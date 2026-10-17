@@ -1,513 +1,846 @@
-<!doctype html>
-<html lang="ar" dir="rtl">
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" class="scroll-smooth" id="htmlTag">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>SFNE — منصة لياقة وتغذية ذكية</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@700;800;900&family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
-<style>
-:root{--bg:#0a1220;--surface:#111e30;--surface-2:#15263d;--border:#26384f;--mint:#57e3a0;--blue:#4c7cff;--coral:#ff6a4d;--text:#f3f6fb;--muted:#93a4bd;--shadow:0 22px 55px rgba(0,0,0,.28)}
-*{box-sizing:border-box}
-html{scroll-behavior:smooth;background:var(--bg);-webkit-text-size-adjust:100%}
-body{margin:0;min-width:0;overflow-x:hidden;background:var(--bg);color:var(--text);font-family:Tajawal,Cairo,sans-serif}
-html[lang="en"] body{font-family:Arial,sans-serif}
-img,svg{max-width:100%}
-.app-root{width:100%;min-height:100vh;min-height:100dvh;overflow-x:clip;background:radial-gradient(circle at 90% 3%,rgba(76,124,255,.19),transparent 30rem),radial-gradient(circle at 7% 50%,rgba(87,227,160,.09),transparent 34rem),var(--bg)}
-main{min-width:0}
-main [class*="grid"]>*{min-width:0}
-.heading{font-family:Cairo,Tajawal,sans-serif}
-html[lang="en"] .heading{font-family:Georgia,serif;letter-spacing:-.03em}
-.section-shell{width:100%;max-width:1180px;margin-inline:auto;padding-inline:16px}
-@media(min-width:680px){.section-shell{padding-inline:20px}}
-section{scroll-margin-top:92px}
-.panel{background:rgba(17,30,48,.88);border:1px solid var(--border);border-radius:16px}
-.focus-ring:focus-visible{outline:3px solid var(--mint);outline-offset:3px}
-.nav-link{min-height:44px;display:inline-flex;align-items:center;padding:0 10px;border-radius:10px;color:var(--muted);font-weight:700;font-size:.9rem;white-space:nowrap;transition:.2s;text-decoration:none}
-.nav-link:hover,.nav-link.active{background:#163427;color:var(--mint)}
-.btn{min-height:44px;display:inline-flex;align-items:center;justify-content:center;gap:.5rem;padding:.7rem 1rem;border-radius:12px;border:1px solid transparent;font-weight:800;transition:transform .2s,filter .2s,background .2s;text-decoration:none;text-align:center;cursor:pointer}
-.btn:hover{transform:translateY(-2px);filter:brightness(1.08)}
-.btn-primary{background:var(--mint);color:#062419}.btn-outline{background:transparent;border-color:var(--border);color:var(--text)}
-.eyebrow{display:inline-flex;align-items:center;gap:.45rem;border:1px solid #317854;background:#103525;color:#a4f4c9;border-radius:999px;padding:.38rem .7rem;font-size:.79rem;font-weight:800}
-.section-title{font-size:clamp(1.6rem,4vw,2.8rem);line-height:1.2;font-weight:800}
-.section-copy{margin-top:14px;max-width:700px;color:var(--muted);line-height:1.9}
-.card{border:1px solid var(--border);background:rgba(17,30,48,.92);border-radius:16px;padding:20px;transition:transform .25s,border-color .25s}
-.card:hover{transform:translateY(-4px);border-color:#42607f}
-.icon-box{display:grid;place-items:center;width:46px;height:46px;border-radius:13px}
-.ecg{height:40px;width:100%;opacity:.72;background:linear-gradient(90deg,transparent 0 3%,var(--mint) 3% 6%,transparent 6% 11%,var(--mint) 11% 14%,transparent 14% 100%);clip-path:polygon(0 50%,7% 50%,9% 50%,11% 8%,13% 91%,15% 50%,23% 50%,25% 33%,27% 68%,29% 50%,100% 50%)}
-.mock-phone{position:relative;width:min(100%,310px);margin-inline:auto;border:7px solid #26384f;border-radius:34px;padding:14px;background:#0c1727;box-shadow:var(--shadow)}
-.mock-phone:before{content:"";display:block;width:84px;height:17px;border-radius:0 0 12px 12px;background:#26384f;margin:-14px auto 12px}
-.ring{width:120px;aspect-ratio:1;border-radius:50%;display:grid;place-items:center;background:conic-gradient(var(--mint) 0 72%,#26384f 72% 100%)}
-.ring>div{width:91px;aspect-ratio:1;border-radius:50%;display:grid;place-items:center;background:var(--surface);text-align:center}
-.pulse-line{height:54px;width:100%;overflow:visible}
-.pulse-line polyline{stroke:var(--mint);stroke-width:4;fill:none;stroke-linecap:round;stroke-linejoin:round}
-.counter{border-inline-start:1px solid var(--border);padding:0 6px}
-.counter:first-child{border:0}
-.tab-row{display:flex;gap:8px;overflow-x:auto;padding-bottom:5px;scrollbar-width:thin;-webkit-overflow-scrolling:touch}
-.role-tab{min-height:44px;white-space:nowrap;border:1px solid var(--border);border-radius:11px;background:#101c2d;color:var(--muted);padding:.6rem .9rem;font-weight:800;cursor:pointer;font-family:inherit}
-.role-tab[aria-selected="true"]{background:#103525;border-color:#317854;color:#a4f4c9}
-.chip{min-height:44px;border:1px solid var(--border);border-radius:999px;background:#101c2d;color:var(--muted);padding:.55rem .85rem;font-weight:700;cursor:pointer;font-family:inherit}
-.chip.selected{background:#18284d;border-color:var(--blue);color:#dbe5ff}
-/* Drawer: in RTL the inline-end edge is the LEFT side, so hide toward the left; reverse in LTR */
-.drawer{transform:translateX(-110%);visibility:hidden;transition:transform .25s ease,visibility .25s}
-[dir="ltr"] .drawer{transform:translateX(110%)}
-.drawer.open{transform:none;visibility:visible}
-.overlay{opacity:0;visibility:hidden;transition:.2s}.overlay.open{opacity:1;visibility:visible}
-.toast{transform:translateY(150%);opacity:0;transition:.25s;max-width:min(24rem,calc(100vw - 36px))}.toast.show{transform:none;opacity:1}
-.loading-dot{width:9px;height:9px;border-radius:50%;background:var(--mint);animation:bounce .85s infinite alternate}
-.loading-dot:nth-child(2){animation-delay:.15s}.loading-dot:nth-child(3){animation-delay:.3s}
-@keyframes bounce{to{transform:translateY(-8px);opacity:.45}}
-.reveal{animation:reveal .55s both}@keyframes reveal{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
-.back-top{position:fixed;inset-inline-end:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:30;width:46px;height:46px;border:1px solid #317854;border-radius:14px;background:#103525;color:#a4f4c9;box-shadow:var(--shadow);cursor:pointer;display:grid;place-items:center}
-[dir="ltr"] .flip-rtl{transform:scaleX(-1)}
-@media(max-width:1023px){.desktop-nav,.desktop-actions{display:none!important}.hero-grid{grid-template-columns:1fr!important}}
-@media(min-width:1024px){.menu-button,.drawer,.overlay{display:none!important}}
-@media(max-width:479px){.counter strong{font-size:1.35rem!important}.counter span{font-size:.7rem!important}.btn{width:100%}.card{padding:18px}}
-@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.btn,.card,.drawer,.overlay,.toast{transition:none}.loading-dot,.reveal{animation:none}}
-</style>
-<script src="https://cdn.jsdelivr.net/npm/lucide@0.577.0/dist/umd/lucide.min.js"></script>
-<script src="https://cdn.tailwindcss.com/3.4.17"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SFNE FITAI - منظومة اللياقة والتغذية الذكية</title>
+    <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        html { scroll-padding-top: 6rem; }
+        body { font-family: 'Cairo', sans-serif; -webkit-font-smoothing: antialiased; }
+        html[lang="en"] body { font-family: 'Inter', 'Cairo', sans-serif; }
+
+        h1 { font-size: clamp(2rem, 5vw, 3.5rem) !important; text-wrap: balance; }
+        h2 { font-size: clamp(1.6rem, 3.5vw, 2.4rem) !important; text-wrap: balance; }
+        .font-black { font-weight: 800; }
+
+        html[lang="ar"] body { line-height: 1.85; }
+        html[lang="ar"] h1, html[lang="ar"] h2, html[lang="ar"] h3 { line-height: 1.45 !important; }
+        html[lang="ar"] .text-xs { font-size: 0.85rem; }
+        html[lang="ar"] .text-sm { font-size: 0.97rem; }
+        html[lang="ar"] .tracking-wider,
+        html[lang="ar"] .tracking-widest { letter-spacing: 0 !important; }
+
+        html[lang="en"] body { line-height: 1.65; letter-spacing: -0.005em; }
+        html[lang="en"] h1, html[lang="en"] h2 { letter-spacing: -0.02em; line-height: 1.15 !important; }
+        html[lang="en"] h3 { line-height: 1.3 !important; }
+    </style>
 </head>
-<body>
-<div class="app-root">
- <div class="bg-[#103525] px-3 py-1 text-center text-xs font-bold text-[#a4f4c9]">SFNE Landing — Mock preview</div>
- <header class="sticky top-0 z-40 border-b border-[#26384f] bg-[#0a1220]/90 backdrop-blur-xl" style="padding-top:env(safe-area-inset-top,0px)">
-  <nav class="section-shell flex min-h-[68px] items-center justify-between gap-3" aria-label="التنقل الرئيسي">
-   <a href="#hero" class="focus-ring flex items-center gap-2 rounded-xl font-bold no-underline text-white" aria-label="SFNE">
-    <span class="grid h-10 w-10 place-items-center rounded-xl bg-[#57e3a0] text-lg font-black text-[#062419]">S</span><span class="heading text-xl">SFNE</span></a>
-   <div id="desktop-nav" class="desktop-nav flex items-center gap-1"></div>
-   <div class="desktop-actions flex items-center gap-2">
-    <button id="language-toggle" class="btn btn-outline focus-ring px-3" type="button" aria-label="Language">EN</button>
-    <a class="btn btn-outline focus-ring route-link" href="/login" data-route="/login"></a>
-    <a class="btn btn-primary focus-ring route-link" href="/register" data-route="/register"></a>
-   </div>
-   <button id="menu-button" class="menu-button btn btn-outline focus-ring px-3" style="width:auto" type="button" aria-label="Menu" aria-expanded="false" aria-controls="mobile-drawer"><i data-lucide="menu"></i></button>
-  </nav>
- </header>
- <div id="drawer-overlay" class="overlay fixed inset-0 z-40 bg-[#050b14]/80"></div>
- <aside id="mobile-drawer" class="drawer fixed bottom-0 top-0 z-50 w-[min(86vw,340px)] overflow-y-auto border-s border-[#26384f] bg-[#0d1929] p-5 shadow-2xl" style="inset-inline-end:0" aria-label="Menu">
-  <div class="flex items-center justify-between"><strong class="heading text-2xl">SFNE</strong>
-   <button id="drawer-close" class="btn btn-outline focus-ring px-3" style="width:auto" type="button" aria-label="Close"><i data-lucide="x"></i></button></div>
-  <nav id="mobile-nav" class="mt-8 flex flex-col gap-2"></nav>
-  <div class="mt-7 grid gap-2 border-t border-[#26384f] pt-5">
-   <button id="mobile-language" class="btn btn-outline focus-ring" type="button">English</button>
-   <a class="btn btn-outline focus-ring route-link" href="/login" data-route="/login"></a>
-   <a class="btn btn-primary focus-ring route-link" href="/register" data-route="/register"></a>
-  </div>
- </aside>
+<body class="bg-slate-950 text-slate-100 antialiased selection:bg-emerald-500 selection:text-slate-950">
 
- <main>
-  <section id="hero" class="section-shell py-14 sm:py-24">
-   <div class="hero-grid grid items-center gap-10 lg:grid-cols-[1.08fr_.92fr] lg:gap-12">
-    <div class="reveal">
-     <span class="eyebrow"><i data-lucide="sparkles" width="16"></i><span data-i18n="heroBadge"></span></span>
-     <h1 class="heading mt-5 max-w-3xl text-3xl font-extrabold leading-[1.25] sm:text-5xl lg:text-6xl" data-i18n="heroTitle"></h1>
-     <p class="mt-5 max-w-2xl text-base leading-8 text-[#b8c5d8] sm:text-lg sm:leading-9" data-i18n="heroCopy"></p>
-     <div class="mt-8 flex flex-wrap gap-3">
-      <a href="#demo" class="btn btn-primary focus-ring"><i data-lucide="sparkles" width="18"></i><span data-i18n="heroPrimary"></span></a>
-      <a href="#solution" class="btn btn-outline focus-ring"><span data-i18n="heroSecondary"></span><i data-lucide="arrow-left" width="18" class="flip-rtl"></i></a>
-     </div>
-     <div class="mt-10 grid max-w-xl grid-cols-3 rounded-2xl border border-[#26384f] bg-[#101c2d]/80 px-2 py-5">
-      <div class="counter text-center"><strong class="heading block text-2xl text-[#81f2bd]" data-count="12">0</strong><span class="mt-1 block text-xs text-[#93a4bd]" data-i18n="counterFeatures"></span></div>
-      <div class="counter text-center"><strong class="heading block text-2xl text-[#b9cbff]" data-count="8">0</strong><span class="mt-1 block text-xs text-[#93a4bd]" data-i18n="counterAi"></span></div>
-      <div class="counter text-center"><strong class="heading block text-2xl text-[#ffad9c]" data-count="5">0</strong><span class="mt-1 block text-xs text-[#93a4bd]" data-i18n="counterRoles"></span></div>
-     </div>
+    <!-- شريط ترويجي علوي -->
+    <div class="bg-gradient-to-r from-emerald-600 to-blue-600 text-slate-950 text-xs font-bold py-2 text-center px-4 flex items-center justify-center gap-2">
+        <span id="promoText">🎉 عرض خاص بمناسبة الإطلاق: خصم 20% على باقات الصالات الرياضية والمدربين لفترة محدودة!</span>
+        <a href="#pricing" id="promoLink" class="underline hover:text-white transition">احصل على العرض</a>
     </div>
-    <div class="reveal" style="animation-delay:.15s">
-     <div class="mock-phone" aria-hidden="true">
-      <div class="flex items-center justify-between text-xs text-[#93a4bd]"><span>SFNE</span><i data-lucide="bell" width="15"></i></div>
-      <div class="mt-5 rounded-2xl border border-[#26384f] bg-[#111e30] p-4">
-       <div class="flex items-center justify-between"><span class="text-sm text-[#93a4bd]" data-i18n="mockCommitment"></span><span class="text-sm font-bold text-[#81f2bd]">72%</span></div>
-       <div class="ring mx-auto mt-4"><div><strong class="text-xl">72%</strong><span class="block text-[10px] text-[#93a4bd]" data-i18n="mockWeek"></span></div></div>
-      </div>
-      <div class="mt-4 rounded-2xl border border-[#26384f] bg-[#111e30] p-4">
-       <div class="flex items-center justify-between"><strong class="text-sm" data-i18n="mockProgress"></strong><i data-lucide="trending-up" width="17" class="text-[#57e3a0]"></i></div>
-       <svg class="pulse-line mt-3" viewBox="0 0 280 54"><polyline points="0,42 33,37 70,40 108,24 145,31 184,15 220,22 280,5"></polyline></svg>
-      </div>
-      <div class="mt-4 flex items-center gap-2 rounded-xl border border-[#317854] bg-[#103525] px-3 py-3 text-sm font-bold text-[#b8f7d4]"><i data-lucide="sparkles" width="17"></i><span data-i18n="mockReady"></span></div>
-     </div>
+
+    <!-- Navbar -->
+    <header class="sticky top-0 z-40 bg-slate-900/90 backdrop-blur-md border-b border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <button onclick="toggleMobileMenu()" class="xl:hidden text-slate-300 hover:text-white text-xl focus:outline-none p-2">
+                    <i class="fa-solid fa-bars" id="menuIcon"></i>
+                </button>
+                <span class="text-xl sm:text-2xl font-black text-emerald-400 tracking-wider">SFNE <span class="text-blue-500">FITAI</span></span>
+            </div>
+
+            <nav class="hidden xl:flex items-center gap-5 text-sm font-semibold text-slate-300">
+                <a href="#hero" id="navHome" class="hover:text-emerald-400 transition">الرئيسية</a>
+                <a href="#about" id="navAbout" class="hover:text-emerald-400 transition">من نحن</a>
+                <a href="#features" id="navFeatures" class="hover:text-emerald-400 transition">المميزات</a>
+                <a href="#services" id="navServices" class="hover:text-emerald-400 transition">خدماتنا</a>
+                <a href="#pricing" id="navPricing" class="hover:text-emerald-400 transition">الباقات</a>
+                <a href="#gallery" id="navGallery" class="hover:text-emerald-400 transition">معرض الصور</a>
+                <a href="#blog" id="navBlog" class="hover:text-emerald-400 transition">المدونة</a>
+                <a href="#contact" id="navContact" class="hover:text-emerald-400 transition">تواصل معنا</a>
+                <a href="#support" id="navSupport" class="hover:text-emerald-400 transition">الدعم الفني</a>
+            </nav>
+
+            <div class="flex items-center gap-2 sm:gap-3">
+                <button onclick="toggleLanguage()" id="langBtn" class="text-xs font-bold px-2.5 py-1.5 rounded-lg border border-slate-700 bg-slate-800 text-slate-300 hover:text-emerald-400 transition flex items-center gap-1">
+                    <i class="fa-solid fa-globe"></i> English
+                </button>
+                <button onclick="openModal('login')" id="loginBtn" class="text-slate-300 hover:text-white font-semibold text-xs sm:text-sm px-2 sm:px-3 py-2 transition">
+                    تسجيل الدخول
+                </button>
+                <button onclick="openModal('signup')" id="signupBtn" class="bg-emerald-500 hover:bg-emerald-600 text-slate-950 font-bold px-3 sm:px-4 py-2 rounded-xl transition text-xs sm:text-sm shadow-lg shadow-emerald-500/20">
+                    إنشاء حساب
+                </button>
+            </div>
+        </div>
+
+        <!-- القائمة المنسدلة للروابط على الموبايل -->
+        <div id="mobileMenu" class="hidden xl:hidden bg-slate-900 border-b border-slate-800 px-6 py-4 space-y-3 text-sm font-semibold text-slate-300">
+            <a href="#hero" onclick="toggleMobileMenu()" class="block py-1.5 hover:text-emerald-400 transition">الرئيسية</a>
+            <a href="#about" onclick="toggleMobileMenu()" class="block py-1.5 hover:text-emerald-400 transition">من نحن</a>
+            <a href="#features" onclick="toggleMobileMenu()" class="block py-1.5 hover:text-emerald-400 transition">المميزات</a>
+            <a href="#services" onclick="toggleMobileMenu()" class="block py-1.5 hover:text-emerald-400 transition">خدماتنا</a>
+            <a href="#pricing" onclick="toggleMobileMenu()" class="block py-1.5 hover:text-emerald-400 transition">الباقات</a>
+            <a href="#gallery" onclick="toggleMobileMenu()" class="block py-1.5 hover:text-emerald-400 transition">معرض الصور</a>
+            <a href="#blog" onclick="toggleMobileMenu()" class="block py-1.5 hover:text-emerald-400 transition">المدونة</a>
+            <a href="#contact" onclick="toggleMobileMenu()" class="block py-1.5 hover:text-emerald-400 transition">تواصل معنا</a>
+            <a href="#support" onclick="toggleMobileMenu()" class="block py-1.5 hover:text-emerald-400 transition">الدعم الفني</a>
+        </div>
+    </header>
+
+    <!-- Hero -->
+    <section id="hero" class="relative py-20 lg:py-28 overflow-hidden bg-slate-950">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div class="ltr:text-left rtl:text-right">
+                    <div id="heroBadge" class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-xs font-semibold mb-6">
+                        <i class="fa-solid fa-bolt"></i> منظومة متكاملة للياقة البدنية والتغذية
+                    </div>
+                    <h1 id="heroTitle" class="font-black text-white mb-6">
+                        طور لياقتك بأحدث تقنيات <span class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-blue-500">الذكاء الاصطناعي والإشراف الاحترافي</span>
+                    </h1>
+                    <p id="heroDesc" class="text-slate-400 text-base sm:text-lg mb-8 leading-relaxed">
+                        نربط بين الصالات الرياضية، المتدربين، والمدربين المحترفين في منصة واحدة سهلة ومبتكرة تضمن لك الوصول لأهدافك الرياضية والصحية بكل أمان وثقة.
+                    </p>
+                    <div class="flex flex-wrap gap-4 ltr:justify-start rtl:justify-start">
+                        <button onclick="openModal('signup')" id="heroCta1" class="bg-emerald-500 hover:bg-emerald-600 text-slate-950 font-bold px-8 py-3.5 rounded-xl transition shadow-lg shadow-emerald-500/20">
+                            ابدأ الآن مجاناً
+                        </button>
+                        <a href="#about" id="heroCta2" class="bg-slate-900 hover:bg-slate-800 border border-slate-800 text-slate-200 font-semibold px-8 py-3.5 rounded-xl transition">
+                            اكتشف المزيد
+                        </a>
+                    </div>
+                </div>
+                <div class="relative">
+                    <div class="absolute -inset-1 bg-gradient-to-r from-emerald-500 to-blue-600 rounded-3xl blur-2xl opacity-20"></div>
+                    <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=800&q=80" alt="Fitness Training" class="relative rounded-3xl border border-slate-800 shadow-2xl w-full object-cover h-[450px]">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- إحصائيات -->
+    <section class="py-12 bg-slate-900/80 border-y border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+                <div>
+                    <h3 class="text-3xl lg:text-4xl font-black text-emerald-400 mb-1">+100</h3>
+                    <p id="stat1" class="text-slate-400 text-sm">صالة رياضية شريكة</p>
+                </div>
+                <div>
+                    <h3 class="text-3xl lg:text-4xl font-black text-blue-400 mb-1">+5,000</h3>
+                    <p id="stat2" class="text-slate-400 text-sm">متدرب نشط</p>
+                </div>
+                <div>
+                    <h3 class="text-3xl lg:text-4xl font-black text-purple-400 mb-1">+200</h3>
+                    <p id="stat3" class="text-slate-400 text-sm">مدرب وأخصائي تغذية</p>
+                </div>
+                <div>
+                    <h3 class="text-3xl lg:text-4xl font-black text-amber-400 mb-1">99%</h3>
+                    <p id="stat4" class="text-slate-400 text-sm">نسبة رضا العملاء</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- من نحن -->
+    <section id="about" class="py-20 bg-slate-900/50 border-t border-slate-800/60">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&fit=crop&w=800&q=80" alt="About SFNE" class="rounded-3xl border border-slate-800 shadow-xl w-full object-cover h-[400px]">
+                </div>
+                <div class="ltr:text-left rtl:text-right">
+                    <span id="aboutSub" class="text-emerald-400 text-sm font-bold uppercase tracking-widest">من نحن</span>
+                    <h2 id="aboutTitle" class="font-extrabold mt-2 mb-6">منصة تجمع كل عناصر النجاح الرياضي في مكان واحد</h2>
+                    <p id="aboutDesc1" class="text-slate-400 mb-4 leading-relaxed">
+                        نحن نسعى لإحداث طفرة حقيقية في قطاع اللياقة البدنية عبر دمج التكنولوجيا المتقدمة بالخبرة البشرية. نوفر بيئة رقمية متكاملة تخدم أصحاب الجيمات، الكباتن، وأخصائيي التغذية لتقديم أفضل تجربة للمشتركين.
+                    </p>
+                    <p id="aboutDesc2" class="text-slate-400 mb-6 leading-relaxed">
+                        نضمن لك متابعة دقيقة ومستمرة لتقدمك الرياضي والصحي مع التركيز على أعلى معايير الجودة والاحترافية.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- المميزات -->
+    <section id="features" class="py-20 bg-slate-950 border-t border-slate-800/60">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span id="featSub" class="text-emerald-400 text-sm font-bold uppercase">المميزات الرئيسية</span>
+                <h2 id="featTitle" class="font-extrabold mt-2 mb-4">ما الذي يقدمه لك النظام؟</h2>
+                <p id="featDesc" class="text-slate-400">حلول مبتكرة ومتقدمة مصممة لتسهيل إدارتك الرياضية والوصول لأهدافك البدنية بكفاءة.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-slate-900 border border-slate-800 p-8 rounded-3xl hover:border-emerald-500/50 transition ltr:text-left rtl:text-right">
+                    <div class="w-14 h-14 bg-emerald-500/10 text-emerald-400 rounded-2xl flex items-center justify-center text-2xl mb-6"><i class="fa-solid fa-robot"></i></div>
+                    <h3 id="f1Title" class="text-xl font-bold mb-3">خطط ذكية مخصصة</h3>
+                    <p id="f1Desc" class="text-slate-400 text-sm leading-relaxed">برامج تمرين وتغذية مصممة خصيصاً لتناسب هدفك الشخصي ومستوى لياقتك البدنية بكل دقة.</p>
+                </div>
+                <div class="bg-slate-900 border border-slate-800 p-8 rounded-3xl hover:border-blue-500/50 transition ltr:text-left rtl:text-right">
+                    <div class="w-14 h-14 bg-blue-500/10 text-blue-400 rounded-2xl flex items-center justify-center text-2xl mb-6"><i class="fa-solid fa-user-check"></i></div>
+                    <h3 id="f2Title" class="text-xl font-bold mb-3">إشراف وتوجيه احترافي</h3>
+                    <p id="f2Desc" class="text-slate-400 text-sm leading-relaxed">متابعة مستمرة وتوجيه مباشر من مدربين معتمدين لضمان تنفيذ التمارين بالشكل الصحيح.</p>
+                </div>
+                <div class="bg-slate-900 border border-slate-800 p-8 rounded-3xl hover:border-purple-500/50 transition ltr:text-left rtl:text-right">
+                    <div class="w-14 h-14 bg-purple-500/10 text-purple-400 rounded-2xl flex items-center justify-center text-2xl mb-6"><i class="fa-solid fa-chart-line"></i></div>
+                    <h3 id="f3Title" class="text-xl font-bold mb-3">تقارير ومتابعة أسبوعية</h3>
+                    <p id="f3Desc" class="text-slate-400 text-sm leading-relaxed">تتبع دوري للقياسات والنتائج لمعرفة مدى تقدمك وتحقيق أهدافك بصورة أسرع وأكثر فعالية.</p>
+                </div>
+                <div class="bg-slate-900 border border-slate-800 p-8 rounded-3xl hover:border-amber-500/50 transition ltr:text-left rtl:text-right">
+                    <div class="w-14 h-14 bg-amber-500/10 text-amber-400 rounded-2xl flex items-center justify-center text-2xl mb-6"><i class="fa-solid fa-shield-halved"></i></div>
+                    <h3 id="f4Title" class="text-xl font-bold mb-3">معايير أمان صارمة</h3>
+                    <p id="f4Desc" class="text-slate-400 text-sm leading-relaxed">فحص آلي ومراجعة بشرية صارمة لضمان خلو الخطط الرياضية من أي مخاطر أو إصابات محتملة.</p>
+                </div>
+                <div class="bg-slate-900 border border-slate-800 p-8 rounded-3xl hover:border-rose-500/50 transition ltr:text-left rtl:text-right">
+                    <div class="w-14 h-14 bg-rose-500/10 text-rose-400 rounded-2xl flex items-center justify-center text-2xl mb-6"><i class="fa-solid fa-dumbbell"></i></div>
+                    <h3 id="f5Title" class="text-xl font-bold mb-3">تطابق مع أجهزة الجيم</h3>
+                    <p id="f5Desc" class="text-slate-400 text-sm leading-relaxed">اختيار التمارين المتاحة آلياً بناءً على الأجهزة والآلات الفعلية المتوفرة داخل الصالة الرياضية.</p>
+                </div>
+                <div class="bg-slate-900 border border-slate-800 p-8 rounded-3xl hover:border-cyan-500/50 transition ltr:text-left rtl:text-right">
+                    <div class="w-14 h-14 bg-cyan-500/10 text-cyan-400 rounded-2xl flex items-center justify-center text-2xl mb-6"><i class="fa-solid fa-clock-rotate-left"></i></div>
+                    <h3 id="f6Title" class="text-xl font-bold mb-3">أرشيف وتاريخ صحي موحد</h3>
+                    <p id="f6Desc" class="text-slate-400 text-sm leading-relaxed">ملف رقمي شامل لا يضيع أبداً حتى عند انتقالك أو اشتراكك في فروع أو صالات رياضية جديدة.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- الخدمات -->
+    <section id="services" class="py-20 bg-slate-900/50 border-t border-slate-800/60">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span id="servSub" class="text-emerald-400 text-sm font-bold uppercase">الخدمات التي نقدمها</span>
+                <h2 id="servTitle" class="font-extrabold mt-2 mb-4">حلول شاملة ومتكاملة لقطاع اللياقة</h2>
+                <p id="servDesc" class="text-slate-400">نقدم منظومة خدمات متطورة تلبي احتياجات الصالات الرياضية، المدربين، والأعضاء بكفاءة عالية.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-slate-900 border border-slate-800 p-8 rounded-3xl ltr:text-left rtl:text-right">
+                    <div class="w-12 h-12 bg-emerald-500/10 text-emerald-400 rounded-xl flex items-center justify-center text-xl font-bold mb-6"><i class="fa-solid fa-building-user"></i></div>
+                    <h3 id="s1Title" class="text-xl font-bold mb-3">إدارة الصالات الرياضية</h3>
+                    <p id="s1Desc" class="text-slate-400 text-sm leading-relaxed">نظام متكامل لإدارة فروع الجيم، الاشتراكات، الحضور، وتوزيع العوائد المالية بكل شفافية.</p>
+                </div>
+                <div class="bg-slate-900 border border-slate-800 p-8 rounded-3xl ltr:text-left rtl:text-right">
+                    <div class="w-12 h-12 bg-blue-500/10 text-blue-400 rounded-xl flex items-center justify-center text-xl font-bold mb-6"><i class="fa-solid fa-utensils"></i></div>
+                    <h3 id="s2Title" class="text-xl font-bold mb-3">التغذية والبرامج الغذائية</h3>
+                    <p id="s2Desc" class="text-slate-400 text-sm leading-relaxed">تصميم الحصص السعرية، السعرات الحرارية، والوجبات الغذائية المناسبة لهدف كل مشترك بإشراف مختصين.</p>
+                </div>
+                <div class="bg-slate-900 border border-slate-800 p-8 rounded-3xl ltr:text-left rtl:text-right">
+                    <div class="w-12 h-12 bg-purple-500/10 text-purple-400 rounded-xl flex items-center justify-center text-xl font-bold mb-6"><i class="fa-solid fa-stethoscope"></i></div>
+                    <h3 id="s3Title" class="text-xl font-bold mb-3">المتابعة الطبية وتحليل المجلدات</h3>
+                    <p id="s3Desc" class="text-slate-400 text-sm leading-relaxed">قراءة وتحليل التقارير الطبية والقياسات الحيوية عبر تقنيات OCR مع مراقبة أسباب الإصابات والتصعيد الفوري.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- الباقات -->
+    <section id="pricing" class="py-20 bg-slate-950 border-t border-slate-800/60">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <span id="priceSub" class="text-emerald-400 text-sm font-bold uppercase">باقات الاشتراكات</span>
+                <h2 id="priceTitle" class="font-extrabold mt-2 mb-4">اختر الباقة المناسبة لاحتياجاتك</h2>
+                <p id="priceDesc" class="text-slate-400 mb-6">باقات مرنة ومصممة خصيصاً لتناسب المتدربين وأصحاب الصالات الرياضية.</p>
+
+                <div class="inline-flex items-center gap-3 bg-slate-900 p-1.5 rounded-2xl border border-slate-800">
+                    <button id="btnMonthly" onclick="togglePricing('monthly')" class="px-5 py-2 rounded-xl text-xs font-bold transition bg-emerald-500 text-slate-950">شهري</button>
+                    <button id="btnYearly" onclick="togglePricing('yearly')" class="px-5 py-2 rounded-xl text-xs font-bold transition text-slate-400 hover:text-white flex items-center gap-1">
+                        سنوي <span class="bg-emerald-500/20 text-emerald-400 text-[10px] px-2 py-0.5 rounded-full">خصم 20%</span>
+                    </button>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-slate-900 border border-slate-800 p-8 rounded-3xl flex flex-col justify-between ltr:text-left rtl:text-right">
+                    <div>
+                        <h3 id="p1Title" class="text-xl font-bold mb-2">باقة المتدرب</h3>
+                        <p id="p1Desc" class="text-slate-400 text-sm mb-6">للأفراد الراغبين في متابعة خططهم الرياضية والتغذية.</p>
+                        <div id="p1Tag" class="text-3xl font-black text-emerald-400 mb-6">مجاناً <span class="text-xs text-slate-400 font-normal">/ لفترة محدودة</span></div>
+                        <ul class="space-y-3 text-sm text-slate-300 mb-8">
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400"></i> <span id="p1Item1">خطط تمرين وتغذية ذكية</span></li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400"></i> <span id="p1Item2">متابعة أسبوعية للتقدم</span></li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400"></i> <span id="p1Item3">دعم فني أساسي</span></li>
+                        </ul>
+                    </div>
+                    <button onclick="openModal('signup')" id="p1Btn" class="w-full bg-slate-800 hover:bg-slate-700 text-center py-3 rounded-xl font-bold transition text-sm">اشترك الآن</button>
+                </div>
+
+                <div class="bg-gradient-to-b from-slate-900 to-slate-950 border-2 border-emerald-500 p-8 rounded-3xl flex flex-col justify-between relative shadow-xl shadow-emerald-500/10 ltr:text-left rtl:text-right">
+                    <div id="popularBadge" class="absolute -top-3 left-1/2 -translate-x-1/2 bg-emerald-500 text-slate-950 text-xs font-bold px-3 py-1 rounded-full">الأكثر طلباً</div>
+                    <div>
+                        <h3 id="p2Title" class="text-xl font-bold mb-2">باقة الصالات الرياضية (Gyms)</h3>
+                        <p id="p2Desc" class="text-slate-400 text-sm mb-6">لإدارة الفروع، المدربين، والاشتراكات بكفاءة.</p>
+                        <div id="gymPrice" class="text-3xl font-black text-emerald-400 mb-6">حسب الطلب</div>
+                        <ul class="space-y-3 text-sm text-slate-300 mb-8">
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400"></i> <span id="p2Item1">ربط شامل لجميع فروع الجيم</span></li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400"></i> <span id="p2Item2">لوحة تحكم كاملة للمدربين</span></li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400"></i> <span id="p2Item3">تقارير مالية وإدارية دقيقة</span></li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400"></i> <span id="p2Item4">دعم فني مخصص على مدار الساعة</span></li>
+                        </ul>
+                    </div>
+                    <a href="#contact" id="p2Btn" class="w-full bg-emerald-500 hover:bg-emerald-600 text-slate-950 text-center py-3 rounded-xl font-bold transition text-sm shadow-lg shadow-emerald-500/20">تواصل مع المبيعات</a>
+                </div>
+
+                <div class="bg-slate-900 border border-slate-800 p-8 rounded-3xl flex flex-col justify-between ltr:text-left rtl:text-right">
+                    <div>
+                        <h3 id="p3Title" class="text-xl font-bold mb-2">باقة المدرب المعتمد</h3>
+                        <p id="p3Desc" class="text-slate-400 text-sm mb-6">للكباتن وأخصائيي التغذية لإدارة عملائهم.</p>
+                        <div id="p3Tag" class="text-3xl font-black text-emerald-400 mb-6">مخصص</div>
+                        <ul class="space-y-3 text-sm text-slate-300 mb-8">
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400"></i> <span id="p3Item1">إدارة المحفظة الخاصة بالعملاء</span></li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400"></i> <span id="p3Item2">مراجعة واعتماد مسودات الذكاء الاصطناعي</span></li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400"></i> <span id="p3Item3">جدولة المواعيد والاستشارات</span></li>
+                        </ul>
+                    </div>
+                    <button onclick="openModal('signup')" id="p3Btn" class="w-full bg-slate-800 hover:bg-slate-700 text-center py-3 rounded-xl font-bold transition text-sm">انضم كمدرب</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- معرض الصور -->
+    <section id="gallery" class="py-20 bg-slate-900/50 border-t border-slate-800/60">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span id="galSub" class="text-emerald-400 text-sm font-bold uppercase">معرض الصور</span>
+                <h2 id="galTitle" class="font-extrabold mt-2 mb-4">جولة داخل المنظومة والصالات الشريكة</h2>
+                <p id="galDesc" class="text-slate-400">لقطات حية تعكس احترافية التجهيزات وبيئة العمل المتطورة.</p>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <img src="https://images.unsplash.com/photo-1540497077202-7c8a3999166f?auto=format&fit=crop&w=600&q=80" alt="Gym 1" class="rounded-2xl border border-slate-800 object-cover h-64 w-full">
+                <img src="https://images.unsplash.com/photo-1517838277536-f5f99be501cd?auto=format&fit=crop&w=600&q=80" alt="Gym 2" class="rounded-2xl border border-slate-800 object-cover h-64 w-full">
+                <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=600&q=80" alt="Gym 3" class="rounded-2xl border border-slate-800 object-cover h-64 w-full">
+            </div>
+        </div>
+    </section>
+
+    <!-- العملاء -->
+    <section id="clients" class="py-20 bg-slate-950 border-t border-slate-800/60">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span id="cliSub" class="text-emerald-400 text-sm font-bold uppercase">شركاء النجاح</span>
+                <h2 id="cliTitle" class="font-extrabold mt-2 mb-4">آراء عملائنا وقصص النجاح</h2>
+                <p id="cliDesc" class="text-slate-400">تعرف على تجارب من استعملوا المنظومة وحققوا نتائج مذهلة.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+                <div class="bg-slate-900 border border-slate-800 p-6 rounded-2xl ltr:text-left rtl:text-right">
+                    <div class="flex items-center gap-1 text-amber-400 mb-4"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                    <p id="t1Text" class="text-slate-300 text-sm mb-6 leading-relaxed">"المنصة ساعدتني كثيراً في تنظيم الجيم الخاص بي ومتابعة الأعضاء بكل سهولة ويسر."</p>
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 bg-emerald-500/20 text-emerald-400 rounded-full flex items-center justify-center font-bold">م</div>
+                        <div><h4 id="t1Name" class="font-bold text-sm">أحمد محمود</h4><p id="t1Role" class="text-xs text-slate-500">مدير صالة رياضية</p></div>
+                    </div>
+                </div>
+                <div class="bg-slate-900 border border-slate-800 p-6 rounded-2xl ltr:text-left rtl:text-right">
+                    <div class="flex items-center gap-1 text-amber-400 mb-4"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                    <p id="t2Text" class="text-slate-300 text-sm mb-6 leading-relaxed">"أفضل تجربة مرت علي كمدربة، سهلت لي وضع البرامج التدريبية ومتابعة اللاعبين بشكل احترافي."</p>
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 bg-blue-500/20 text-blue-400 rounded-full flex items-center justify-center font-bold">ك</div>
+                        <div><h4 id="t2Name" class="font-bold text-sm">سارة علي</h4><p id="t2Role" class="text-xs text-slate-500">مدربة لياقة بدنية</p></div>
+                    </div>
+                </div>
+                <div class="bg-slate-900 border border-slate-800 p-6 rounded-2xl ltr:text-left rtl:text-right">
+                    <div class="flex items-center gap-1 text-amber-400 mb-4"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                    <p id="t3Text" class="text-slate-300 text-sm mb-6 leading-relaxed">"النتائج واضحة جداً وجدول التمارين والتغذية ساعدوني أوصل لهدفي في وقت قصير."</p>
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 bg-purple-500/20 text-purple-400 rounded-full flex items-center justify-center font-bold">ع</div>
+                        <div><h4 id="t3Name" class="font-bold text-sm">عمر حسن</h4><p id="t3Role" class="text-xs text-slate-500">عضو مشترك</p></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center pt-8 border-t border-slate-800">
+                <p id="sponsorsLabel" class="text-xs text-slate-500 uppercase tracking-widest mb-6">الجهات الراعية وصالات اللياقة الشريكة</p>
+                <div class="flex flex-wrap justify-center items-center gap-10 text-slate-400 font-bold opacity-75">
+                    <span class="text-xl tracking-wider">FITNESS HUB</span>
+                    <span class="text-xl tracking-wider">IRON GYM</span>
+                    <span class="text-xl tracking-wider">TITAN FITNESS</span>
+                    <span class="text-xl tracking-wider">OLYMPUS CLUB</span>
+                    <span class="text-xl tracking-wider">EGYPT FIT</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- المدونة -->
+    <section id="blog" class="py-20 bg-slate-900/50 border-t border-slate-800/60">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span id="blogSub" class="text-emerald-400 text-sm font-bold uppercase">المدونة والنصائح</span>
+                <h2 id="blogTitle" class="font-extrabold mt-2 mb-4">أحدث المقالات والنصائح الرياضية</h2>
+                <p id="blogDesc" class="text-slate-400">محتوى تثقفي احترافي لمساعدتك على فهم التغذية والتمارين بصورة أفضل.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden ltr:text-left rtl:text-right">
+                    <img src="https://images.unsplash.com/photo-1517838277536-f5f99be501cd?auto=format&fit=crop&w=500&q=80" alt="Blog 1" class="h-48 w-full object-cover">
+                    <div class="p-6">
+                        <span id="b1Cat" class="text-xs text-emerald-400 font-bold">التغذية السليمة</span>
+                        <h3 id="b1Title" class="font-bold text-lg mt-2 mb-2">أهمية حساب السعرات الحرارية للوصول للوزن المثالي</h3>
+                        <p id="b1Desc" class="text-slate-400 text-sm">كيف تؤثر الماكروز (البروتين والكربوهيدرات والدهون) على تطور عضلاتك وحرق الدهون.</p>
+                    </div>
+                </div>
+                <div class="bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden ltr:text-left rtl:text-right">
+                    <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=500&q=80" alt="Blog 2" class="h-48 w-full object-cover">
+                    <div class="p-6">
+                        <span id="b2Cat" class="text-xs text-blue-400 font-bold">التمارين الرياضية</span>
+                        <h3 id="b2Title" class="font-bold text-lg mt-2 mb-2">لماذا تعد تمارين المقاومة أساسية للياقة البدنية؟</h3>
+                        <p id="b2Desc" class="text-slate-400 text-sm">تعرف على دور رفع الأشرطة والأوزان في بناء القوة العضلية وتحسين صحة العظام.</p>
+                    </div>
+                </div>
+                <div class="bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden ltr:text-left rtl:text-right">
+                    <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&fit=crop&w=500&q=80" alt="Blog 3" class="h-48 w-full object-cover">
+                    <div class="p-6">
+                        <span id="b3Cat" class="text-xs text-purple-400 font-bold">الذكاء الاصطناعي</span>
+                        <h3 id="b3Title" class="font-bold text-lg mt-2 mb-2">دور الذكاء الاصطناعي والإشراف البشري في الرياضة</h3>
+                        <p id="b3Desc" class="text-slate-400 text-sm">كيف تضمن المنظومة دقة البرامج التدريبية مع حمايتك التامة من الإصابات.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- تطبيق الجوال -->
+    <section class="py-20 bg-slate-950 border-t border-slate-800/60">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div class="ltr:text-left rtl:text-right">
+                    <span id="appSub" class="text-emerald-400 text-sm font-bold uppercase tracking-widest">تطبيق الجوال</span>
+                    <h2 id="appTitle" class="font-extrabold mt-2 mb-6">تابع تمارينك وتغذيتك أينما كنت</h2>
+                    <p id="appDesc" class="text-slate-400 mb-6 leading-relaxed">
+                        قم بتحميل تطبيق SFNE FITAI على هاتفك الذكي واستمتع بمتابعة خطتك اليومية، تسجيل الأوزان، والتواصل المباشر مع مدربك في أي وقت.
+                    </p>
+                    <div class="flex flex-wrap gap-4 ltr:justify-start rtl:justify-start">
+                        <button class="bg-slate-900 hover:bg-slate-800 border border-slate-700 px-6 py-3 rounded-xl flex items-center gap-3 transition">
+                            <i class="fa-brands fa-apple text-2xl text-white"></i>
+                            <div class="ltr:text-left rtl:text-right">
+                                <p id="appStoreSub" class="text-[10px] text-slate-400">تحميل من</p>
+                                <p class="text-xs font-bold text-white">App Store</p>
+                            </div>
+                        </button>
+                        <button class="bg-slate-900 hover:bg-slate-800 border border-slate-700 px-6 py-3 rounded-xl flex items-center gap-3 transition">
+                            <i class="fa-brands fa-google-play text-2xl text-emerald-400"></i>
+                            <div class="ltr:text-left rtl:text-right">
+                                <p id="playStoreSub" class="text-[10px] text-slate-400">حمل من</p>
+                                <p class="text-xs font-bold text-white">Google Play</p>
+                            </div>
+                        </button>
+                    </div>
+                </div>
+                <div class="text-center">
+                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=600&q=80" alt="Mobile App" class="rounded-3xl border border-slate-800 shadow-2xl mx-auto max-h-[350px] object-cover">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- تواصل معنا -->
+    <section id="contact" class="py-20 bg-slate-900/50 border-t border-slate-800/60">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <div class="ltr:text-left rtl:text-right">
+                    <span id="cntSub" class="text-emerald-400 text-sm font-bold uppercase">تواصل معنا</span>
+                    <h2 id="cntTitle" class="font-extrabold mt-2 mb-6">يسعدنا تواصلك معنا في أي وقت</h2>
+                    <p id="cntDesc" class="text-slate-400 mb-8 leading-relaxed">
+                        سواء كنت صاحب صالة رياضية تبحث عن تطوير نظامك، أو مشتركاً جديداً، فريقنا جاهز للإجابة على كافة استفساراتك.
+                    </p>
+                    <div class="space-y-4">
+                        <div class="flex items-center gap-4 text-slate-300">
+                            <div class="w-10 h-10 bg-slate-900 border border-slate-800 rounded-xl flex items-center justify-center text-emerald-400"><i class="fa-solid fa-envelope"></i></div>
+                            <span dir="ltr">info@sfne-fitai.com</span>
+                        </div>
+                        <div class="flex items-center gap-4 text-slate-300">
+                            <div class="w-10 h-10 bg-slate-900 border border-slate-800 rounded-xl flex items-center justify-center text-emerald-400"><i class="fa-solid fa-phone"></i></div>
+                            <span dir="ltr">+20 100 000 0000</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-slate-900 border border-slate-800 p-8 rounded-3xl ltr:text-left rtl:text-right">
+                    <form class="space-y-4" onsubmit="event.preventDefault(); alert(currentLang === 'ar' ? 'تم إرسال رسالتك بنجاح!' : 'Your message was sent successfully!');">
+                        <div>
+                            <label id="lblFullName" class="block text-xs font-bold text-slate-400 mb-2">الاسم بالكامل</label>
+                            <input id="inpName" type="text" required placeholder="أدخل اسمك" class="w-full bg-slate-950 border border-slate-800 px-4 py-3 rounded-xl text-sm focus:outline-none focus:border-emerald-500">
+                        </div>
+                        <div>
+                            <label id="lblEmailPhone" class="block text-xs font-bold text-slate-400 mb-2">البريد الإلكتروني / الهاتف</label>
+                            <input id="inpContact" type="text" required placeholder="أدخل بريدك أو رقمك" class="w-full bg-slate-950 border border-slate-800 px-4 py-3 rounded-xl text-sm focus:outline-none focus:border-emerald-500">
+                        </div>
+                        <div>
+                            <label id="lblMsg" class="block text-xs font-bold text-slate-400 mb-2">الرسالة</label>
+                            <textarea id="inpMsg" rows="4" required placeholder="كيف يمكننا مساعدتك؟" class="w-full bg-slate-950 border border-slate-800 px-4 py-3 rounded-xl text-sm focus:outline-none focus:border-emerald-500"></textarea>
+                        </div>
+                        <button type="submit" id="btnSendMsg" class="w-full bg-emerald-500 hover:bg-emerald-600 text-slate-950 font-bold py-3.5 rounded-xl transition shadow-lg shadow-emerald-500/20">
+                            إرسال الرسالة
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- الدعم والأسئلة -->
+    <section id="support" class="py-20 bg-slate-950 border-t border-slate-800/60">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span id="supSub" class="text-emerald-400 text-sm font-bold uppercase">الدعم الفني والأسئلة</span>
+                <h2 id="supTitle" class="font-extrabold mt-2 mb-4">الأسئلة الشائعة والدعم الفني</h2>
+                <p id="supDesc" class="text-slate-400">إجابات واضحة ومقسمة لاحتياجات الأعضاء، المدربين، وصالات الجيم.</p>
+            </div>
+
+            <div class="max-w-3xl mx-auto space-y-4 mb-12">
+                <div class="bg-slate-900 border border-slate-800 p-6 rounded-2xl ltr:text-left rtl:text-right">
+                    <span id="q1Role" class="text-xs text-emerald-400 font-bold">للأعضاء والمتدربين</span>
+                    <h3 id="q1Title" class="font-bold text-lg mt-1 mb-2">كيف يمكنني البدء في استخدام المنصة؟</h3>
+                    <p id="q1Desc" class="text-slate-400 text-sm leading-relaxed">يمكنك التسجيل مباشرة عبر الضغط على "إنشاء حساب" أو التواصل معنا لتفعيل حسابك الشخصي.</p>
+                </div>
+                <div class="bg-slate-900 border border-slate-800 p-6 rounded-2xl ltr:text-left rtl:text-right">
+                    <span id="q2Role" class="text-xs text-blue-400 font-bold">للمدربين والكباتن</span>
+                    <h3 id="q2Title" class="font-bold text-lg mt-1 mb-2">كيف أراجع خطط الذكاء الاصطناعي؟</h3>
+                    <p id="q2Desc" class="text-slate-400 text-sm leading-relaxed">يتيح النظام لوحة تحكم مخصصة للمدرب المعتمد لمراجعة وتعديل واعتماد مسودات التمارين والتغذية بكل سهولة.</p>
+                </div>
+                <div class="bg-slate-900 border border-slate-800 p-6 rounded-2xl ltr:text-left rtl:text-right">
+                    <span id="q3Role" class="text-xs text-purple-400 font-bold">لأصحاب الصالات الرياضية</span>
+                    <h3 id="q3Title" class="font-bold text-lg mt-1 mb-2">كيف يتم ربط الفروع وتوزيع العوائد؟</h3>
+                    <p id="q3Desc" class="text-slate-400 text-sm leading-relaxed">توفر المنظومة نظام متكامل لإدارة فروع الجيم، الاشتراكات، والتقارير المالية بدقة واحترافية عالية.</p>
+                </div>
+            </div>
+
+            <div class="bg-gradient-to-r from-emerald-500/10 to-blue-500/10 border border-emerald-500/30 p-8 rounded-3xl text-center max-w-2xl mx-auto">
+                <i class="fa-solid fa-headset text-4xl text-emerald-400 mb-4"></i>
+                <h3 id="supCardTitle" class="text-xl font-bold mb-2">هل تواجه أي مشكلة تقنية؟</h3>
+                <p id="supCardDesc" class="text-slate-400 text-sm mb-6">فريق الدعم الفني جاهز لحل أي مشكلة واجهتك ومساعدتك فوراً.</p>
+                <a href="mailto:support@sfne-fitai.com" id="supCardBtn" class="inline-flex items-center gap-2 bg-emerald-500 hover:bg-emerald-600 text-slate-950 font-bold px-6 py-3 rounded-xl transition text-sm">
+                    <i class="fa-solid fa-paper-plane"></i> مراسلة الدعم الفني
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- الفوتر الشامل والمطور (Footer) -->
+    <footer class="bg-slate-900 border-t border-slate-800 text-slate-400 pt-16 pb-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12 ltr:text-left rtl:text-right">
+                <div>
+                    <span class="text-2xl font-black text-emerald-400 tracking-wider block mb-4">SFNE <span class="text-blue-500">FITAI</span></span>
+                    <p id="footerDesc" class="text-sm leading-relaxed mb-6">
+                        المنظومة الذكية الأولى لربط الصالات الرياضية، المتدربين، والمدربين بأحدث تقنيات الذكاء الاصطناعي وإشراف الخبراء.
+                    </p>
+                    <div class="flex items-center gap-3">
+                        <a href="#" class="w-9 h-9 bg-slate-800 hover:bg-emerald-500 hover:text-slate-950 rounded-xl flex items-center justify-center transition"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#" class="w-9 h-9 bg-slate-800 hover:bg-emerald-500 hover:text-slate-950 rounded-xl flex items-center justify-center transition"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#" class="w-9 h-9 bg-slate-800 hover:bg-emerald-500 hover:text-slate-950 rounded-xl flex items-center justify-center transition"><i class="fa-brands fa-twitter"></i></a>
+                        <a href="#" class="w-9 h-9 bg-slate-800 hover:bg-emerald-500 hover:text-slate-950 rounded-xl flex items-center justify-center transition"><i class="fa-brands fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+
+                <div>
+                    <h4 id="footerLinksTitle" class="text-white font-bold text-base mb-4">روابط سريعة</h4>
+                    <ul class="space-y-2.5 text-sm">
+                        <li><a href="#hero" class="hover:text-emerald-400 transition">الرئيسية</a></li>
+                        <li><a href="#about" class="hover:text-emerald-400 transition">من نحن</a></li>
+                        <li><a href="#features" class="hover:text-emerald-400 transition">المميزات</a></li>
+                        <li><a href="#services" class="hover:text-emerald-400 transition">خدماتنا</a></li>
+                        <li><a href="#pricing" class="hover:text-emerald-400 transition">الباقات</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 id="footerServicesTitle" class="text-white font-bold text-base mb-4">خدمات المنظومة</h4>
+                    <ul class="space-y-2.5 text-sm">
+                        <li><a href="#services" class="hover:text-emerald-400 transition">إدارة الصالات الرياضية</a></li>
+                        <li><a href="#services" class="hover:text-emerald-400 transition">التغذية والبرامج الغذائية</a></li>
+                        <li><a href="#services" class="hover:text-emerald-400 transition">المتابعة الطبية وتحليل OCR</a></li>
+                        <li><a href="#pricing" class="hover:text-emerald-400 transition">باقات المدرب المعتمد</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 id="footerContactTitle" class="text-white font-bold text-base mb-4">معلومات الاتصال</h4>
+                    <ul class="space-y-3 text-sm">
+                        <li class="flex items-center gap-3">
+                            <i class="fa-solid fa-location-dot text-emerald-400"></i>
+                            <span>القاهرة، جمهورية مصر العربية</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fa-solid fa-envelope text-emerald-400"></i>
+                            <span dir="ltr">info@sfne-fitai.com</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fa-solid fa-phone text-emerald-400"></i>
+                            <span dir="ltr">+20 100 000 0000</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-slate-800 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500 text-center">
+                <p id="footerRights">&copy; 2026 SFNE FITAI Ecosystem. جميع الحقوق محفوظة.</p>
+                <div class="flex gap-6">
+                    <a href="#" class="hover:text-emerald-400 transition">سياسة الخصوصية</a>
+                    <a href="#" class="hover:text-emerald-400 transition">الشروط والأحكام</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- زر العودة للأعلى -->
+    <a href="#hero" class="fixed bottom-6 ltr:right-6 rtl:left-6 bg-emerald-500 hover:bg-emerald-600 text-slate-950 w-12 h-12 rounded-full flex items-center justify-center shadow-lg transition z-40">
+        <i class="fa-solid fa-arrow-up font-bold"></i>
+    </a>
+
+    <!-- نافذة الدخول / التسجيل -->
+    <div id="authModal" class="fixed inset-0 bg-slate-950/80 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
+        <div class="bg-slate-900 border border-slate-800 p-8 rounded-3xl max-w-md w-full relative shadow-2xl ltr:text-left rtl:text-right">
+            <button onclick="closeModal()" class="absolute top-4 ltr:right-4 rtl:left-4 text-slate-400 hover:text-white"><i class="fa-solid fa-xmark text-xl"></i></button>
+
+            <h3 id="modalTitle" class="text-2xl font-black text-center mb-6 text-emerald-400">تسجيل الدخول</h3>
+
+            <form class="space-y-4" onsubmit="event.preventDefault(); alert(currentLang === 'ar' ? 'تم الإرسال بنجاح!' : 'Submitted successfully!'); closeModal();">
+                <div>
+                    <label id="lblModalEmail" class="block text-xs font-bold text-slate-400 mb-2">البريد الإلكتروني</label>
+                    <input type="email" required placeholder="example@mail.com" dir="ltr" class="w-full bg-slate-950 border border-slate-800 px-4 py-3 rounded-xl text-sm focus:outline-none focus:border-emerald-500">
+                </div>
+                <div>
+                    <label id="lblModalPass" class="block text-xs font-bold text-slate-400 mb-2">كلمة المرور</label>
+                    <input type="password" required placeholder="••••••••" dir="ltr" class="w-full bg-slate-950 border border-slate-800 px-4 py-3 rounded-xl text-sm focus:outline-none focus:border-emerald-500">
+                </div>
+
+                <div id="signupRoles" class="hidden">
+                    <label id="lblModalRole" class="block text-xs font-bold text-slate-400 mb-2">نوع الحساب</label>
+                    <select class="w-full bg-slate-950 border border-slate-800 px-4 py-3 rounded-xl text-sm focus:outline-none focus:border-emerald-500 text-slate-300">
+                        <option value="user" id="role1">متدرب / عضو</option>
+                        <option value="trainer" id="role2">مدرب / أخصائي تغذية</option>
+                        <option value="gym" id="role3">صالة رياضية (Gym)</option>
+                    </select>
+                </div>
+
+                <button type="submit" id="modalSubmitBtn" class="w-full bg-emerald-500 hover:bg-emerald-600 text-slate-950 font-bold py-3.5 rounded-xl transition shadow-lg shadow-emerald-500/20 mt-4">
+                    دخول
+                </button>
+            </form>
+        </div>
     </div>
-   </div>
-  </section>
-  <div class="section-shell"><div class="ecg" aria-hidden="true"></div></div>
 
-  <section id="problem" class="section-shell py-14 sm:py-20">
-   <span class="eyebrow" style="border-color:#a34f40;background:#42201e;color:#ffc3b7"><i data-lucide="triangle-alert" width="16"></i><span data-i18n="problemEyebrow"></span></span>
-   <h2 class="heading section-title mt-5" data-i18n="problemTitle"></h2>
-   <p class="section-copy" data-i18n="problemCopy"></p>
-   <div id="problem-grid" class="mt-9 grid gap-4 sm:grid-cols-2 lg:grid-cols-4"></div>
-  </section>
-  <div class="section-shell"><div class="ecg" aria-hidden="true"></div></div>
+    <script>
+        let currentLang = 'ar';
+        let currentModalType = 'login';
+        let currentPricing = 'monthly';
 
-  <section id="solution" class="section-shell py-14 sm:py-20">
-   <span class="eyebrow"><i data-lucide="circle-check" width="16"></i><span data-i18n="solutionEyebrow"></span></span>
-   <h2 class="heading section-title mt-5" data-i18n="solutionTitle"></h2>
-   <p class="section-copy" data-i18n="solutionCopy"></p>
-   <div id="solution-grid" class="mt-9 grid gap-4 sm:grid-cols-2 lg:grid-cols-4"></div>
-   <a href="#how-it-works" class="btn btn-primary focus-ring mt-8"><span data-i18n="solutionButton"></span><i data-lucide="arrow-down" width="18"></i></a>
-  </section>
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobileMenu');
+            const icon = document.getElementById('menuIcon');
+            menu.classList.toggle('hidden');
+            if (menu.classList.contains('hidden')) {
+                icon.classList.remove('fa-xmark');
+                icon.classList.add('fa-bars');
+            } else {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-xmark');
+            }
+        }
 
-  <section id="how-it-works" class="section-shell py-14 sm:py-20">
-   <span class="eyebrow"><i data-lucide="route" width="16"></i><span data-i18n="stepsEyebrow"></span></span>
-   <h2 class="heading section-title mt-5" data-i18n="stepsTitle"></h2>
-   <div id="steps-grid" class="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4"></div>
-  </section>
+        const translations = {
+            ar: {
+                promoText: "🎉 عرض خاص بمناسبة الإطلاق: خصم 20% على باقات الصالات الرياضية والمدربين لفترة محدودة!",
+                promoLink: "احصل على العرض",
+                navHome: "الرئيسية", navAbout: "من نحن", navFeatures: "المميزات", navServices: "خدماتنا",
+                navPricing: "الباقات", navGallery: "معرض الصور", navBlog: "المدونة", navContact: "تواصل معنا", navSupport: "الدعم الفني",
+                langBtn: '<i class="fa-solid fa-globe"></i> English', loginBtn: "تسجيل الدخول", signupBtn: "إنشاء حساب",
+                heroBadge: '<i class="fa-solid fa-bolt"></i> منظومة متكاملة للياقة البدنية والتغذية',
+                heroTitle: 'طور لياقتك بأحدث تقنيات <span class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-blue-500">الذكاء الاصطناعي والإشراف الاحترافي</span>',
+                heroDesc: "نربط بين الصالات الرياضية، المتدربين، والمدربين المحترفين في منصة واحدة سهلة ومبتكرة تضمن لك الوصول لأهدافك الرياضية والصحية بكل أمان وثقة.",
+                heroCta1: "ابدأ الآن مجاناً", heroCta2: "اكتشف المزيد",
+                stat1: "صالة رياضية شريكة", stat2: "متدرب نشط", stat3: "مدرب وأخصائي تغذية", stat4: "نسبة رضا العملاء",
+                aboutSub: "من نحن", aboutTitle: "منصة تجمع كل عناصر النجاح الرياضي في مكان واحد",
+                aboutDesc1: "نحن نسعى لإحداث طفرة حقيقية في قطاع اللياقة البدنية عبر دمج التكنولوجيا المتقدمة بالخبرة البشرية. نوفر بيئة رقمية متكاملة تخدم أصحاب الجيمات، الكباتن، وأخصائيي التغذية لتقديم أفضل تجربة للمشتركين.",
+                aboutDesc2: "نضمن لك متابعة دقيقة ومستمرة لتقدمك الرياضي والصحي مع التركيز على أعلى معايير الجودة والاحترافية.",
+                featSub: "المميزات الرئيسية", featTitle: "ما الذي يقدمه لك النظام؟", featDesc: "حلول مبتكرة ومتقدمة مصممة لتسهيل إدارتك الرياضية والوصول لأهدافك البدنية بكفاءة.",
+                f1Title: "خطط ذكية مخصصة", f1Desc: "برامج تمرين وتغذية مصممة خصيصاً لتناسب هدفك الشخصي ومستوى لياقتك البدنية بكل دقة.",
+                f2Title: "إشراف وتوجيه احترافي", f2Desc: "متابعة مستمرة وتوجيه مباشر من مدربين معتمدين لضمان تنفيذ التمارين بالشكل الصحيح.",
+                f3Title: "تقارير ومتابعة أسبوعية", f3Desc: "تتبع دوري للقياسات والنتائج لمعرفة مدى تقدمك وتحقيق أهدافك بصورة أسرع وأكثر فعالية.",
+                f4Title: "معايير أمان صارمة", f4Desc: "فحص آلي ومراجعة بشرية صارمة لضمان خلو الخطط الرياضية من أي مخاطر أو إصابات محتملة.",
+                f5Title: "تطابق مع أجهزة الجيم", f5Desc: "اختيار التمارين المتاحة آلياً بناءً على الأجهزة والآلات الفعلية المتوفرة داخل الصالة الرياضية.",
+                f6Title: "أرشيف وتاريخ صحي موحد", f6Desc: "ملف رقمي شامل لا يضيع أبداً حتى عند انتقالك أو اشتراكك في فروع أو صالات رياضية جديدة.",
+                servSub: "الخدمات التي نقدمها", servTitle: "حلول شاملة ومتكاملة لقطاع اللياقة", servDesc: "نقدم منظومة خدمات متطورة تلبي احتياجات الصالات الرياضية، المدربين، والأعضاء بكفاءة عالية.",
+                s1Title: "إدارة الصالات الرياضية", s1Desc: "نظام متكامل لإدارة فروع الجيم، الاشتراكات، الحضور، وتوزيع العوائد المالية بكل شفافية.",
+                s2Title: "التغذية والبرامج الغذائية", s2Desc: "تصميم الحصص السعرية، السعرات الحرارية، والوجبات الغذائية المناسبة لهدف كل مشترك بإشراف مختصين.",
+                s3Title: "المتابعة الطبية وتحليل المجلدات", s3Desc: "قراءة وتحليل التقارير الطبية والقياسات الحيوية عبر تقنيات OCR مع مراقبة أسباب الإصابات والتصعيد الفوري.",
+                priceSub: "باقات الاشتراكات", priceTitle: "اختر الباقة المناسبة لاحتياجاتك", priceDesc: "باقات مرنة ومصممة خصيصاً لتناسب المتدربين وأصحاب الصالات الرياضية.",
+                btnMonthly: "شهري", btnYearly: 'سنوي <span class="bg-emerald-500/20 text-emerald-400 text-[10px] px-2 py-0.5 rounded-full">خصم 20%</span>',
+                p1Title: "باقة المتدرب", p1Desc: "للأفراد الراغبين في متابعة خططهم الرياضية والتغذية.", p1Tag: 'مجاناً <span class="text-xs text-slate-400 font-normal">/ لفترة محدودة</span>',
+                p1Item1: "خطط تمرين وتغذية ذكية", p1Item2: "متابعة أسبوعية للتقدم", p1Item3: "دعم فني أساسي", p1Btn: "اشترك الآن",
+                popularBadge: "الأكثر طلباً", p2Title: "باقة الصالات الرياضية (Gyms)", p2Desc: "لإدارة الفروع، المدربين، والاشتراكات بكفاءة.",
+                p2Item1: "ربط شامل لجميع فروع الجيم", p2Item2: "لوحة تحكم كاملة للمدربين", p2Item3: "تقارير مالية وإدارية دقيقة", p2Item4: "دعم فني مخصص على مدار الساعة", p2Btn: "تواصل مع المبيعات",
+                p3Title: "باقة المدرب المعتمد", p3Desc: "للكباتن وأخصائيي التغذية لإدارة عملائهم.", p3Tag: "مخصص",
+                p3Item1: "إدارة المحفظة الخاصة بالعملاء", p3Item2: "مراجعة واعتماد مسودات الذكاء الاصطناعي", p3Item3: "جدولة المواعيد والاستشارات", p3Btn: "انضم كمدرب",
+                galSub: "معرض الصور", galTitle: "جولة داخل المنظومة والصالات الشريكة", galDesc: "لقطات حية تعكس احترافية التجهيزات وبيئة العمل المتطورة.",
+                cliSub: "شركاء النجاح", cliTitle: "آراء عملائنا وقصص النجاح", cliDesc: "تعرف على تجارب من استعملوا المنظومة وحققوا نتائج مذهلة.",
+                t1Text: '"المنصة ساعدتني كثيراً في تنظيم الجيم الخاص بي ومتابعة الأعضاء بكل سهولة ويسر."', t1Name: "أحمد محمود", t1Role: "مدير صالة رياضية",
+                t2Text: '"أفضل تجربة مرت علي كمدربة، سهلت لي وضع البرامج التدريبية ومتابعة اللاعبين بشكل احترافي."', t2Name: "سارة علي", t2Role: "مدربة لياقة بدنية",
+                t3Text: '"النتائج واضحة جداً وجدول التمارين والتغذية ساعدوني أوصل لهدفي في وقت قصير."', t3Name: "عمر حسن", t3Role: "عضو مشترك",
+                sponsorsLabel: "الجهات الراعية وصالات اللياقة الشريكة",
+                blogSub: "المدونة والنصائح", blogTitle: "أحدث المقالات والنصائح الرياضية", blogDesc: "محتوى تثقفي احترافي لمساعدتك على فهم التغذية والتمارين بصورة أفضل.",
+                b1Cat: "التغذية السليمة", b1Title: "أهمية حساب السعرات الحرارية للوصول للوزن المثالي", b1Desc: "كيف تؤثر الماكروز (البروتين والكربوهيدرات والدهون) على تطور عضلاتك وحرق الدهون.",
+                b2Cat: "التمارين الرياضية", b2Title: "لماذا تعد تمارين المقاومة أساسية للياقة البدنية؟", b2Desc: "تعرف على دور رفع الأشرطة والأوزان في بناء القوة العضلية وتحسين صحة العظام.",
+                b3Cat: "الذكاء الاصطناعي", b3Title: "دور الذكاء الاصطناعي والإشراف البشري في الرياضة", b3Desc: "كيف تضمن المنظومة دقة البرامج التدريبية مع حمايتك التامة من الإصابات.",
+                appSub: "تطبيق الجوال", appTitle: "تابع تمارينك وتغذيتك أينما كنت", appDesc: "قم بتحميل تطبيق SFNE FITAI على هاتفك الذكي واستمتع بمتابعة خطتك اليومية، تسجيل الأوزان، والتواصل المباشر مع مدربك في أي وقت.",
+                appStoreSub: "تحميل من", playStoreSub: "حمل من",
+                cntSub: "تواصل معنا", cntTitle: "يسعدنا تواصلك معنا في أي وقت", cntDesc: "سواء كنت صاحب صالة رياضية تبحث عن تطوير نظامك، أو مشتركاً جديداً، فريقنا جاهز للإجابة على كافة استفساراتك.",
+                lblFullName: "الاسم بالكامل", lblEmailPhone: "البريد الإلكتروني / الهاتف", lblMsg: "الرسالة", btnSendMsg: "إرسال الرسالة",
+                supSub: "الدعم الفني والأسئلة", supTitle: "الأسئلة الشائعة والدعم الفني", supDesc: "إجابات واضحة ومقسمة لاحتياجات الأعضاء، المدربين، وصالات الجيم.",
+                q1Role: "للأعضاء والمتدربين", q1Title: "كيف يمكنني البدء في استخدام المنصة؟", q1Desc: 'يمكنك التسجيل مباشرة عبر الضغط على "إنشاء حساب" أو التواصل معنا لتفعيل حسابك الشخصي.',
+                q2Role: "للمدربين والكباتن", q2Title: "كيف أراجع خطط الذكاء الاصطناعي؟", q2Desc: "يتيح النظام لوحة تحكم مخصصة للمدرب المعتمد لمراجعة وتعديل واعتماد مسودات التمارين والتغذية بكل سهولة.",
+                q3Role: "لأصحاب الصالات الرياضية", q3Title: "كيف يتم ربط الفروع وتوزيع العوائد؟", q3Desc: "توفر المنظومة نظام متكامل لإدارة فروع الجيم، الاشتراكات، والتقارير المالية بدقة واحترافية عالية.",
+                supCardTitle: "هل تواجه أي مشكلة تقنية؟", supCardDesc: "فريق الدعم الفني جاهز لحل أي مشكلة واجهتك ومساعدتك فوراً.", supCardBtn: '<i class="fa-solid fa-paper-plane"></i> مراسلة الدعم الفني',
+                footerDesc: "المنظومة الذكية الأولى لربط الصالات الرياضية، المتدربين، والمدربين بأحدث تقنيات الذكاء الاصطناعي وإشراف الخبراء.",
+                footerLinksTitle: "روابط سريعة", footerServicesTitle: "خدمات المنظومة", footerContactTitle: "معلومات الاتصال",
+                footerRights: "© 2026 SFNE FITAI Ecosystem. جميع الحقوق محفوظة.",
+                lblModalEmail: "البريد الإلكتروني", lblModalPass: "كلمة المرور", lblModalRole: "نوع الحساب", role1: "متدرب / عضو", role2: "مدرب / أخصائي تغذية", role3: "صالة رياضية (Gym)"
+            },
+            en: {
+                promoText: "🎉 Launch Special Offer: Get 20% Off on Gym & Trainer packages for a limited time!",
+                promoLink: "Get Offer",
+                navHome: "Home", navAbout: "About", navFeatures: "Features", navServices: "Services",
+                navPricing: "Pricing", navGallery: "Gallery", navBlog: "Blog", navContact: "Contact", navSupport: "Support",
+                langBtn: '<i class="fa-solid fa-globe"></i> العربية', loginBtn: "Login", signupBtn: "Sign Up",
+                heroBadge: '<i class="fa-solid fa-bolt"></i> Integrated Fitness & Nutrition Ecosystem',
+                heroTitle: 'Elevate Your Fitness with <span class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-blue-500">AI Tech & Expert Coaching</span>',
+                heroDesc: "Connecting gyms, trainees, and certified coaches in one intuitive, AI-powered platform so you can reach your goals safely and confidently.",
+                heroCta1: "Start Free Now", heroCta2: "Learn More",
+                stat1: "Partner Gyms", stat2: "Active Trainees", stat3: "Coaches & Dietitians", stat4: "Satisfaction Rate",
+                aboutSub: "About Us", aboutTitle: "Everything You Need for Fitness Success, in One Platform",
+                aboutDesc1: "We combine cutting-edge AI technology with certified human expertise to deliver personalized workout and nutrition solutions for gym owners, coaches, dietitians, and members.",
+                aboutDesc2: "Get accurate, continuous tracking of your fitness and health progress, backed by the highest standards of quality and safety.",
+                featSub: "Key Features", featTitle: "What Does SFNE FITAI Offer?", featDesc: "Innovative solutions engineered to streamline fitness management and help you hit your goals efficiently.",
+                f1Title: "Personalized Smart Plans", f1Desc: "AI-generated workout and diet routines customized to your goals and fitness level.",
+                f2Title: "Expert Supervision", f2Desc: "Certified coaches review and fine-tune your plans to make sure every exercise is done correctly.",
+                f3Title: "Weekly Progress Reports", f3Desc: "Track body metrics, weight, and results regularly to see your progress and reach your goals faster.",
+                f4Title: "Strict Safety Checks", f4Desc: "Automated checks plus human review to prevent overtraining and injury risks.",
+                f5Title: "Gym Equipment Sync", f5Desc: "Exercises are selected automatically based on the equipment actually available in your gym.",
+                f6Title: "Unified Health Records", f6Desc: "A complete digital record that follows you when you switch gyms or join new branches.",
+                servSub: "Our Services", servTitle: "End-to-End Fitness Ecosystem Solutions", servDesc: "A complete suite of services built for gym owners, coaches, and members.",
+                s1Title: "Gym Facility Management", s1Desc: "Multi-branch administration, memberships, attendance, and transparent revenue distribution.",
+                s2Title: "Nutrition & Meal Planning", s2Desc: "Custom calorie and macro targets with meal plans supervised by nutrition experts.",
+                s3Title: "Medical & OCR Tracking", s3Desc: "Read medical reports and body measurements with OCR, with injury monitoring and instant escalation.",
+                priceSub: "Pricing Plans", priceTitle: "Choose the Right Plan for You", priceDesc: "Flexible plans tailored for trainees, coaches, and gym facilities.",
+                btnMonthly: "Monthly", btnYearly: 'Yearly <span class="bg-emerald-500/20 text-emerald-400 text-[10px] px-2 py-0.5 rounded-full">20% OFF</span>',
+                p1Title: "Trainee Plan", p1Desc: "For individuals who want to track their workouts and nutrition.", p1Tag: 'Free <span class="text-xs text-slate-400 font-normal">/ limited time</span>',
+                p1Item1: "AI Workout & Meal Plans", p1Item2: "Weekly Progress Tracking", p1Item3: "Basic Tech Support", p1Btn: "Subscribe Now",
+                popularBadge: "Most Popular", p2Title: "Gyms & Clubs Plan", p2Desc: "Manage branches, trainers, and memberships efficiently.",
+                p2Item1: "Multi-branch Management", p2Item2: "Full Trainer Dashboard", p2Item3: "Financial & Admin Reports", p2Item4: "24/7 Dedicated Support", p2Btn: "Contact Sales",
+                p3Title: "Certified Coach Plan", p3Desc: "For personal trainers and nutritionists managing clients.", p3Tag: "Custom",
+                p3Item1: "Client Portfolio Dashboard", p3Item2: "AI Draft Review & Approval", p3Item3: "Session Scheduling", p3Btn: "Join as Coach",
+                galSub: "Gallery", galTitle: "Inside SFNE Partner Gyms", galDesc: "A look inside modern partner fitness centers.",
+                cliSub: "Success Stories", cliTitle: "What Our Community Says", cliDesc: "Real stories from members, trainers, and gym owners.",
+                t1Text: '"The platform made managing my gym and tracking members so much easier."', t1Name: "Ahmed Mahmoud", t1Role: "Gym Manager",
+                t2Text: '"The best experience I\'ve had as a coach. It makes building training programs and tracking athletes simple and professional."', t2Name: "Sara Ali", t2Role: "Fitness Coach",
+                t3Text: '"The results are clear. The workout and nutrition plans helped me reach my goal in a short time."', t3Name: "Omar Hassan", t3Role: "Active Member",
+                sponsorsLabel: "Trusted Partner Gyms & Sponsors",
+                blogSub: "Blog & Tips", blogTitle: "Latest Fitness Articles & Tips", blogDesc: "Expert content to help you understand nutrition and training better.",
+                b1Cat: "Nutrition", b1Title: "Why Calorie Tracking Matters for Reaching Your Ideal Weight", b1Desc: "How macros (protein, carbs, and fats) affect muscle growth and fat loss.",
+                b2Cat: "Workouts", b2Title: "Why Resistance Training Is Essential for Fitness", b2Desc: "Learn how bands and weights build muscle strength and improve bone health.",
+                b3Cat: "AI Tech", b3Title: "The Role of AI and Human Supervision in Sports", b3Desc: "How our ecosystem keeps training programs accurate while protecting you from injury.",
+                appSub: "Mobile App", appTitle: "Track Your Workouts Anywhere", appDesc: "Download the SFNE FITAI app to follow your daily plan, log your weight, and chat directly with your trainer anytime.",
+                appStoreSub: "Download on the", playStoreSub: "Get it on",
+                cntSub: "Contact Us", cntTitle: "We'd Love to Hear From You", cntDesc: "Whether you run a gym or are just starting your fitness journey, our team is ready to answer your questions.",
+                lblFullName: "Full Name", lblEmailPhone: "Email / Phone", lblMsg: "Message", btnSendMsg: "Send Message",
+                supSub: "FAQ & Support", supTitle: "FAQ & Technical Support", supDesc: "Clear answers for members, coaches, and gym owners.",
+                q1Role: "For Trainees & Members", q1Title: "How do I get started?", q1Desc: 'Simply click "Sign Up" or contact us to activate your personal account.',
+                q2Role: "For Coaches & Trainers", q2Title: "How do I review AI-generated plans?", q2Desc: "Certified coaches get a dedicated dashboard to review, edit, and approve workout and nutrition drafts with ease.",
+                q3Role: "For Gym Owners", q3Title: "How are branches connected and revenue shared?", q3Desc: "The ecosystem provides complete branch administration, memberships, and accurate financial reporting.",
+                supCardTitle: "Having a Technical Issue?", supCardDesc: "Our support team is ready to solve any problem and help you right away.", supCardBtn: '<i class="fa-solid fa-paper-plane"></i> Contact Support',
+                footerDesc: "The premier smart ecosystem connecting gyms, trainees, and coaches with advanced AI and expert supervision.",
+                footerLinksTitle: "Quick Links", footerServicesTitle: "Ecosystem Services", footerContactTitle: "Contact Info",
+                footerRights: "© 2026 SFNE FITAI Ecosystem. All Rights Reserved.",
+                lblModalEmail: "Email Address", lblModalPass: "Password", lblModalRole: "Account Type", role1: "Trainee / Member", role2: "Coach / Dietitian", role3: "Gym Facility"
+            }
+        };
 
-  <section id="features" class="section-shell py-14 sm:py-20">
-   <span class="eyebrow"><i data-lucide="layers-3" width="16"></i><span data-i18n="featuresEyebrow"></span></span>
-   <h2 class="heading section-title mt-5" data-i18n="featuresTitle"></h2>
-   <p class="section-copy" data-i18n="featuresCopy"></p>
-   <div id="features-grid" class="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3"></div>
-  </section>
+        const placeholders = {
+            ar: { name: 'أدخل اسمك', contact: 'أدخل بريدك أو رقمك', msg: 'كيف يمكننا مساعدتك؟' },
+            en: { name: 'Enter your name', contact: 'Enter your email or phone', msg: 'How can we help you?' }
+        };
 
-  <section id="ai" class="section-shell py-14 sm:py-20">
-   <div class="panel overflow-hidden p-5 sm:p-9">
-    <span class="eyebrow"><i data-lucide="brain-circuit" width="16"></i><span data-i18n="aiEyebrow"></span></span>
-    <h2 class="heading section-title mt-5" data-i18n="aiTitle"></h2>
-    <p class="section-copy" data-i18n="aiCopy"></p>
-    <div id="ai-grid" class="mt-9 grid gap-4 sm:grid-cols-2 lg:grid-cols-4"></div>
-    <div class="mt-8 rounded-2xl border border-[#4c7cff] bg-[#18284d] p-5 text-[#dbe5ff]">
-     <strong class="heading block text-lg" data-i18n="aiNoteTitle"></strong>
-     <p class="mt-2 leading-8" data-i18n="aiNoteCopy"></p>
-    </div>
-   </div>
-  </section>
+        const pageTitles = {
+            ar: 'SFNE FITAI - منظومة اللياقة والتغذية الذكية',
+            en: 'SFNE FITAI - Smart Fitness & Nutrition Ecosystem'
+        };
 
-  <section id="roles" class="section-shell py-14 sm:py-20">
-   <span class="eyebrow"><i data-lucide="users" width="16"></i><span data-i18n="rolesEyebrow"></span></span>
-   <h2 class="heading section-title mt-5" data-i18n="rolesTitle"></h2>
-   <p class="section-copy" data-i18n="rolesCopy"></p>
-   <div id="role-tabs" class="tab-row mt-9" role="tablist"></div>
-   <div id="role-panel" class="panel mt-4 p-5 sm:p-8" role="tabpanel" tabindex="0"></div>
-  </section>
+        function toggleLanguage() {
+            currentLang = currentLang === 'ar' ? 'en' : 'ar';
+            const html = document.getElementById('htmlTag');
+            html.dir = currentLang === 'ar' ? 'rtl' : 'ltr';
+            html.lang = currentLang;
 
-  <section id="demo" class="section-shell py-14 sm:py-20">
-   <div class="panel p-5 sm:p-9">
-    <span class="eyebrow"><i data-lucide="flask-conical" width="16"></i><span data-i18n="demoEyebrow"></span></span>
-    <h2 class="heading section-title mt-5" data-i18n="demoTitle"></h2>
-    <p class="section-copy" data-i18n="demoCopy"></p>
-    <div id="demo-controls" class="mt-8 grid gap-6 lg:grid-cols-3"></div>
-    <button id="generate-plan" class="btn btn-primary focus-ring mt-8" type="button"><i data-lucide="sparkles" width="18"></i><span data-i18n="generate"></span></button>
-    <div id="demo-state" class="mt-6" aria-live="polite"></div>
-   </div>
-  </section>
+            const langData = translations[currentLang];
+            for (const key in langData) {
+                const el = document.getElementById(key);
+                if (el) el.innerHTML = langData[key];
+            }
 
-  <section class="section-shell py-14 sm:py-20">
-   <div class="rounded-3xl border border-[#317854] bg-[linear-gradient(135deg,#103525,#111e30_62%,#18284d)] p-6 text-center sm:p-14">
-    <span class="eyebrow"><i data-lucide="rocket" width="16"></i>SFNE</span>
-    <h2 class="heading section-title mt-5" data-i18n="ctaTitle"></h2>
-    <p class="mx-auto mt-4 max-w-2xl leading-8 text-[#b8c5d8]" data-i18n="ctaCopy"></p>
-    <div class="mt-8 flex flex-wrap justify-center gap-3">
-     <a href="/register" data-route="/register" class="btn btn-primary focus-ring route-link"></a>
-     <a href="/contact" data-route="/contact" class="btn btn-outline focus-ring route-link"></a>
-    </div>
-   </div>
-  </section>
- </main>
+            const p = placeholders[currentLang];
+            document.getElementById('inpName').placeholder = p.name;
+            document.getElementById('inpContact').placeholder = p.contact;
+            document.getElementById('inpMsg').placeholder = p.msg;
+            document.title = pageTitles[currentLang];
 
- <footer class="border-t border-[#26384f] bg-[#09111e]">
-  <div class="section-shell grid gap-9 py-12 sm:grid-cols-2 lg:grid-cols-[1.4fr_1fr_1fr_1fr]">
-   <div>
-    <div class="flex items-center gap-2"><span class="grid h-10 w-10 place-items-center rounded-xl bg-[#57e3a0] font-black text-[#062419]">S</span><strong class="heading text-xl">SFNE</strong></div>
-    <p class="mt-4 max-w-sm leading-8 text-[#93a4bd]" data-i18n="footerCopy"></p>
-   </div>
-   <div><h3 class="heading font-bold" data-i18n="footerPlatform"></h3><div id="footer-platform" class="mt-4 grid gap-3"></div></div>
-   <div><h3 class="heading font-bold" data-i18n="footerAi"></h3><div id="footer-ai" class="mt-4 grid gap-3"></div></div>
-   <div><h3 class="heading font-bold" data-i18n="footerCompany"></h3><div id="footer-company" class="mt-4 grid gap-3"></div></div>
-  </div>
-  <div class="section-shell flex flex-col items-center justify-between gap-3 border-t border-[#26384f] py-6 text-center text-sm text-[#93a4bd] md:flex-row md:text-start">
-   <span data-i18n="copyright"></span><span data-i18n="graduation"></span><span data-i18n="footerMock"></span>
-  </div>
- </footer>
+            updateModalTexts();
+            togglePricing(currentPricing);
+        }
 
- <button id="back-top" class="back-top focus-ring" type="button" aria-label="Top"><i data-lucide="arrow-up"></i></button>
- <div id="toast" class="toast fixed z-[60] flex items-center gap-3 rounded-xl border border-[#317854] bg-[#103525] px-4 py-3 text-sm font-bold text-[#d9ffe9] shadow-2xl" style="inset-inline-start:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px))" role="status">
-  <i data-lucide="info" width="18"></i><span id="toast-text"></span>
- </div>
-</div>
+        function updateModalTexts() {
+            const isAr = currentLang === 'ar';
+            const modalTitle = document.getElementById('modalTitle');
+            const submitBtn = document.getElementById('modalSubmitBtn');
+            if (currentModalType === 'signup') {
+                modalTitle.textContent = isAr ? 'إنشاء حساب جديد' : 'Create New Account';
+                submitBtn.textContent = isAr ? 'تسجيل الحساب' : 'Register Account';
+            } else {
+                modalTitle.textContent = isAr ? 'تسجيل الدخول' : 'Login';
+                submitBtn.textContent = isAr ? 'دخول' : 'Login';
+            }
+        }
 
-<script>
-(() => {
-  const dictionary = {
-    ar: {
-      nav:[["#problem","المشكلة"],["#solution","الحل"],["#features","المزايا"],["#ai","الذكاء الاصطناعي"],["#roles","الأدوار"],["#demo","تجربة"]],
-      login:"تسجيل الدخول",register:"ابدأ مجانًا",contact:"تواصل مع فريق المبيعات",
-      heroBadge:"منصة B2B2C مدعومة بالذكاء الاصطناعي",
-      heroTitle:"لياقتك وتغذيتك في نظام واحد ذكي، مش عشرة تطبيقات",
-      heroCopy:"SFNE تربط الجيم والمدرب وأخصائي التغذية في رحلة واحدة. الذكاء الاصطناعي يولّد مسودة ذكية، والمتخصص يراجع ويعتمد القرار النهائي.",
-      heroPrimary:"جرّب توليد خطتك الآن",heroSecondary:"اعرف تفاصيل الحل",
-      counterFeatures:"ميزة أساسية",counterAi:"أدوات AI",counterRoles:"أدوار تعمل معًا",
-      mockCommitment:"التزامك الأسبوعي",mockWeek:"هذا الأسبوع",mockProgress:"تقدمك",mockReady:"خطتك جاهزة بالـ AI",
-      problemEyebrow:"التحدي",problemTitle:"رحلة اللياقة لسه متفرقة ومربكة",problemCopy:"بين تطبيقات كثيرة وقرارات غير مترابطة، يضيع الوقت ويصعب الحفاظ على خطة صحية متوازنة.",
-      solutionEyebrow:"الحل الموحد",solutionTitle:"كل ما تحتاجه في منظومة واحدة مترابطة",solutionCopy:"من اكتشاف الصالة إلى متابعة التقدم، SFNE تجعل التجربة أوضح وأسهل لكل الأطراف.",
-      solutionButton:"شاهد كيف يعمل النظام",
-      stepsEyebrow:"رحلة بسيطة",stepsTitle:"من أول تسجيل إلى متابعة مستمرة",
-      featuresEyebrow:"منظومة كاملة",featuresTitle:"12 ميزة مصممة لتجربة لياقة أذكى",featuresCopy:"أدوات مترابطة للعضو والمتخصص والصالة بدل الانتقال بين منصات متفرقة.",
-      aiEyebrow:"ذكاء مسؤول",aiTitle:"AI يساعدك، والقرار دائمًا للمتخصص",aiCopy:"أدوات AI في SFNE توفر وقت التحضير والتحليل، مع الحفاظ على المراجعة البشرية في كل خطة.",
-      aiNoteTitle:"الـ AI بيقترح، والمتخصص هو اللي بيقرر",
-      aiNoteCopy:"كل خطة يتم إنشاؤها بالذكاء الاصطناعي تظل مسودة حتى يتم اعتمادها من متخصص بشري.",
-      rolesEyebrow:"لكل طرف مساحة",rolesTitle:"أدوار واضحة في نفس النظام",rolesCopy:"واجهة واحدة، مع أدوات وسياق مناسبين لكل دور داخل منظومة SFNE.",
-      demoEyebrow:"تجربة محلية",demoTitle:"ولّد مسودة خطتك في ثوانٍ",demoCopy:"اختر هدفك ومستواك ونوع التدريب. هذه تجربة Mock محلية ولا تتصل بأي API.",
-      generate:"ولّد خطتي بالذكاء الاصطناعي",goal:"الهدف",level:"المستوى",type:"النوع",
-      placeholder:"اختر تفضيلاتك ثم ولّد مسودة خطتك.",loading:"جاري تجهيز مسودة خطتك محليًا...",resultTitle:"مسودة مبدئية لخطة yossef salah",
-      calories:"السعرات اليومية",workout:"خطة التمرين",nutrition:"خطة التغذية",draft:"مسودة AI — في انتظار اعتماد المتخصص",
-      ctaTitle:"جاهز تبدأ رحلتك مع SFNE؟",ctaCopy:"اجمع أهدافك وخطتك وحجوزاتك وتواصلك مع المتخصصين في مكان واحد.",
-      footerCopy:"Smart Fitness & Nutrition Ecosystem — منصة B2B2C تربط كل أطراف رحلة العافية.",
-      footerPlatform:"المنصة",footerAi:"الذكاء الاصطناعي",footerCompany:"الشركة",
-      copyright:"© 2026 SFNE. جميع الحقوق محفوظة.",graduation:"مشروع تخرج — منصة B2B2C",footerMock:"Demo والروابط غير المتاحة تستخدم Mock/Placeholder محليًا.",
-      routeToast:"هذه صفحة Placeholder محلية في عرض SFNE.",
-      roles:[
-        {name:"العضو",icon:"user-round",title:"كل رحلتك الصحية في مكان واحد",copy:"تختار صالتك، تحدد هدفك، تتابع خططك وحجوزاتك وتقدمك أسبوعًا بعد أسبوع.",tags:["خطط شخصية","حجوزات","تقدم أسبوعي"]},
-        {name:"المدرب",icon:"dumbbell",title:"متابعة أوضح لعملائك",copy:"يراجع خطط التدريب ويرى الالتزام ويتواصل ضمن سياق الهدف والقدرات.",tags:["مراجعة خطط","عملاء","جلسات"]},
-        {name:"أخصائي التغذية",icon:"apple",title:"قرارات غذائية مبنية على سياق كامل",copy:"يراجع مسودات الوجبات ويعدلها ويعتمدها مع متابعة واضحة للتقدم.",tags:["وجبات","مراجعة بشرية","متابعة"]},
-        {name:"الصالة الرياضية",icon:"building-2",title:"إدارة تجربة العضو من نقطة واحدة",copy:"تقدم العضويات والحصص والخدمات والعروض ضمن تجربة متصلة بالعضو.",tags:["عضويات","حصص","عروض"]},
-        {name:"مدير النظام",icon:"shield-check",title:"حوكمة وتجربة متماسكة",copy:"يتابع الأدوار والسياسات والتشغيل لضمان رحلة واضحة وآمنة للجميع.",tags:["أدوار","حوكمة","تشغيل"]}
-      ]
-    },
-    en: {
-      nav:[["#problem","Problem"],["#solution","Solution"],["#features","Features"],["#ai","AI"],["#roles","Roles"],["#demo","Demo"]],
-      login:"Log in",register:"Start free",contact:"Contact sales",
-      heroBadge:"AI-powered B2B2C platform",
-      heroTitle:"Fitness and nutrition in one smart system — not ten separate apps",
-      heroCopy:"SFNE connects gyms, trainers and nutrition specialists in one journey. AI creates a smart draft, while a specialist reviews and approves the final decision.",
-      heroPrimary:"Generate your plan",heroSecondary:"Explore the solution",
-      counterFeatures:"core features",counterAi:"AI tools",counterRoles:"connected roles",
-      mockCommitment:"Weekly commitment",mockWeek:"this week",mockProgress:"Your progress",mockReady:"Your AI plan is ready",
-      problemEyebrow:"The challenge",problemTitle:"Fitness journeys are still fragmented",problemCopy:"Too many disconnected apps and decisions waste time and make healthy routines harder to sustain.",
-      solutionEyebrow:"One connected solution",solutionTitle:"Everything you need in one ecosystem",solutionCopy:"From discovering a gym to tracking progress, SFNE makes the journey clearer for every participant.",
-      solutionButton:"See how it works",
-      stepsEyebrow:"A simple journey",stepsTitle:"From sign-up to ongoing progress",
-      featuresEyebrow:"Complete ecosystem",featuresTitle:"12 features for a smarter fitness experience",featuresCopy:"Connected tools for members, specialists and gyms instead of scattered platforms.",
-      aiEyebrow:"Responsible intelligence",aiTitle:"AI assists you — specialists make the decisions",aiCopy:"SFNE AI tools save preparation and analysis time while keeping human review in every plan.",
-      aiNoteTitle:"AI suggests. The specialist decides.",
-      aiNoteCopy:"Every AI-generated plan remains a draft until it is approved by a human specialist.",
-      rolesEyebrow:"A space for every role",rolesTitle:"Clear roles in one system",rolesCopy:"One interface with relevant tools and context for each SFNE role.",
-      demoEyebrow:"Local demo",demoTitle:"Generate a plan draft in seconds",demoCopy:"Choose your goal, level and training type. This is a local mock experience with no API connection.",
-      generate:"Generate my AI plan",goal:"Goal",level:"Level",type:"Training type",
-      placeholder:"Choose your preferences, then generate your plan draft.",loading:"Preparing your local plan draft...",resultTitle:"Starter plan draft for yossef salah",
-      calories:"Daily calories",workout:"Workout plan",nutrition:"Nutrition plan",draft:"AI Draft — waiting for specialist approval",
-      ctaTitle:"Ready to start your journey with SFNE?",ctaCopy:"Bring your goals, plans, bookings and expert collaboration together in one place.",
-      footerCopy:"Smart Fitness & Nutrition Ecosystem — a B2B2C platform connecting every part of the wellness journey.",
-      footerPlatform:"Platform",footerAi:"Artificial intelligence",footerCompany:"Company",
-      copyright:"© 2026 SFNE. All rights reserved.",graduation:"Graduation Project — B2B2C Platform",footerMock:"Demo and unavailable routes use local Mock/Placeholder content.",
-      routeToast:"This is a local placeholder route in the SFNE preview.",
-      roles:[
-        {name:"Member",icon:"user-round",title:"Your full health journey in one place",copy:"Choose a gym, set your goal, follow plans and bookings, and track your weekly progress.",tags:["Personal plans","Bookings","Weekly progress"]},
-        {name:"Trainer",icon:"dumbbell",title:"Clearer client follow-up",copy:"Review training plans, understand adherence, and work within each client's goals and abilities.",tags:["Plan reviews","Clients","Sessions"]},
-        {name:"Nutrition Specialist",icon:"apple",title:"Nutrition decisions with full context",copy:"Review meal drafts, adapt them, approve them, and follow client progress clearly.",tags:["Meal plans","Human review","Follow-up"]},
-        {name:"Gym",icon:"building-2",title:"Manage the member experience centrally",copy:"Offer memberships, classes, services and promotions in a connected member journey.",tags:["Memberships","Classes","Offers"]},
-        {name:"System Admin",icon:"shield-check",title:"Governance and consistent experiences",copy:"Monitor roles, policies and operations to keep the ecosystem clear and safe.",tags:["Roles","Governance","Operations"]}
-      ]
-    }
-  };
+        function openModal(type) {
+            currentModalType = type;
+            document.getElementById('authModal').classList.remove('hidden');
+            document.getElementById('signupRoles').classList.toggle('hidden', type !== 'signup');
+            updateModalTexts();
+        }
 
-  const problemCards = [
-    ["smartphone","تطبيقات متعددة غير مترابطة","تطبيق للتمرين وآخر للتغذية وثالث للحجز، بدون سياق موحد."],
-    ["clipboard-x","إدارة الصالات يدوية ومجزأة","متابعة العضويات والخدمات والحصص تتم عبر أدوات متفرقة."],
-    ["unlink","غياب التكامل بين التغذية والتمارين","يصعب أن يرى كل متخصص الصورة الكاملة للعضو."],
-    ["layers-x","لا توجد منصة موحدة","تتوزع الخدمات والبيانات، فتضيع تجربة متماسكة للعضو."]
-  ];
-  const solutionCards = [
-    ["map-pin","اختيار الجيم بسهولة","اكتشف الصالة المناسبة حسب موقعك وخدماتك وهدفك."],
-    ["sparkles","خطط مدعومة بالـ AI","مسودات تمرين وتغذية ذكية، مع مراجعة بشرية قبل الاعتماد."],
-    ["calendar-check","حجز جلسات متكامل","احجز وتابع جلساتك وخدماتك من نفس الرحلة."],
-    ["chart-no-axes-combined","تتبع التقدم ودعم الخبراء","تابع التزامك وتقدمك مع وصول منظم للمتخصص."]
-  ];
-  const steps = [
-    ["تسجيل الحساب","Create account"],["ملء الملف الشخصي","Complete your profile"],["اختيار الجيم والهدف","Select gym and goal"],["توليد الخطة بالـ AI","Generate an AI plan"],
-    ["مراجعة المتخصص","Specialist review"],["حجز الجلسات","Book sessions"],["تتبع أسبوعي","Track weekly"],["تعديل تلقائي أو بشري","Automatic or human adjustments"]
-  ];
-  const featureData = [
-    ["user-check","تسجيل وتأهيل ذكي","بداية منظمة تعرف احتياج العضو.","Smart onboarding","A structured start that understands member needs."],
-    ["map-pin","اختيار الجيم","دليل واضح لاختيار الصالة المناسبة.","Gym selection","A clear directory to find the right gym."],
-    ["target","تحديد الهدف","أهداف قابلة للمتابعة والتعديل.","Goal setting","Goals that can be tracked and adapted."],
-    ["dumbbell","خطة تمرين بالـ AI","مسودة تدريب ذكية قابلة للمراجعة.","AI workout plan","A reviewable smart training draft."],
-    ["utensils","خطة تغذية بالـ AI","وجبات ومقترحات تتناسب مع الهدف.","AI nutrition plan","Meal suggestions aligned with goals."],
-    ["calendar-days","نظام الحجز","جلسات وخدمات في تقويم موحد.","Booking system","Sessions and services in one calendar."],
-    ["chart-line","تتبع التقدم","مؤشرات أسبوعية مفهومة للعضو.","Progress tracking","Clear weekly member indicators."],
-    ["apple","سوق أخصائيي التغذية","وصول منظم لمتخصصين مناسبين.","Nutrition specialist marketplace","Structured access to relevant specialists."],
-    ["building-2","لوحة تحكم الجيم","خدمات وعروض وعضويات أوضح.","Gym dashboard","Clearer services, offers and memberships."],
-    ["clipboard-check","لوحة تحكم المتخصص","مراجعة ومتابعة في سياق واحد.","Specialist dashboard","Review and follow-up in one context."],
-    ["bell-ring","تنبيهات وتذكيرات","تذكيرات مفيدة بدون إزعاج.","Alerts and reminders","Useful reminders without noise."],
-    ["badge-percent","عروض واشتراكات","باقات وخدمات وعروض مرتبطة بالتجربة.","Offers and subscriptions","Packages and offers connected to the experience."]
-  ];
-  const aiData = [
-    ["user-round-check","مساعد التسجيل الذكي","Smart onboarding assistant"],["dumbbell","مولّد خطط التمرين","Workout plan generator"],
-    ["salad","مخطط الوجبات","Meal planner"],["chart-no-axes-combined","محلّل التقدم التكيفي","Adaptive progress analyzer"],
-    ["message-circle","مدرّب المحادثة","Conversation coach"],["wand-sparkles","محرك الترشيح الذكي","Smart recommendation engine"],
-    ["file-text","ملخصات للمتخصصين والجيمات","Summaries for specialists and gyms"],["camera","تسجيل الأكل بالصورة","Photo food logging"]
-  ];
-  const enProblems = [
-    ["smartphone","Disconnected apps","Workout, nutrition and booking often live in separate places."],
-    ["clipboard-x","Manual gym management","Memberships, services and classes use fragmented tools."],
-    ["unlink","Nutrition and workouts are disconnected","Specialists lack a complete member context."],
-    ["layers-x","No unified platform","Services and data are scattered, creating an inconsistent journey."]
-  ];
-  const enSolutions = [
-    ["map-pin","Choose a gym easily","Discover a suitable gym based on location, services and goals."],
-    ["sparkles","AI-supported plans","Smart workout and nutrition drafts reviewed before approval."],
-    ["calendar-check","Integrated session booking","Book and track sessions from the same journey."],
-    ["chart-no-axes-combined","Progress tracking and expert support","Track adherence and progress with structured expert access."]
-  ];
+        function closeModal() {
+            document.getElementById('authModal').classList.add('hidden');
+        }
 
-  let lang = "ar";
-  try { lang = localStorage.getItem("sfne-lang") || "ar"; } catch(e) {}
-  if (lang !== "ar" && lang !== "en") lang = "ar";
-  let activeRole = 0;
-  const picks = { goal:0, level:0, type:0 };
+        function togglePricing(type) {
+            currentPricing = type;
+            const isAr = currentLang === 'ar';
+            const btnMonthly = document.getElementById('btnMonthly');
+            const btnYearly = document.getElementById('btnYearly');
+            const gymPrice = document.getElementById('gymPrice');
+            const active = "px-5 py-2 rounded-xl text-xs font-bold transition bg-emerald-500 text-slate-950";
+            const inactive = "px-5 py-2 rounded-xl text-xs font-bold transition text-slate-400 hover:text-white";
 
-  const $ = s => document.querySelector(s);
-  const t = key => dictionary[lang][key];
-  const icons = () => { try { lucide.createIcons(); } catch(e) {} };
+            if (type === 'yearly') {
+                btnYearly.className = active + " flex items-center gap-1";
+                btnMonthly.className = inactive;
+                gymPrice.innerHTML = isAr
+                    ? 'حسب الطلب <span class="text-xs text-emerald-400 font-normal">(وفر 20% سنوياً)</span>'
+                    : 'On Demand <span class="text-xs text-emerald-400 font-normal">(Save 20% yearly)</span>';
+            } else {
+                btnMonthly.className = active;
+                btnYearly.className = inactive + " flex items-center gap-1";
+                gymPrice.textContent = isAr ? 'حسب الطلب' : 'On Demand';
+            }
+        }
 
-  function setText() {
-    document.documentElement.lang = lang;
-    document.documentElement.dir = lang === "ar" ? "rtl" : "ltr";
-    document.title = lang === "ar" ? "SFNE — منصة لياقة وتغذية ذكية" : "SFNE — Smart Fitness & Nutrition Ecosystem";
-    document.querySelectorAll("[data-i18n]").forEach(el => el.textContent = t(el.dataset.i18n));
-    document.querySelectorAll(".route-link[data-route='/login']").forEach(el => el.textContent = t("login"));
-    document.querySelectorAll(".route-link[data-route='/register']").forEach(el => el.textContent = t("register"));
-    document.querySelectorAll(".route-link[data-route='/contact']").forEach(el => el.textContent = t("contact"));
-    $("#language-toggle").textContent = lang === "ar" ? "EN" : "AR";
-    $("#mobile-language").textContent = lang === "ar" ? "English" : "العربية";
-    renderContent();
-  }
-
-  function card(icon,title,copy,accent="mint") {
-    const color = accent === "coral" ? "#ff6a4d" : "#57e3a0";
-    const bg = accent === "coral" ? "#42201e" : "#103525";
-    return `<article class="card"><div class="icon-box" style="color:${color};background:${bg}"><i data-lucide="${icon}"></i></div><h3 class="heading mt-5 text-xl font-bold">${title}</h3><p class="mt-3 leading-7 text-[#93a4bd]">${copy}</p></article>`;
-  }
-
-  function renderContent() {
-    const isAr = lang === "ar";
-    const problems = isAr ? problemCards : enProblems;
-    const solutions = isAr ? solutionCards : enSolutions;
-    const navHtml = cls => t("nav").map(([href,label]) => `<a class="nav-link focus-ring ${cls}" href="${href}">${label}</a>`).join("");
-    $("#desktop-nav").innerHTML = navHtml("");
-    $("#mobile-nav").innerHTML = navHtml("border border-[#26384f]");
-    $("#problem-grid").innerHTML = problems.map(x => card(x[0],x[1],x[2],"coral")).join("");
-    $("#solution-grid").innerHTML = solutions.map(x => card(x[0],x[1],x[2],"mint")).join("");
-    $("#steps-grid").innerHTML = steps.map((s,i) => `<article class="card relative overflow-hidden"><span class="heading text-5xl font-black text-[#26384f]">0${i+1}</span><h3 class="heading mt-3 text-lg font-bold">${s[isAr?0:1]}</h3></article>`).join("");
-    $("#features-grid").innerHTML = featureData.map(f => card(f[0], isAr?f[1]:f[3], isAr?f[2]:f[4])).join("");
-    $("#ai-grid").innerHTML = aiData.map(a => `<article class="rounded-2xl border border-[#26384f] bg-[#0d1929] p-4"><i data-lucide="${a[0]}" class="text-[#81f2bd]"></i><h3 class="heading mt-4 font-bold">${isAr?a[1]:a[2]}</h3></article>`).join("");
-    renderRoles();
-    renderDemo();
-    const link = (href,label,route) => `<a class="focus-ring rounded text-sm text-[#93a4bd] hover:text-[#57e3a0] ${route?"route-link":""}" href="${href}" ${route?`data-route="${href}"`:""}>${label}</a>`;
-    $("#footer-platform").innerHTML = ["#solution","#features","#roles"].map((h,i)=>link(h,(isAr?["الحل","المزايا","الأدوار"]:["Solution","Features","Roles"])[i])).join("");
-    $("#footer-ai").innerHTML = ["#ai","#demo"].map((h,i)=>link(h,(isAr?["أدوات AI","تجربة الخطة"]:["AI tools","Plan demo"])[i])).join("");
-    $("#footer-company").innerHTML = link("/privacy",isAr?"الخصوصية":"Privacy",true)+link("/contact",isAr?"تواصل":"Contact",true);
-    icons();
-  }
-
-  function renderRoles() {
-    const roles = t("roles");
-    $("#role-tabs").innerHTML = roles.map((role,i)=>`<button id="role-tab-${i}" class="role-tab focus-ring" role="tab" aria-selected="${i===activeRole}" aria-controls="role-panel" tabindex="${i===activeRole?0:-1}" data-role="${i}">${role.name}</button>`).join("");
-    const role = roles[activeRole];
-    $("#role-panel").setAttribute("aria-labelledby",`role-tab-${activeRole}`);
-    $("#role-panel").innerHTML = `<div class="grid items-center gap-6 md:grid-cols-[auto_1fr] md:gap-7"><div class="grid h-20 w-20 place-items-center rounded-3xl bg-[#103525] text-[#81f2bd]"><i data-lucide="${role.icon}" width="38" height="38"></i></div><div><h3 class="heading text-xl font-bold sm:text-2xl">${role.title}</h3><p class="mt-3 max-w-2xl leading-8 text-[#b8c5d8]">${role.copy}</p><div class="mt-5 flex flex-wrap gap-2">${role.tags.map(tag=>`<span class="rounded-full border border-[#26384f] bg-[#15263d] px-3 py-1 text-sm font-bold text-[#cbd8e9]">${tag}</span>`).join("")}</div></div></div>`;
-  }
-
-  function renderDemo() {
-    const options = lang === "ar"
-      ? [{k:"goal",v:["خسارة وزن","بناء عضلات","لياقة عامة"]},{k:"level",v:["مبتدئ","متوسط","متقدم"]},{k:"type",v:["جيم كامل","تمرين منزلي"]}]
-      : [{k:"goal",v:["Weight loss","Muscle building","General fitness"]},{k:"level",v:["Beginner","Intermediate","Advanced"]},{k:"type",v:["Full gym","Home workout"]}];
-    $("#demo-controls").innerHTML = options.map(g=>`<div><h3 class="heading font-bold">${t(g.k)}</h3><div class="mt-3 flex flex-wrap gap-2">${g.v.map((label,i)=>`<button class="chip focus-ring ${picks[g.k]===i?"selected":""}" data-pick="${g.k}" data-index="${i}" type="button" aria-pressed="${picks[g.k]===i}">${label}</button>`).join("")}</div></div>`).join("");
-    $("#demo-state").innerHTML = `<div class="rounded-2xl border border-dashed border-[#42607f] bg-[#0d1929] p-5 text-[#93a4bd]"><i data-lucide="mouse-pointer-2" class="mb-3 text-[#4c7cff]"></i><p>${t("placeholder")}</p></div>`;
-  }
-
-  function showToast(message) {
-    $("#toast-text").textContent = message;
-    $("#toast").classList.add("show");
-    clearTimeout(window.sfneToast);
-    window.sfneToast = setTimeout(()=>$("#toast").classList.remove("show"),3200);
-  }
-
-  function generateResult() {
-    const goals = lang === "ar" ? ["خسارة وزن","بناء عضلات","لياقة عامة"] : ["Weight loss","Muscle building","General fitness"];
-    const levels = lang === "ar" ? ["مبتدئ","متوسط","متقدم"] : ["Beginner","Intermediate","Advanced"];
-    const calories = ["2,050","2,650","2,300"][picks.goal];
-    $("#demo-state").innerHTML = `<div class="rounded-2xl border border-[#317854] bg-[#103525]/45 p-4 sm:p-5 reveal">
-      <div class="flex flex-wrap items-start justify-between gap-3"><div><h3 class="heading text-lg font-bold sm:text-xl">${t("resultTitle")}</h3><p class="mt-1 text-sm text-[#b8c5d8]">${goals[picks.goal]} · ${levels[picks.level]}</p></div><span class="rounded-full border border-[#a34f40] bg-[#42201e] px-3 py-1 text-xs font-bold text-[#ffc3b7]">${t("draft")}</span></div>
-      <div class="mt-6 grid gap-3 md:grid-cols-3">
-        <div class="rounded-xl border border-[#317854] bg-[#103525] p-4"><span class="text-sm text-[#a4f4c9]">${t("calories")}</span><strong class="heading mt-2 block text-2xl">${calories}</strong><span class="text-sm text-[#a4f4c9]">kcal</span></div>
-        <div class="rounded-xl border border-[#26384f] bg-[#111e30] p-4"><strong>${t("workout")}</strong><p class="mt-2 text-sm leading-7 text-[#b8c5d8]">${lang==="ar"?"3 أيام قوة + يومي حركة خفيفة":"3 strength days + light daily movement"}</p></div>
-        <div class="rounded-xl border border-[#26384f] bg-[#111e30] p-4"><strong>${t("nutrition")}</strong><p class="mt-2 text-sm leading-7 text-[#b8c5d8]">${lang==="ar"?"3 وجبات متوازنة + سناك مرن":"3 balanced meals + flexible snack"}</p></div>
-      </div></div>`;
-  }
-
-  function startCounters() {
-    const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    document.querySelectorAll("[data-count]").forEach(el=>{
-      const final = +el.dataset.count;
-      if(reduce){el.textContent=final;return}
-      let current = 0;
-      const timer = setInterval(()=>{
-        current += Math.ceil(final/18);
-        if(current >= final){current=final;clearInterval(timer)}
-        el.textContent=current;
-      },55);
-    });
-  }
-
-  function toggleLang(){lang=lang==="ar"?"en":"ar";try{localStorage.setItem("sfne-lang",lang)}catch(e){}setText()}
-  $("#language-toggle").addEventListener("click",toggleLang);
-  $("#mobile-language").addEventListener("click",toggleLang);
-
-  const drawer = $("#mobile-drawer"), overlay = $("#drawer-overlay"), menu = $("#menu-button");
-  function closeDrawer(){const was=drawer.classList.contains("open");drawer.classList.remove("open");overlay.classList.remove("open");menu.setAttribute("aria-expanded","false");if(was)menu.focus()}
-  function openDrawer(){drawer.classList.add("open");overlay.classList.add("open");menu.setAttribute("aria-expanded","true");$("#drawer-close").focus()}
-  menu.addEventListener("click",openDrawer);
-  $("#drawer-close").addEventListener("click",closeDrawer);
-  overlay.addEventListener("click",closeDrawer);
-  document.addEventListener("keydown",e=>{if(e.key==="Escape")closeDrawer()});
-  window.matchMedia("(min-width:1024px)").addEventListener("change",e=>{if(e.matches){drawer.classList.remove("open");overlay.classList.remove("open")}});
-
-  document.addEventListener("click",e=>{
-    const anchor = e.target.closest("a[href^='#']");
-    if(anchor && drawer.contains(anchor)){drawer.classList.remove("open");overlay.classList.remove("open");menu.setAttribute("aria-expanded","false")}
-    const route = e.target.closest("[data-route]");
-    if(route){e.preventDefault();showToast(t("routeToast"))}
-    const pick = e.target.closest("[data-pick]");
-    if(pick){picks[pick.dataset.pick]=+pick.dataset.index;renderDemo();icons()}
-    const role = e.target.closest("[data-role]");
-    if(role){activeRole=+role.dataset.role;renderRoles();icons();$(`#role-tab-${activeRole}`).focus()}
-  });
-
-  $("#role-tabs").addEventListener("keydown",e=>{
-    if(!["ArrowRight","ArrowLeft","Home","End"].includes(e.key))return;
-    e.preventDefault();
-    const count=t("roles").length, rtl=lang==="ar";
-    const next=rtl?"ArrowLeft":"ArrowRight", prev=rtl?"ArrowRight":"ArrowLeft";
-    if(e.key===next)activeRole=(activeRole+1)%count;
-    if(e.key===prev)activeRole=(activeRole-1+count)%count;
-    if(e.key==="Home")activeRole=0;
-    if(e.key==="End")activeRole=count-1;
-    renderRoles();icons();$(`#role-tab-${activeRole}`).focus();
-  });
-
-  $("#generate-plan").addEventListener("click",()=>{
-    $("#demo-state").innerHTML=`<div class="rounded-2xl border border-[#4c7cff] bg-[#18284d] p-6 text-[#dbe5ff]"><div class="flex items-center gap-3"><div class="flex gap-1"><span class="loading-dot"></span><span class="loading-dot"></span><span class="loading-dot"></span></div><span>${t("loading")}</span></div></div>`;
-    setTimeout(()=>{generateResult();icons()},1050);
-  });
-
-  $("#back-top").addEventListener("click",()=>window.scrollTo({top:0,behavior:"smooth"}));
-
-  const observer = new IntersectionObserver(entries=>{
-    const current=entries.filter(x=>x.isIntersecting).sort((a,b)=>b.intersectionRatio-a.intersectionRatio)[0];
-    if(!current)return;
-    document.querySelectorAll(".nav-link[href^='#']").forEach(l=>l.classList.toggle("active",l.getAttribute("href")==="#"+current.target.id));
-  },{rootMargin:"-30% 0px -60% 0px",threshold:.05});
-  ["problem","solution","features","ai","roles","demo"].forEach(id=>observer.observe(document.getElementById(id)));
-
-  const heroObserver = new IntersectionObserver(entries=>{
-    if(entries[0].isIntersecting){startCounters();heroObserver.disconnect()}
-  },{threshold:.15});
-  heroObserver.observe($("#hero"));
-
-  setText();
-})();
-</script>
+        document.getElementById('authModal').addEventListener('click', function (e) {
+            if (e.target === this) closeModal();
+        });
+        document.addEventListener('keydown', function (e) {
+            if (e.key === 'Escape') closeModal();
+        });
+    </script>
 </body>
 </html>
