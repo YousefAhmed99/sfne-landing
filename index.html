@@ -1,593 +1,286 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl" class="scroll-smooth" id="htmlTag">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SFNE FITAI - منظومة اللياقة والتغذية الذكية</title>
-    <script src="https://cdn.tailwindcss.com/3.4.17"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <style>
-        html { scroll-padding-top: 6rem; }
-        body { font-family: 'Cairo', sans-serif; -webkit-font-smoothing: antialiased; }
-        html[lang="en"] body { font-family: 'Inter', 'Cairo', sans-serif; }
-
-        h1 { font-size: clamp(2rem, 5vw, 3.5rem) !important; text-wrap: balance; }
-        h2 { font-size: clamp(1.6rem, 3.5vw, 2.4rem) !important; text-wrap: balance; }
-        .font-black { font-weight: 800; }
-
-        html[lang="ar"] body { line-height: 1.85; }
-        html[lang="ar"] h1, html[lang="ar"] h2, html[lang="ar"] h3 { line-height: 1.45 !important; }
-        html[lang="ar"] .text-xs { font-size: 0.85rem; }
-        html[lang="ar"] .text-sm { font-size: 0.97rem; }
-        html[lang="ar"] .tracking-wider,
-        html[lang="ar"] .tracking-widest { letter-spacing: 0 !important; }
-
-        html[lang="en"] body { line-height: 1.65; letter-spacing: -0.005em; }
-        html[lang="en"] h1, html[lang="en"] h2 { letter-spacing: -0.02em; line-height: 1.15 !important; }
-        html[lang="en"] h3 { line-height: 1.3 !important; }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SFNE FITAI - منظومة اللياقة والتغذية الذكية</title>
+<meta name="description" content="منصة SFNE FITAI تربط الصالات الرياضية والمتدربين والمدربين بخطط تمرين وتغذية ذكية بإشراف خبراء.">
+<meta name="theme-color" content="#050806">
+<meta property="og:type" content="website">
+<meta property="og:title" content="SFNE FITAI - منظومة اللياقة والتغذية الذكية">
+<meta property="og:description" content="خطط تمرين وتغذية ذكية بإشراف مدربين معتمدين، وإدارة متكاملة للصالات الرياضية.">
+<meta property="og:image" content="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=1200&q=80">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"SFNE FITAI","email":"info@sfne-fitai.com","telephone":"+201000000000","address":{"@type":"PostalAddress","addressLocality":"Cairo","addressCountry":"EG"}}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="preconnect" href="https://images.unsplash.com">
+<script>document.documentElement.classList.add('js');try{if(localStorage.getItem('theme')==='light')document.documentElement.classList.add('light')}catch(e){}</script>
+<script src="https://cdn.tailwindcss.com/3.4.17"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Readex+Pro:wght@400;500;600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+html{scroll-padding-top:6rem}
+body{font-family:'Readex Pro','Inter',sans-serif;-webkit-font-smoothing:antialiased;overflow-x:hidden;line-height:1.8}
+html[lang="en"] body{font-family:'Inter','Readex Pro',sans-serif}
+h1{font-size:clamp(2.1rem,5.4vw,4rem)!important;text-wrap:balance}
+h2{font-size:clamp(1.9rem,4.4vw,3.1rem)!important;text-wrap:balance}
+h1,h2,h3{line-height:1.4}
+.font-black{font-weight:700}
+.sec{padding:clamp(3.5rem,8vw,6rem) 0}
+.dots{background-image:radial-gradient(rgba(16,217,160,.22) 1.2px,transparent 1.2px);background-size:26px 26px}
+.grid-bg{background-image:linear-gradient(rgba(16,217,160,.07) 1px,transparent 1px),linear-gradient(90deg,rgba(16,217,160,.07) 1px,transparent 1px);background-size:56px 56px}
+summary::-webkit-details-marker{display:none}
+.js .rv{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease}
+.js .rv.in{opacity:1;transform:none}
+.glow{position:relative;overflow:hidden}
+.glow::before{content:"";position:absolute;inset:0;pointer-events:none;opacity:0;transition:opacity .3s;background:radial-gradient(320px circle at var(--x,50%) var(--y,50%),rgba(16,217,160,.2),transparent 60%)}
+.glow:hover::before{opacity:1}
+.svc{transition:flex .5s ease}
+@media (min-width:1024px){.svc{flex:1}.svc.on{flex:2.4}.svc .sd{max-height:0;opacity:0;transition:max-height .5s ease,opacity .4s ease}.svc.on .sd{max-height:220px;opacity:1}}
+.svc:focus-visible{outline:2px solid #10D9A0;outline-offset:3px}
+.noscroll{scrollbar-width:none}.noscroll::-webkit-scrollbar{display:none}
+@keyframes hi{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:none}}
+.js .hi{animation:hi .8s cubic-bezier(.2,.7,.2,1) both}
+@keyframes fl{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+.fl{animation:fl 5s ease-in-out infinite}
+@keyframes orb{0%,100%{transform:translate(0,0)}50%{transform:translate(30px,20px)}}
+.orb{animation:orb 12s ease-in-out infinite}.orb2{animation:orb 16s ease-in-out infinite reverse}
+@media (prefers-reduced-motion:reduce){.js .hi{animation:none}.fl,.orb,.orb2{animation:none}}
+.mq{animation:mq 30s linear infinite}.mq:hover{animation-play-state:paused}
+@keyframes mq{to{transform:translateX(-50%)}}
+#prog{transform:scaleX(0);transform-origin:left}html[dir=rtl] #prog{transform-origin:right}
+nav a.is-active{background:rgba(16,217,160,.16);color:#6ee7b7}
+html.light{filter:invert(1) hue-rotate(180deg) brightness(.9)}
+html.light img,html.light .keep{filter:invert(1) hue-rotate(180deg)}
+@media (prefers-reduced-motion:reduce){.js .rv{opacity:1;transform:none;transition:none}.mq{animation:none}html{scroll-behavior:auto!important}}
+a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible,summary:focus-visible{outline:2px solid #10D9A0;outline-offset:3px}
+</style>
 </head>
-<body class="bg-slate-950 text-slate-100 antialiased selection:bg-emerald-500 selection:text-slate-950">
+<body class="bg-[#04120C] text-slate-100">
+<div id="prog" class="fixed top-0 inset-x-0 h-1 z-[60] bg-emerald-400" aria-hidden="true"></div>
 
-    <!-- شريط ترويجي علوي -->
-    <div class="bg-gradient-to-r from-emerald-600 to-blue-600 text-slate-950 text-xs font-bold py-2 text-center px-4 flex items-center justify-center gap-2">
-        <span id="promoText">🎉 عرض خاص بمناسبة الإطلاق: خصم 20% على باقات الصالات الرياضية والمدربين لفترة محدودة!</span>
-        <a href="#pricing" id="promoLink" class="underline hover:text-white transition">احصل على العرض</a>
-    </div>
+<div class="bg-emerald-400 text-slate-950 text-sm font-semibold py-2 text-center px-4 flex flex-wrap items-center justify-center gap-x-3">
+<span id="promoText">🎉 عرض خاص بمناسبة الإطلاق: خصم 20% على باقات الصالات الرياضية والمدربين لفترة محدودة!</span>
+<a href="#pricing" id="promoLink" class="underline font-bold">احصل على العرض</a></div>
 
-    <!-- Navbar -->
-    <header class="sticky top-0 z-40 bg-slate-900/90 backdrop-blur-md border-b border-slate-800">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
-            <div class="flex items-center gap-3">
-                <button onclick="toggleMobileMenu()" class="xl:hidden text-slate-300 hover:text-white text-xl focus:outline-none p-2">
-                    <i class="fa-solid fa-bars" id="menuIcon"></i>
-                </button>
-                <span class="text-xl sm:text-2xl font-black text-emerald-400 tracking-wider">SFNE <span class="text-blue-500">FITAI</span></span>
-            </div>
+<header class="sticky top-0 z-40 bg-[#06170F]/85 backdrop-blur-xl border-b border-emerald-400/25">
+<div class="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 h-16 sm:h-[72px] flex items-center justify-between gap-2 sm:gap-3">
+<div class="flex items-center gap-2 shrink-0">
+<button onclick="toggleMobileMenu()" aria-label="Menu" class="xl:hidden w-9 h-9 rounded-xl border border-emerald-400/25 text-slate-200 hover:text-emerald-300 transition"><i class="fa-solid fa-bars" id="menuIcon"></i></button>
+<a href="#hero" class="flex items-center gap-2"><span class="w-9 h-9 rounded-xl bg-gradient-to-br from-emerald-300 to-emerald-600 text-slate-950 flex items-center justify-center"><i class="fa-solid fa-dumbbell"></i></span><span class="hidden sm:inline text-lg font-black text-white whitespace-nowrap">SFNE <span class="text-emerald-400">FITAI</span></span></a></div>
+<nav class="hidden xl:flex items-center gap-0.5 rounded-full bg-emerald-400/[0.07] border border-emerald-400/20 p-1 text-[12.5px] 2xl:text-[13px] font-medium text-slate-200"><a href="#hero" id="navHome" class="px-2 2xl:px-3 py-1.5 rounded-full whitespace-nowrap hover:bg-emerald-400/15 hover:text-white transition">الرئيسية</a><a href="#about" id="navAbout" class="px-2 2xl:px-3 py-1.5 rounded-full whitespace-nowrap hover:bg-emerald-400/15 hover:text-white transition">من نحن</a><a href="#features" id="navFeatures" class="px-2 2xl:px-3 py-1.5 rounded-full whitespace-nowrap hover:bg-emerald-400/15 hover:text-white transition">المميزات</a><a href="#services" id="navServices" class="px-2 2xl:px-3 py-1.5 rounded-full whitespace-nowrap hover:bg-emerald-400/15 hover:text-white transition">خدماتنا</a><a href="#pricing" id="navPricing" class="px-2 2xl:px-3 py-1.5 rounded-full whitespace-nowrap hover:bg-emerald-400/15 hover:text-white transition">الباقات</a><a href="#gallery" id="navGallery" class="px-2 2xl:px-3 py-1.5 rounded-full whitespace-nowrap hover:bg-emerald-400/15 hover:text-white transition">معرض الصور</a><a href="#blog" id="navBlog" class="px-2 2xl:px-3 py-1.5 rounded-full whitespace-nowrap hover:bg-emerald-400/15 hover:text-white transition">المدونة</a><a href="#contact" id="navContact" class="px-2 2xl:px-3 py-1.5 rounded-full whitespace-nowrap hover:bg-emerald-400/15 hover:text-white transition">تواصل معنا</a><a href="#support" id="navSupport" class="px-2 2xl:px-3 py-1.5 rounded-full whitespace-nowrap hover:bg-emerald-400/15 hover:text-white transition">الدعم الفني</a></nav>
+<div class="flex items-center gap-1.5 sm:gap-2 shrink-0">
+<button onclick="toggleTheme()" aria-label="Theme" class="hidden sm:flex w-9 h-9 rounded-full border border-emerald-400/25 bg-emerald-400/5 text-slate-200 hover:text-emerald-300 hover:bg-emerald-400/15 transition items-center justify-center"><i id="themeIcon" class="theme-i fa-solid fa-moon"></i></button>
+<button onclick="toggleLanguage()" id="langBtn" class="h-9 text-xs font-bold px-3 rounded-full border border-emerald-400/25 bg-emerald-400/5 text-slate-200 hover:text-emerald-300 hover:bg-emerald-400/15 transition flex items-center gap-1.5 whitespace-nowrap"><i class="fa-solid fa-globe"></i> English</button>
+<button onclick="openModal('login')" id="loginBtn" class="hidden md:inline-flex items-center h-9 px-4 rounded-full border border-emerald-400/50 text-emerald-100 hover:bg-emerald-400/15 text-[13px] font-semibold transition whitespace-nowrap">تسجيل الدخول</button>
+<button onclick="openModal('signup')" class="h-9 inline-flex items-center gap-1.5 px-3.5 sm:px-4 rounded-full bg-gradient-to-r from-emerald-300 to-emerald-500 hover:from-emerald-200 hover:to-emerald-400 text-slate-950 font-bold text-xs sm:text-[13px] whitespace-nowrap shadow-[0_6px_16px_-6px_rgba(16,217,160,.7)] hover:-translate-y-0.5 transition"><i class="fa-solid fa-user-plus hidden lg:inline text-[11px]"></i><span id="signupBtn">إنشاء حساب</span></button></div></div>
+<div id="mobileMenu" class="hidden xl:hidden bg-[#06170F]/95 border-t border-emerald-400/20 px-3 sm:px-6 py-4 grid grid-cols-2 sm:grid-cols-3 gap-2 text-sm font-medium"><a href="#hero" onclick="toggleMobileMenu()" class="block px-4 py-3 rounded-xl bg-white/5 text-slate-200 hover:bg-emerald-400/15 hover:text-emerald-300 transition">الرئيسية</a><a href="#about" onclick="toggleMobileMenu()" class="block px-4 py-3 rounded-xl bg-white/5 text-slate-200 hover:bg-emerald-400/15 hover:text-emerald-300 transition">من نحن</a><a href="#features" onclick="toggleMobileMenu()" class="block px-4 py-3 rounded-xl bg-white/5 text-slate-200 hover:bg-emerald-400/15 hover:text-emerald-300 transition">المميزات</a><a href="#services" onclick="toggleMobileMenu()" class="block px-4 py-3 rounded-xl bg-white/5 text-slate-200 hover:bg-emerald-400/15 hover:text-emerald-300 transition">خدماتنا</a><a href="#pricing" onclick="toggleMobileMenu()" class="block px-4 py-3 rounded-xl bg-white/5 text-slate-200 hover:bg-emerald-400/15 hover:text-emerald-300 transition">الباقات</a><a href="#gallery" onclick="toggleMobileMenu()" class="block px-4 py-3 rounded-xl bg-white/5 text-slate-200 hover:bg-emerald-400/15 hover:text-emerald-300 transition">معرض الصور</a><a href="#blog" onclick="toggleMobileMenu()" class="block px-4 py-3 rounded-xl bg-white/5 text-slate-200 hover:bg-emerald-400/15 hover:text-emerald-300 transition">المدونة</a><a href="#contact" onclick="toggleMobileMenu()" class="block px-4 py-3 rounded-xl bg-white/5 text-slate-200 hover:bg-emerald-400/15 hover:text-emerald-300 transition">تواصل معنا</a><a href="#support" onclick="toggleMobileMenu()" class="block px-4 py-3 rounded-xl bg-white/5 text-slate-200 hover:bg-emerald-400/15 hover:text-emerald-300 transition">الدعم الفني</a>
+<button type="button" onclick="toggleMobileMenu();openModal('login')" class="login-alt md:hidden col-span-2 sm:col-span-3 px-4 py-3 rounded-xl border border-emerald-400/50 text-emerald-200 hover:bg-emerald-400/15 transition">تسجيل الدخول</button>
+<button type="button" onclick="toggleTheme()" aria-label="Theme" class="sm:hidden col-span-2 px-4 py-3 rounded-xl bg-white/5 text-slate-200 hover:bg-emerald-400/15 transition"><i class="theme-i fa-solid fa-moon"></i></button></div>
+</header>
 
-            <nav class="hidden xl:flex items-center gap-5 text-sm font-semibold text-slate-300">
-                <a href="#hero" id="navHome" class="hover:text-emerald-400 transition">الرئيسية</a>
-                <a href="#about" id="navAbout" class="hover:text-emerald-400 transition">من نحن</a>
-                <a href="#features" id="navFeatures" class="hover:text-emerald-400 transition">المميزات</a>
-                <a href="#services" id="navServices" class="hover:text-emerald-400 transition">خدماتنا</a>
-                <a href="#pricing" id="navPricing" class="hover:text-emerald-400 transition">الباقات</a>
-                <a href="#gallery" id="navGallery" class="hover:text-emerald-400 transition">معرض الصور</a>
-                <a href="#blog" id="navBlog" class="hover:text-emerald-400 transition">المدونة</a>
-                <a href="#contact" id="navContact" class="hover:text-emerald-400 transition">تواصل معنا</a>
-                <a href="#support" id="navSupport" class="hover:text-emerald-400 transition">الدعم الفني</a>
-            </nav>
+<!-- 1) HERO: جذاب، نص في المنتصف والصورة تحته مع كروت عائمة -->
+<section id="hero" class="relative overflow-hidden bg-[#04120C] sec pb-0">
+<div class="absolute inset-0 grid-bg" style="-webkit-mask-image:radial-gradient(ellipse at top,#000 30%,transparent 75%);mask-image:radial-gradient(ellipse at top,#000 30%,transparent 75%)"></div>
+<div class="orb absolute -top-24 start-[8%] w-80 h-80 rounded-full bg-emerald-500/30 blur-3xl"></div>
+<div class="orb2 absolute top-40 end-[6%] w-72 h-72 rounded-full bg-emerald-300/15 blur-3xl"></div>
+<div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+<div id="heroBadge" class="hi inline-flex items-center gap-2 px-4 py-2 rounded-full border border-emerald-400/40 bg-emerald-400/10 text-emerald-300 text-sm font-semibold mb-6"><i class="fa-solid fa-bolt"></i> منظومة متكاملة للياقة البدنية والتغذية</div>
+<h1 id="heroTitle" class="hi font-black text-white mb-6 max-w-4xl mx-auto" style="animation-delay:.1s">طور لياقتك بأحدث تقنيات <span class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-300 to-emerald-500">الذكاء الاصطناعي والإشراف الاحترافي</span></h1>
+<p id="heroDesc" class="hi text-slate-300 text-lg mb-8 max-w-2xl mx-auto" style="animation-delay:.2s">نربط بين الصالات الرياضية، المتدربين، والمدربين المحترفين في منصة واحدة سهلة ومبتكرة تضمن لك الوصول لأهدافك الرياضية والصحية بكل أمان وثقة.</p>
+<div class="hi flex flex-wrap justify-center gap-4 mb-8" style="animation-delay:.3s">
+<button onclick="openModal('signup')" id="heroCta1" class="bg-emerald-400 hover:bg-emerald-300 text-slate-950 font-bold px-8 py-3.5 rounded-full transition shadow-lg shadow-emerald-500/30">ابدأ الآن مجاناً</button>
+<a href="#about" id="heroCta2" class="border border-emerald-400/50 hover:bg-emerald-400/10 text-white font-semibold px-8 py-3.5 rounded-full transition">اكتشف المزيد</a></div>
+<div class="hi flex flex-wrap items-center justify-center gap-4 mb-14" style="animation-delay:.4s">
+<div class="flex -space-x-3 rtl:space-x-reverse"><span class="w-9 h-9 rounded-full border-2 border-black bg-emerald-300 text-slate-950 flex items-center justify-center text-sm"><i class="fa-solid fa-user"></i></span><span class="w-9 h-9 rounded-full border-2 border-black bg-emerald-400 text-slate-950 flex items-center justify-center text-sm"><i class="fa-solid fa-user"></i></span><span class="w-9 h-9 rounded-full border-2 border-black bg-emerald-500 text-slate-950 flex items-center justify-center text-sm"><i class="fa-solid fa-user"></i></span><span class="w-9 h-9 rounded-full border-2 border-black bg-emerald-600 text-slate-950 flex items-center justify-center text-sm"><i class="fa-solid fa-user"></i></span></div>
+<div class="flex items-center gap-1 text-emerald-400 text-sm"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+<span class="text-white font-bold">5.0</span><span class="text-slate-400">+5,000</span></div>
+<div class="hi relative max-w-5xl mx-auto" style="animation-delay:.5s">
+<div class="absolute -inset-3 rounded-[2.2rem] bg-gradient-to-b from-emerald-400/60 to-transparent blur-md"></div>
+<img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=1400&q=80" srcset="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=640&q=75 640w, https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=1400&q=80 1400w" sizes="(max-width:1024px) 100vw, 1024px" fetchpriority="high" alt="Fitness Training" class="relative w-full h-64 sm:h-96 lg:h-[30rem] object-cover rounded-t-[2rem] border border-emerald-400/40 border-b-0">
+<div class="absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-[#04120C] to-transparent"></div>
+<div class="fl absolute -top-5 start-3 sm:start-10 flex items-center gap-3 bg-black/70 backdrop-blur-md border border-emerald-400/40 rounded-2xl px-4 py-3"><span class="w-10 h-10 rounded-xl bg-emerald-400 text-slate-950 flex items-center justify-center"><i class="fa-solid fa-fire"></i></span><div class="text-start leading-tight"><p class="text-white font-bold text-lg">480</p><p class="text-slate-400 text-xs">kcal</p></div></div>
+<div class="fl absolute bottom-10 end-3 sm:end-10 flex items-center gap-3 bg-black/70 backdrop-blur-md border border-emerald-400/40 rounded-2xl px-4 py-3" style="animation-delay:-2s"><span class="relative w-10 h-10 rounded-xl bg-emerald-400 text-slate-950 flex items-center justify-center"><span class="absolute inset-0 rounded-xl bg-emerald-400 animate-ping opacity-40"></span><i class="relative fa-solid fa-heart-pulse"></i></span><div class="text-start leading-tight"><p class="text-white font-bold text-lg">72</p><p class="text-slate-400 text-xs">BPM</p></div></div>
+<div class="fl hidden md:flex absolute top-1/3 -end-4 items-center gap-2 bg-emerald-400 text-slate-950 font-bold rounded-full px-4 py-2" style="animation-delay:-3.5s"><i class="fa-solid fa-robot"></i> AI</div></div>
+</div></section>
+<div aria-hidden="true" style="height:3px;background:linear-gradient(90deg,transparent,#10D9A0,transparent);box-shadow:0 0 18px #10D9A088"></div>
 
-            <div class="flex items-center gap-2 sm:gap-3">
-                <button onclick="toggleLanguage()" id="langBtn" class="text-xs font-bold px-2.5 py-1.5 rounded-lg border border-slate-700 bg-slate-800 text-slate-300 hover:text-emerald-400 transition flex items-center gap-1">
-                    <i class="fa-solid fa-globe"></i> English
-                </button>
-                <button onclick="openModal('login')" id="loginBtn" class="text-slate-300 hover:text-white font-semibold text-xs sm:text-sm px-2 sm:px-3 py-2 transition">
-                    تسجيل الدخول
-                </button>
-                <button onclick="openModal('signup')" id="signupBtn" class="bg-emerald-500 hover:bg-emerald-600 text-slate-950 font-bold px-3 sm:px-4 py-2 rounded-xl transition text-xs sm:text-sm shadow-lg shadow-emerald-500/20">
-                    إنشاء حساب
-                </button>
-            </div>
-        </div>
+<!-- 2) إحصائيات: شريط أخضر ساطع -->
+<section class="bg-emerald-400 text-slate-950 py-10">
+<div class="max-w-7xl mx-auto px-4 grid grid-cols-2 md:grid-cols-4 gap-y-6 text-center">
+<div class="px-4 py-2 "><h3 data-count="100" data-pre="+" data-suf="" class="text-4xl lg:text-5xl font-black">+100</h3><p id="stat1" class="text-sm font-semibold mt-1 opacity-80">صالة رياضية شريكة</p></div><div class="px-4 py-2 md:border-s border-slate-950/25"><h3 data-count="5000" data-pre="+" data-suf="" class="text-4xl lg:text-5xl font-black">+5,000</h3><p id="stat2" class="text-sm font-semibold mt-1 opacity-80">متدرب نشط</p></div><div class="px-4 py-2 md:border-s border-slate-950/25"><h3 data-count="200" data-pre="+" data-suf="" class="text-4xl lg:text-5xl font-black">+200</h3><p id="stat3" class="text-sm font-semibold mt-1 opacity-80">مدرب وأخصائي تغذية</p></div><div class="px-4 py-2 md:border-s border-slate-950/25"><h3 data-count="99" data-pre="" data-suf="%" class="text-4xl lg:text-5xl font-black">99%</h3><p id="stat4" class="text-sm font-semibold mt-1 opacity-80">نسبة رضا العملاء</p></div>
+</div></section>
+<div aria-hidden="true" style="height:3px;background:linear-gradient(90deg,transparent,#10D9A0,transparent);box-shadow:0 0 18px #10D9A088"></div>
 
-        <!-- القائمة المنسدلة للروابط على الموبايل -->
-        <div id="mobileMenu" class="hidden xl:hidden bg-slate-900 border-b border-slate-800 px-6 py-4 space-y-3 text-sm font-semibold text-slate-300">
-            <a href="#hero" onclick="toggleMobileMenu()" class="block py-1.5 hover:text-emerald-400 transition">الرئيسية</a>
-            <a href="#about" onclick="toggleMobileMenu()" class="block py-1.5 hover:text-emerald-400 transition">من نحن</a>
-            <a href="#features" onclick="toggleMobileMenu()" class="block py-1.5 hover:text-emerald-400 transition">المميزات</a>
-            <a href="#services" onclick="toggleMobileMenu()" class="block py-1.5 hover:text-emerald-400 transition">خدماتنا</a>
-            <a href="#pricing" onclick="toggleMobileMenu()" class="block py-1.5 hover:text-emerald-400 transition">الباقات</a>
-            <a href="#gallery" onclick="toggleMobileMenu()" class="block py-1.5 hover:text-emerald-400 transition">معرض الصور</a>
-            <a href="#blog" onclick="toggleMobileMenu()" class="block py-1.5 hover:text-emerald-400 transition">المدونة</a>
-            <a href="#contact" onclick="toggleMobileMenu()" class="block py-1.5 hover:text-emerald-400 transition">تواصل معنا</a>
-            <a href="#support" onclick="toggleMobileMenu()" class="block py-1.5 hover:text-emerald-400 transition">الدعم الفني</a>
-        </div>
-    </header>
+<!-- 3) من نحن: أخضر داكن مع نقاط وبطاقة زجاجية -->
+<section id="about" class="bg-[#0E2C1F] dots sec">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-2 gap-12 items-center">
+<img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&fit=crop&w=800&q=80" alt="About SFNE" loading="lazy" class="rounded-[2.5rem] w-full h-[300px] sm:h-[440px] object-cover border-2 border-emerald-400/50">
+<div class="bg-black/55 backdrop-blur-md border border-emerald-400/30 rounded-[2rem] p-6 sm:p-10">
+<span id="aboutSub" class="inline-flex items-center gap-2 rounded-full border border-emerald-400/40 bg-emerald-400/10 text-emerald-300 px-4 py-1.5 text-sm font-semibold"><i class="fa-solid fa-circle text-[7px]"></i>من نحن</span>
+<h2 id="aboutTitle" class="font-bold text-white mt-5">منصة تجمع كل عناصر النجاح الرياضي في مكان واحد</h2>
+<div class="w-20 h-1.5 rounded-full bg-emerald-400 mt-4 mb-6"></div>
+<p id="aboutDesc1" class="text-slate-300 mb-4">نحن نسعى لإحداث طفرة حقيقية في قطاع اللياقة البدنية عبر دمج التكنولوجيا المتقدمة بالخبرة البشرية. نوفر بيئة رقمية متكاملة تخدم أصحاب الجيمات، الكباتن، وأخصائيي التغذية لتقديم أفضل تجربة للمشتركين.</p>
+<p id="aboutDesc2" class="text-emerald-200 font-medium">نضمن لك متابعة دقيقة ومستمرة لتقدمك الرياضي والصحي مع التركيز على أعلى معايير الجودة والاحترافية.</p></div>
+</div></section>
+<div aria-hidden="true" style="height:3px;background:linear-gradient(90deg,transparent,#10D9A0,transparent);box-shadow:0 0 18px #10D9A088"></div>
 
-    <!-- Hero -->
-    <section id="hero" class="relative py-20 lg:py-28 overflow-hidden bg-slate-950">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                <div class="ltr:text-left rtl:text-right">
-                    <div id="heroBadge" class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-xs font-semibold mb-6">
-                        <i class="fa-solid fa-bolt"></i> منظومة متكاملة للياقة البدنية والتغذية
-                    </div>
-                    <h1 id="heroTitle" class="font-black text-white mb-6">
-                        طور لياقتك بأحدث تقنيات <span class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-blue-500">الذكاء الاصطناعي والإشراف الاحترافي</span>
-                    </h1>
-                    <p id="heroDesc" class="text-slate-400 text-base sm:text-lg mb-8 leading-relaxed">
-                        نربط بين الصالات الرياضية، المتدربين، والمدربين المحترفين في منصة واحدة سهلة ومبتكرة تضمن لك الوصول لأهدافك الرياضية والصحية بكل أمان وثقة.
-                    </p>
-                    <div class="flex flex-wrap gap-4 ltr:justify-start rtl:justify-start">
-                        <button onclick="openModal('signup')" id="heroCta1" class="bg-emerald-500 hover:bg-emerald-600 text-slate-950 font-bold px-8 py-3.5 rounded-xl transition shadow-lg shadow-emerald-500/20">
-                            ابدأ الآن مجاناً
-                        </button>
-                        <a href="#about" id="heroCta2" class="bg-slate-900 hover:bg-slate-800 border border-slate-800 text-slate-200 font-semibold px-8 py-3.5 rounded-xl transition">
-                            اكتشف المزيد
-                        </a>
-                    </div>
-                </div>
-                <div class="relative">
-                    <div class="absolute -inset-1 bg-gradient-to-r from-emerald-500 to-blue-600 rounded-3xl blur-2xl opacity-20"></div>
-                    <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=800&q=80" alt="Fitness Training" class="relative rounded-3xl border border-slate-800 shadow-2xl w-full object-cover h-[450px]">
-                </div>
-            </div>
-        </div>
-    </section>
+<!-- 4) المميزات: أسود Bento -->
+<section id="features" class="bg-black sec">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="text-center mx-auto max-w-3xl mb-14"><span id="featSub" class="inline-flex items-center gap-2 rounded-full border border-emerald-400/40 bg-emerald-400/10 text-emerald-300 px-4 py-1.5 text-sm font-semibold"><i class="fa-solid fa-circle text-[7px]"></i>المميزات الرئيسية</span><h2 id="featTitle" class="font-bold text-white mt-5">ما الذي يقدمه لك النظام؟</h2><div class="w-20 h-1.5 rounded-full bg-emerald-400 mt-4 mb-5 mx-auto"></div><p id="featDesc" class="text-slate-400 text-lg">حلول مبتكرة ومتقدمة مصممة لتسهيل إدارتك الرياضية والوصول لأهدافك البدنية بكفاءة.</p></div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5"><div class="lg:col-span-2 glow rounded-3xl p-8 border bg-gradient-to-br from-emerald-400/25 to-transparent border-emerald-400/40 transition"><div class="w-14 h-14 rounded-2xl bg-emerald-400 text-slate-950 flex items-center justify-center text-2xl mb-6"><i class="fa-solid fa-robot"></i></div><h3 id="f1Title" class="text-xl font-bold text-white mb-3">خطط ذكية مخصصة</h3><p id="f1Desc" class="text-slate-400 leading-relaxed max-w-md">برامج تمرين وتغذية مصممة خصيصاً لتناسب هدفك الشخصي ومستوى لياقتك البدنية بكل دقة.</p></div><div class=" glow rounded-3xl p-8 border bg-white/[0.03] border-white/10 hover:border-emerald-400/50 transition"><div class="w-14 h-14 rounded-2xl bg-emerald-400 text-slate-950 flex items-center justify-center text-2xl mb-6"><i class="fa-solid fa-user-check"></i></div><h3 id="f2Title" class="text-xl font-bold text-white mb-3">إشراف وتوجيه احترافي</h3><p id="f2Desc" class="text-slate-400 leading-relaxed max-w-md">متابعة مستمرة وتوجيه مباشر من مدربين معتمدين لضمان تنفيذ التمارين بالشكل الصحيح.</p></div><div class=" glow rounded-3xl p-8 border bg-white/[0.03] border-white/10 hover:border-emerald-400/50 transition"><div class="w-14 h-14 rounded-2xl bg-emerald-400 text-slate-950 flex items-center justify-center text-2xl mb-6"><i class="fa-solid fa-chart-line"></i></div><h3 id="f3Title" class="text-xl font-bold text-white mb-3">تقارير ومتابعة أسبوعية</h3><p id="f3Desc" class="text-slate-400 leading-relaxed max-w-md">تتبع دوري للقياسات والنتائج لمعرفة مدى تقدمك وتحقيق أهدافك بصورة أسرع وأكثر فعالية.</p></div><div class="lg:col-span-2 glow rounded-3xl p-8 border bg-white/[0.03] border-white/10 hover:border-emerald-400/50 transition"><div class="w-14 h-14 rounded-2xl bg-emerald-400 text-slate-950 flex items-center justify-center text-2xl mb-6"><i class="fa-solid fa-shield-halved"></i></div><h3 id="f4Title" class="text-xl font-bold text-white mb-3">معايير أمان صارمة</h3><p id="f4Desc" class="text-slate-400 leading-relaxed max-w-md">فحص آلي ومراجعة بشرية صارمة لضمان خلو الخطط الرياضية من أي مخاطر أو إصابات محتملة.</p></div><div class=" glow rounded-3xl p-8 border bg-white/[0.03] border-white/10 hover:border-emerald-400/50 transition"><div class="w-14 h-14 rounded-2xl bg-emerald-400 text-slate-950 flex items-center justify-center text-2xl mb-6"><i class="fa-solid fa-dumbbell"></i></div><h3 id="f5Title" class="text-xl font-bold text-white mb-3">تطابق مع أجهزة الجيم</h3><p id="f5Desc" class="text-slate-400 leading-relaxed max-w-md">اختيار التمارين المتاحة آلياً بناءً على الأجهزة والآلات الفعلية المتوفرة داخل الصالة الرياضية.</p></div><div class="lg:col-span-2 glow rounded-3xl p-8 border bg-gradient-to-br from-emerald-400/25 to-transparent border-emerald-400/40 transition"><div class="w-14 h-14 rounded-2xl bg-emerald-400 text-slate-950 flex items-center justify-center text-2xl mb-6"><i class="fa-solid fa-clock-rotate-left"></i></div><h3 id="f6Title" class="text-xl font-bold text-white mb-3">أرشيف وتاريخ صحي موحد</h3><p id="f6Desc" class="text-slate-400 leading-relaxed max-w-md">ملف رقمي شامل لا يضيع أبداً حتى عند انتقالك أو اشتراكك في فروع أو صالات رياضية جديدة.</p></div></div></div></section>
+<div aria-hidden="true" style="height:3px;background:linear-gradient(90deg,transparent,#10D9A0,transparent);box-shadow:0 0 18px #10D9A088"></div>
 
-    <!-- إحصائيات -->
-    <section class="py-12 bg-slate-900/80 border-y border-slate-800">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-                <div>
-                    <h3 class="text-3xl lg:text-4xl font-black text-emerald-400 mb-1">+100</h3>
-                    <p id="stat1" class="text-slate-400 text-sm">صالة رياضية شريكة</p>
-                </div>
-                <div>
-                    <h3 class="text-3xl lg:text-4xl font-black text-blue-400 mb-1">+5,000</h3>
-                    <p id="stat2" class="text-slate-400 text-sm">متدرب نشط</p>
-                </div>
-                <div>
-                    <h3 class="text-3xl lg:text-4xl font-black text-purple-400 mb-1">+200</h3>
-                    <p id="stat3" class="text-slate-400 text-sm">مدرب وأخصائي تغذية</p>
-                </div>
-                <div>
-                    <h3 class="text-3xl lg:text-4xl font-black text-amber-400 mb-1">99%</h3>
-                    <p id="stat4" class="text-slate-400 text-sm">نسبة رضا العملاء</p>
-                </div>
-            </div>
-        </div>
-    </section>
+<!-- 5) الخدمات: ألواح تفاعلية بصور -->
+<section id="services" class="bg-gradient-to-b from-[#13472F] to-[#0E2C1F] sec">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="text-center mx-auto max-w-3xl mb-14"><span id="servSub" class="inline-flex items-center gap-2 rounded-full border border-emerald-400/40 bg-emerald-400/10 text-emerald-300 px-4 py-1.5 text-sm font-semibold"><i class="fa-solid fa-circle text-[7px]"></i>الخدمات التي نقدمها</span><h2 id="servTitle" class="font-bold text-white mt-5">حلول شاملة ومتكاملة لقطاع اللياقة</h2><div class="w-20 h-1.5 rounded-full bg-emerald-400 mt-4 mb-5 mx-auto"></div><p id="servDesc" class="text-slate-400 text-lg">نقدم منظومة خدمات متطورة تلبي احتياجات الصالات الرياضية، المدربين، والأعضاء بكفاءة عالية.</p></div>
+<div class="flex flex-col lg:flex-row gap-4 lg:h-[30rem]"><article tabindex="0" class="svc on group relative rounded-3xl overflow-hidden min-h-[17rem] border border-emerald-400/30 cursor-pointer focus:outline-none"><img src="https://images.unsplash.com/photo-1540497077202-7c8a3999166f?auto=format&fit=crop&w=700&q=75" alt="" loading="lazy" class="absolute inset-0 w-full h-full object-cover opacity-70 group-hover:scale-105 transition duration-700"><div class="absolute inset-0 bg-gradient-to-t from-black via-black/65 to-emerald-900/30"></div><div class="relative h-full min-h-[17rem] flex flex-col justify-end p-6 sm:p-8"><div class="w-14 h-14 rounded-2xl bg-emerald-400 text-slate-950 flex items-center justify-center text-2xl mb-4"><i class="fa-solid fa-building-user"></i></div><h3 id="s1Title" class="text-xl sm:text-2xl font-bold text-white">إدارة الصالات الرياضية</h3><div class="sd"><p id="s1Desc" class="text-slate-200 leading-relaxed mt-3">نظام متكامل لإدارة فروع الجيم، الاشتراكات، الحضور، وتوزيع العوائد المالية بكل شفافية.</p></div></div></article><article tabindex="0" class="svc group relative rounded-3xl overflow-hidden min-h-[17rem] border border-emerald-400/30 cursor-pointer focus:outline-none"><img src="https://images.unsplash.com/photo-1490645935967-10de6ba17061?auto=format&fit=crop&w=700&q=75" alt="" loading="lazy" class="absolute inset-0 w-full h-full object-cover opacity-70 group-hover:scale-105 transition duration-700"><div class="absolute inset-0 bg-gradient-to-t from-black via-black/65 to-emerald-900/30"></div><div class="relative h-full min-h-[17rem] flex flex-col justify-end p-6 sm:p-8"><div class="w-14 h-14 rounded-2xl bg-emerald-400 text-slate-950 flex items-center justify-center text-2xl mb-4"><i class="fa-solid fa-utensils"></i></div><h3 id="s2Title" class="text-xl sm:text-2xl font-bold text-white">التغذية والبرامج الغذائية</h3><div class="sd"><p id="s2Desc" class="text-slate-200 leading-relaxed mt-3">تصميم الحصص السعرية، السعرات الحرارية، والوجبات الغذائية المناسبة لهدف كل مشترك بإشراف مختصين.</p></div></div></article><article tabindex="0" class="svc group relative rounded-3xl overflow-hidden min-h-[17rem] border border-emerald-400/30 cursor-pointer focus:outline-none"><img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=700&q=75" alt="" loading="lazy" class="absolute inset-0 w-full h-full object-cover opacity-70 group-hover:scale-105 transition duration-700"><div class="absolute inset-0 bg-gradient-to-t from-black via-black/65 to-emerald-900/30"></div><div class="relative h-full min-h-[17rem] flex flex-col justify-end p-6 sm:p-8"><div class="w-14 h-14 rounded-2xl bg-emerald-400 text-slate-950 flex items-center justify-center text-2xl mb-4"><i class="fa-solid fa-stethoscope"></i></div><h3 id="s3Title" class="text-xl sm:text-2xl font-bold text-white">المتابعة الطبية وتحليل المجلدات</h3><div class="sd"><p id="s3Desc" class="text-slate-200 leading-relaxed mt-3">قراءة وتحليل التقارير الطبية والقياسات الحيوية عبر تقنيات OCR مع مراقبة أسباب الإصابات والتصعيد الفوري.</p></div></div></article></div></div></section>
+<div aria-hidden="true" style="height:3px;background:linear-gradient(90deg,transparent,#10D9A0,transparent);box-shadow:0 0 18px #10D9A088"></div>
 
-    <!-- من نحن -->
-    <section id="about" class="py-20 bg-slate-900/50 border-t border-slate-800/60">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                <div>
-                    <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&fit=crop&w=800&q=80" alt="About SFNE" class="rounded-3xl border border-slate-800 shadow-xl w-full object-cover h-[400px]">
-                </div>
-                <div class="ltr:text-left rtl:text-right">
-                    <span id="aboutSub" class="text-emerald-400 text-sm font-bold uppercase tracking-widest">من نحن</span>
-                    <h2 id="aboutTitle" class="font-extrabold mt-2 mb-6">منصة تجمع كل عناصر النجاح الرياضي في مكان واحد</h2>
-                    <p id="aboutDesc1" class="text-slate-400 mb-4 leading-relaxed">
-                        نحن نسعى لإحداث طفرة حقيقية في قطاع اللياقة البدنية عبر دمج التكنولوجيا المتقدمة بالخبرة البشرية. نوفر بيئة رقمية متكاملة تخدم أصحاب الجيمات، الكباتن، وأخصائيي التغذية لتقديم أفضل تجربة للمشتركين.
-                    </p>
-                    <p id="aboutDesc2" class="text-slate-400 mb-6 leading-relaxed">
-                        نضمن لك متابعة دقيقة ومستمرة لتقدمك الرياضي والصحي مع التركيز على أعلى معايير الجودة والاحترافية.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
+<!-- 5.5) كيف يعمل النظام: خطوات متسلسلة -->
+<section id="how" class="bg-[#0A1F15] sec">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="text-center mx-auto max-w-3xl mb-14"><span id="howSub" class="inline-flex items-center gap-2 rounded-full border border-emerald-400/40 bg-emerald-400/10 text-emerald-300 px-4 py-1.5 text-sm font-semibold"><i class="fa-solid fa-circle text-[7px]"></i>كيف يعمل النظام</span><h2 id="howTitle" class="font-bold text-white mt-5">أربع خطوات تفصلك عن هدفك</h2><div class="w-20 h-1.5 rounded-full bg-emerald-400 mt-4 mb-5 mx-auto"></div><p id="howDesc" class="text-slate-400 text-lg">رحلة بسيطة وواضحة من التسجيل حتى تحقيق النتيجة.</p></div>
+<div class="relative grid sm:grid-cols-2 lg:grid-cols-4 gap-10">
+<div class="hidden lg:block absolute top-10 inset-x-[12%] border-t-2 border-dashed border-emerald-400/50"></div>
+<div class="relative text-center px-2"><div class="relative z-10 mx-auto w-20 h-20 rounded-full bg-emerald-400 text-slate-950 flex items-center justify-center text-3xl shadow-lg shadow-emerald-500/30"><i class="fa-solid fa-user-plus"></i></div><span class="absolute -top-2 start-1/2 ms-5 z-20 w-8 h-8 rounded-full bg-black border-2 border-emerald-400 text-emerald-300 text-sm font-bold flex items-center justify-center">1</span><h3 id="hw1Title" class="text-xl font-bold text-white mt-6 mb-2">سجّل حسابك</h3><p id="hw1Desc" class="text-slate-400">أنشئ حسابك كمتدرب أو مدرب أو صالة رياضية في دقائق.</p></div><div class="relative text-center px-2"><div class="relative z-10 mx-auto w-20 h-20 rounded-full bg-emerald-400 text-slate-950 flex items-center justify-center text-3xl shadow-lg shadow-emerald-500/30"><i class="fa-solid fa-robot"></i></div><span class="absolute -top-2 start-1/2 ms-5 z-20 w-8 h-8 rounded-full bg-black border-2 border-emerald-400 text-emerald-300 text-sm font-bold flex items-center justify-center">2</span><h3 id="hw2Title" class="text-xl font-bold text-white mt-6 mb-2">احصل على خطة ذكية</h3><p id="hw2Desc" class="text-slate-400">نبني لك برنامج تمرين وتغذية يناسب هدفك وأجهزة الصالة.</p></div><div class="relative text-center px-2"><div class="relative z-10 mx-auto w-20 h-20 rounded-full bg-emerald-400 text-slate-950 flex items-center justify-center text-3xl shadow-lg shadow-emerald-500/30"><i class="fa-solid fa-user-check"></i></div><span class="absolute -top-2 start-1/2 ms-5 z-20 w-8 h-8 rounded-full bg-black border-2 border-emerald-400 text-emerald-300 text-sm font-bold flex items-center justify-center">3</span><h3 id="hw3Title" class="text-xl font-bold text-white mt-6 mb-2">مدربك يراجع ويعتمد</h3><p id="hw3Desc" class="text-slate-400">مدرب معتمد يراجع الخطة ويعدلها قبل أن تبدأ.</p></div><div class="relative text-center px-2"><div class="relative z-10 mx-auto w-20 h-20 rounded-full bg-emerald-400 text-slate-950 flex items-center justify-center text-3xl shadow-lg shadow-emerald-500/30"><i class="fa-solid fa-chart-line"></i></div><span class="absolute -top-2 start-1/2 ms-5 z-20 w-8 h-8 rounded-full bg-black border-2 border-emerald-400 text-emerald-300 text-sm font-bold flex items-center justify-center">4</span><h3 id="hw4Title" class="text-xl font-bold text-white mt-6 mb-2">تابع تقدمك أسبوعياً</h3><p id="hw4Desc" class="text-slate-400">تقارير دورية تعرض نتائجك وتقترح التحسين التالي.</p></div></div></div></section>
+<div aria-hidden="true" style="height:3px;background:linear-gradient(90deg,transparent,#10D9A0,transparent);box-shadow:0 0 18px #10D9A088"></div>
 
-    <!-- المميزات -->
-    <section id="features" class="py-20 bg-slate-950 border-t border-slate-800/60">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-3xl mx-auto mb-16">
-                <span id="featSub" class="text-emerald-400 text-sm font-bold uppercase">المميزات الرئيسية</span>
-                <h2 id="featTitle" class="font-extrabold mt-2 mb-4">ما الذي يقدمه لك النظام؟</h2>
-                <p id="featDesc" class="text-slate-400">حلول مبتكرة ومتقدمة مصممة لتسهيل إدارتك الرياضية والوصول لأهدافك البدنية بكفاءة.</p>
-            </div>
+<!-- 6) الباقات: أسود مع توهج مركزي -->
+<section id="pricing" class="relative bg-[#04120C] sec overflow-hidden">
+<div class="absolute top-1/3 start-1/2 -translate-x-1/2 w-[36rem] max-w-full h-96 rounded-full bg-emerald-500/20 blur-3xl"></div>
+<div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="text-center max-w-3xl mx-auto mb-12"><span id="priceSub" class="inline-flex items-center gap-2 rounded-full border border-emerald-400/40 bg-emerald-400/10 text-emerald-300 px-4 py-1.5 text-sm font-semibold"><i class="fa-solid fa-circle text-[7px]"></i>باقات الاشتراكات</span>
+<h2 id="priceTitle" class="font-bold text-white mt-5">اختر الباقة المناسبة لاحتياجاتك</h2><div class="w-20 h-1.5 rounded-full bg-emerald-400 mt-4 mb-5 mx-auto"></div>
+<p id="priceDesc" class="text-slate-400 text-lg mb-8">باقات مرنة ومصممة خصيصاً لتناسب المتدربين وأصحاب الصالات الرياضية.</p>
+<div class="inline-flex items-center gap-2 bg-black p-1.5 rounded-2xl border border-emerald-400/30">
+<button id="btnMonthly" onclick="togglePricing('monthly')" class="px-5 py-2 rounded-xl text-xs font-bold transition bg-emerald-500 text-slate-950">شهري</button>
+<button id="btnYearly" onclick="togglePricing('yearly')" class="px-5 py-2 rounded-xl text-xs font-bold transition text-slate-400 hover:text-white flex items-center gap-1">سنوي <span class="bg-emerald-500/20 text-emerald-400 text-[10px] px-2 py-0.5 rounded-full">خصم 20%</span></button></div></div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6 items-stretch">
+<div class="bg-white/[0.04] backdrop-blur border border-white/15 p-8 rounded-3xl flex flex-col justify-between md:my-6"><div>
+<h3 id="p1Title" class="text-xl font-bold text-white mb-2">باقة المتدرب</h3><p id="p1Desc" class="text-slate-400 text-sm mb-6">للأفراد الراغبين في متابعة خططهم الرياضية والتغذية.</p>
+<div id="p1Tag" class="text-3xl font-black text-emerald-400 mb-6">مجاناً <span class="text-xs text-slate-400 font-normal">/ لفترة محدودة</span></div>
+<ul class="space-y-3 text-sm text-slate-300 mb-8"><li class="flex items-center gap-3"><i class="fa-solid fa-check text-emerald-400"></i><span id="p1Item1">خطط تمرين وتغذية ذكية</span></li><li class="flex items-center gap-3"><i class="fa-solid fa-check text-emerald-400"></i><span id="p1Item2">متابعة أسبوعية للتقدم</span></li><li class="flex items-center gap-3"><i class="fa-solid fa-check text-emerald-400"></i><span id="p1Item3">دعم فني أساسي</span></li></ul></div>
+<button onclick="openModal('signup')" id="p1Btn" class="w-full border border-emerald-400/50 hover:bg-emerald-400/10 py-3 rounded-full font-bold transition text-sm">اشترك الآن</button></div>
+<div class="relative bg-gradient-to-b from-emerald-400 to-emerald-600 text-slate-950 p-8 rounded-3xl flex flex-col justify-between shadow-2xl shadow-emerald-500/30"><div>
+<div id="popularBadge" class="absolute -top-3 start-1/2 -translate-x-1/2 rtl:translate-x-1/2 bg-black text-emerald-300 text-xs font-bold px-4 py-1 rounded-full whitespace-nowrap">الأكثر طلباً</div>
+<h3 id="p2Title" class="text-xl font-bold mb-2">باقة الصالات الرياضية (Gyms)</h3><p id="p2Desc" class="text-slate-900/70 text-sm mb-6">لإدارة الفروع، المدربين، والاشتراكات بكفاءة.</p>
+<div id="gymPrice" class="text-3xl font-black mb-6">حسب الطلب</div>
+<ul class="space-y-3 text-sm font-medium mb-8"><li class="flex items-center gap-3"><i class="fa-solid fa-check text-slate-950"></i><span id="p2Item1">ربط شامل لجميع فروع الجيم</span></li><li class="flex items-center gap-3"><i class="fa-solid fa-check text-slate-950"></i><span id="p2Item2">لوحة تحكم كاملة للمدربين</span></li><li class="flex items-center gap-3"><i class="fa-solid fa-check text-slate-950"></i><span id="p2Item3">تقارير مالية وإدارية دقيقة</span></li><li class="flex items-center gap-3"><i class="fa-solid fa-check text-slate-950"></i><span id="p2Item4">دعم فني مخصص على مدار الساعة</span></li></ul></div>
+<a href="#contact" id="p2Btn" class="block w-full bg-black hover:bg-slate-900 text-white text-center py-3 rounded-full font-bold transition text-sm">تواصل مع المبيعات</a></div>
+<div class="bg-white/[0.04] backdrop-blur border border-white/15 p-8 rounded-3xl flex flex-col justify-between md:my-6"><div>
+<h3 id="p3Title" class="text-xl font-bold text-white mb-2">باقة المدرب المعتمد</h3><p id="p3Desc" class="text-slate-400 text-sm mb-6">للكباتن وأخصائيي التغذية لإدارة عملائهم.</p>
+<div id="p3Tag" class="text-3xl font-black text-emerald-400 mb-6">مخصص</div>
+<ul class="space-y-3 text-sm text-slate-300 mb-8"><li class="flex items-center gap-3"><i class="fa-solid fa-check text-emerald-400"></i><span id="p3Item1">إدارة المحفظة الخاصة بالعملاء</span></li><li class="flex items-center gap-3"><i class="fa-solid fa-check text-emerald-400"></i><span id="p3Item2">مراجعة واعتماد مسودات الذكاء الاصطناعي</span></li><li class="flex items-center gap-3"><i class="fa-solid fa-check text-emerald-400"></i><span id="p3Item3">جدولة المواعيد والاستشارات</span></li></ul></div>
+<button onclick="openModal('signup')" id="p3Btn" class="w-full border border-emerald-400/50 hover:bg-emerald-400/10 py-3 rounded-full font-bold transition text-sm">انضم كمدرب</button></div>
+</div></div></section>
+<div aria-hidden="true" style="height:3px;background:linear-gradient(90deg,transparent,#10D9A0,transparent);box-shadow:0 0 18px #10D9A088"></div>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div class="bg-slate-900 border border-slate-800 p-8 rounded-3xl hover:border-emerald-500/50 transition ltr:text-left rtl:text-right">
-                    <div class="w-14 h-14 bg-emerald-500/10 text-emerald-400 rounded-2xl flex items-center justify-center text-2xl mb-6"><i class="fa-solid fa-robot"></i></div>
-                    <h3 id="f1Title" class="text-xl font-bold mb-3">خطط ذكية مخصصة</h3>
-                    <p id="f1Desc" class="text-slate-400 text-sm leading-relaxed">برامج تمرين وتغذية مصممة خصيصاً لتناسب هدفك الشخصي ومستوى لياقتك البدنية بكل دقة.</p>
-                </div>
-                <div class="bg-slate-900 border border-slate-800 p-8 rounded-3xl hover:border-blue-500/50 transition ltr:text-left rtl:text-right">
-                    <div class="w-14 h-14 bg-blue-500/10 text-blue-400 rounded-2xl flex items-center justify-center text-2xl mb-6"><i class="fa-solid fa-user-check"></i></div>
-                    <h3 id="f2Title" class="text-xl font-bold mb-3">إشراف وتوجيه احترافي</h3>
-                    <p id="f2Desc" class="text-slate-400 text-sm leading-relaxed">متابعة مستمرة وتوجيه مباشر من مدربين معتمدين لضمان تنفيذ التمارين بالشكل الصحيح.</p>
-                </div>
-                <div class="bg-slate-900 border border-slate-800 p-8 rounded-3xl hover:border-purple-500/50 transition ltr:text-left rtl:text-right">
-                    <div class="w-14 h-14 bg-purple-500/10 text-purple-400 rounded-2xl flex items-center justify-center text-2xl mb-6"><i class="fa-solid fa-chart-line"></i></div>
-                    <h3 id="f3Title" class="text-xl font-bold mb-3">تقارير ومتابعة أسبوعية</h3>
-                    <p id="f3Desc" class="text-slate-400 text-sm leading-relaxed">تتبع دوري للقياسات والنتائج لمعرفة مدى تقدمك وتحقيق أهدافك بصورة أسرع وأكثر فعالية.</p>
-                </div>
-                <div class="bg-slate-900 border border-slate-800 p-8 rounded-3xl hover:border-amber-500/50 transition ltr:text-left rtl:text-right">
-                    <div class="w-14 h-14 bg-amber-500/10 text-amber-400 rounded-2xl flex items-center justify-center text-2xl mb-6"><i class="fa-solid fa-shield-halved"></i></div>
-                    <h3 id="f4Title" class="text-xl font-bold mb-3">معايير أمان صارمة</h3>
-                    <p id="f4Desc" class="text-slate-400 text-sm leading-relaxed">فحص آلي ومراجعة بشرية صارمة لضمان خلو الخطط الرياضية من أي مخاطر أو إصابات محتملة.</p>
-                </div>
-                <div class="bg-slate-900 border border-slate-800 p-8 rounded-3xl hover:border-rose-500/50 transition ltr:text-left rtl:text-right">
-                    <div class="w-14 h-14 bg-rose-500/10 text-rose-400 rounded-2xl flex items-center justify-center text-2xl mb-6"><i class="fa-solid fa-dumbbell"></i></div>
-                    <h3 id="f5Title" class="text-xl font-bold mb-3">تطابق مع أجهزة الجيم</h3>
-                    <p id="f5Desc" class="text-slate-400 text-sm leading-relaxed">اختيار التمارين المتاحة آلياً بناءً على الأجهزة والآلات الفعلية المتوفرة داخل الصالة الرياضية.</p>
-                </div>
-                <div class="bg-slate-900 border border-slate-800 p-8 rounded-3xl hover:border-cyan-500/50 transition ltr:text-left rtl:text-right">
-                    <div class="w-14 h-14 bg-cyan-500/10 text-cyan-400 rounded-2xl flex items-center justify-center text-2xl mb-6"><i class="fa-solid fa-clock-rotate-left"></i></div>
-                    <h3 id="f6Title" class="text-xl font-bold mb-3">أرشيف وتاريخ صحي موحد</h3>
-                    <p id="f6Desc" class="text-slate-400 text-sm leading-relaxed">ملف رقمي شامل لا يضيع أبداً حتى عند انتقالك أو اشتراكك في فروع أو صالات رياضية جديدة.</p>
-                </div>
-            </div>
-        </div>
-    </section>
+<!-- 7) المعرض: سلايدر أفقي بعرض الصفحة مع تكبير الصورة -->
+<section id="gallery" class="bg-[#0A1F15] sec overflow-hidden">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="text-center mx-auto max-w-3xl mb-14"><span id="galSub" class="inline-flex items-center gap-2 rounded-full border border-emerald-400/40 bg-emerald-400/10 text-emerald-300 px-4 py-1.5 text-sm font-semibold"><i class="fa-solid fa-circle text-[7px]"></i>معرض الصور</span><h2 id="galTitle" class="font-bold text-white mt-5">جولة داخل المنظومة والصالات الشريكة</h2><div class="w-20 h-1.5 rounded-full bg-emerald-400 mt-4 mb-5 mx-auto"></div><p id="galDesc" class="text-slate-400 text-lg">لقطات حية تعكس احترافية التجهيزات وبيئة العمل المتطورة.</p></div></div>
+<div>
+<div id="galTrack" class="noscroll flex items-start gap-5 overflow-x-auto snap-x snap-mandatory px-4 sm:px-8 pb-12 pt-2"><button type="button" data-src="https://images.unsplash.com/photo-1540497077202-7c8a3999166f?auto=format&fit=crop&w=1400&q=80" aria-label="Gym 1" class="gal group snap-center shrink-0 w-64 sm:w-72 h-[22rem] sm:h-[26rem] rounded-[2rem] overflow-hidden relative border border-emerald-400/30 "><img src="https://images.unsplash.com/photo-1540497077202-7c8a3999166f?auto=format&fit=crop&w=600&q=75" alt="Gym 1" loading="lazy" class="w-full h-full object-cover group-hover:scale-110 transition duration-700"><span class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></span><span class="absolute bottom-4 end-4 w-10 h-10 rounded-full bg-emerald-400 text-slate-950 flex items-center justify-center opacity-0 group-hover:opacity-100 transition"><i class="fa-solid fa-expand"></i></span></button><button type="button" data-src="https://images.unsplash.com/photo-1517838277536-f5f99be501cd?auto=format&fit=crop&w=1400&q=80" aria-label="Gym 2" class="gal group snap-center shrink-0 w-64 sm:w-72 h-[22rem] sm:h-[26rem] rounded-[2rem] overflow-hidden relative border border-emerald-400/30 sm:mt-10"><img src="https://images.unsplash.com/photo-1517838277536-f5f99be501cd?auto=format&fit=crop&w=600&q=75" alt="Gym 2" loading="lazy" class="w-full h-full object-cover group-hover:scale-110 transition duration-700"><span class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></span><span class="absolute bottom-4 end-4 w-10 h-10 rounded-full bg-emerald-400 text-slate-950 flex items-center justify-center opacity-0 group-hover:opacity-100 transition"><i class="fa-solid fa-expand"></i></span></button><button type="button" data-src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=1400&q=80" aria-label="Gym 3" class="gal group snap-center shrink-0 w-64 sm:w-72 h-[22rem] sm:h-[26rem] rounded-[2rem] overflow-hidden relative border border-emerald-400/30 "><img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=600&q=75" alt="Gym 3" loading="lazy" class="w-full h-full object-cover group-hover:scale-110 transition duration-700"><span class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></span><span class="absolute bottom-4 end-4 w-10 h-10 rounded-full bg-emerald-400 text-slate-950 flex items-center justify-center opacity-0 group-hover:opacity-100 transition"><i class="fa-solid fa-expand"></i></span></button><button type="button" data-src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&fit=crop&w=1400&q=80" aria-label="Gym 4" class="gal group snap-center shrink-0 w-64 sm:w-72 h-[22rem] sm:h-[26rem] rounded-[2rem] overflow-hidden relative border border-emerald-400/30 sm:mt-10"><img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&fit=crop&w=600&q=75" alt="Gym 4" loading="lazy" class="w-full h-full object-cover group-hover:scale-110 transition duration-700"><span class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></span><span class="absolute bottom-4 end-4 w-10 h-10 rounded-full bg-emerald-400 text-slate-950 flex items-center justify-center opacity-0 group-hover:opacity-100 transition"><i class="fa-solid fa-expand"></i></span></button><button type="button" data-src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?auto=format&fit=crop&w=1400&q=80" aria-label="Gym 5" class="gal group snap-center shrink-0 w-64 sm:w-72 h-[22rem] sm:h-[26rem] rounded-[2rem] overflow-hidden relative border border-emerald-400/30 "><img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?auto=format&fit=crop&w=600&q=75" alt="Gym 5" loading="lazy" class="w-full h-full object-cover group-hover:scale-110 transition duration-700"><span class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></span><span class="absolute bottom-4 end-4 w-10 h-10 rounded-full bg-emerald-400 text-slate-950 flex items-center justify-center opacity-0 group-hover:opacity-100 transition"><i class="fa-solid fa-expand"></i></span></button><button type="button" data-src="https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?auto=format&fit=crop&w=1400&q=80" aria-label="Gym 6" class="gal group snap-center shrink-0 w-64 sm:w-72 h-[22rem] sm:h-[26rem] rounded-[2rem] overflow-hidden relative border border-emerald-400/30 sm:mt-10"><img src="https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?auto=format&fit=crop&w=600&q=75" alt="Gym 6" loading="lazy" class="w-full h-full object-cover group-hover:scale-110 transition duration-700"><span class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></span><span class="absolute bottom-4 end-4 w-10 h-10 rounded-full bg-emerald-400 text-slate-950 flex items-center justify-center opacity-0 group-hover:opacity-100 transition"><i class="fa-solid fa-expand"></i></span></button></div>
+<div class="flex justify-center gap-3">
+<button id="galPrev" type="button" aria-label="Previous" class="w-12 h-12 rounded-full border border-emerald-400/50 text-emerald-400 hover:bg-emerald-400 hover:text-slate-950 transition"><i class="fa-solid fa-chevron-left rtl:rotate-180"></i></button>
+<button id="galNext" type="button" aria-label="Next" class="w-12 h-12 rounded-full border border-emerald-400/50 text-emerald-400 hover:bg-emerald-400 hover:text-slate-950 transition"><i class="fa-solid fa-chevron-right rtl:rotate-180"></i></button></div></div></section>
+<div aria-hidden="true" style="height:3px;background:linear-gradient(90deg,transparent,#10D9A0,transparent);box-shadow:0 0 18px #10D9A088"></div>
 
-    <!-- الخدمات -->
-    <section id="services" class="py-20 bg-slate-900/50 border-t border-slate-800/60">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-3xl mx-auto mb-16">
-                <span id="servSub" class="text-emerald-400 text-sm font-bold uppercase">الخدمات التي نقدمها</span>
-                <h2 id="servTitle" class="font-extrabold mt-2 mb-4">حلول شاملة ومتكاملة لقطاع اللياقة</h2>
-                <p id="servDesc" class="text-slate-400">نقدم منظومة خدمات متطورة تلبي احتياجات الصالات الرياضية، المدربين، والأعضاء بكفاءة عالية.</p>
-            </div>
+<!-- 8) العملاء: تدرج أخضر → أسود، اقتباس رئيسي أخضر -->
+<section id="clients" class="bg-gradient-to-b from-[#13472F] to-black sec">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="text-center mx-auto max-w-3xl mb-14"><span id="cliSub" class="inline-flex items-center gap-2 rounded-full border border-emerald-400/40 bg-emerald-400/10 text-emerald-300 px-4 py-1.5 text-sm font-semibold"><i class="fa-solid fa-circle text-[7px]"></i>شركاء النجاح</span><h2 id="cliTitle" class="font-bold text-white mt-5">آراء عملائنا وقصص النجاح</h2><div class="w-20 h-1.5 rounded-full bg-emerald-400 mt-4 mb-5 mx-auto"></div><p id="cliDesc" class="text-slate-400 text-lg">تعرف على تجارب من استعملوا المنظومة وحققوا نتائج مذهلة.</p></div>
+<div class="grid lg:grid-cols-2 gap-6 mb-14">
+<div class="lg:row-span-2 bg-emerald-400 text-slate-950 rounded-3xl p-8 flex flex-col justify-between"><div class="flex gap-1 mb-4 text-slate-950"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div><p id="t1Text" class="text-xl sm:text-3xl font-bold leading-relaxed mb-8">"المنصة ساعدتني كثيراً في تنظيم الجيم الخاص بي ومتابعة الأعضاء بكل سهولة ويسر."</p><div class="flex items-center gap-3"><div id="t1Av" class="w-11 h-11 rounded-full bg-slate-950 text-emerald-400 flex items-center justify-center font-bold">م</div><div><h4 id="t1Name" class="font-bold">أحمد محمود</h4><p id="t1Role" class="text-sm opacity-70">مدير صالة رياضية</p></div></div></div>
+<div class="bg-white/[0.05] border border-white/10 text-slate-100 rounded-3xl p-8 flex flex-col justify-between"><div class="flex gap-1 mb-4 text-emerald-400"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div><p id="t2Text" class="text-base leading-relaxed mb-8">"أفضل تجربة مرت علي كمدربة، سهلت لي وضع البرامج التدريبية ومتابعة اللاعبين بشكل احترافي."</p><div class="flex items-center gap-3"><div id="t2Av" class="w-11 h-11 rounded-full bg-emerald-400/20 text-emerald-300 flex items-center justify-center font-bold">ك</div><div><h4 id="t2Name" class="font-bold">سارة علي</h4><p id="t2Role" class="text-sm opacity-70">مدربة لياقة بدنية</p></div></div></div>
+<div class="bg-white/[0.05] border border-white/10 text-slate-100 rounded-3xl p-8 flex flex-col justify-between"><div class="flex gap-1 mb-4 text-emerald-400"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div><p id="t3Text" class="text-base leading-relaxed mb-8">"النتائج واضحة جداً وجدول التمارين والتغذية ساعدوني أوصل لهدفي في وقت قصير."</p><div class="flex items-center gap-3"><div id="t3Av" class="w-11 h-11 rounded-full bg-emerald-400/20 text-emerald-300 flex items-center justify-center font-bold">ع</div><div><h4 id="t3Name" class="font-bold">عمر حسن</h4><p id="t3Role" class="text-sm opacity-70">عضو مشترك</p></div></div></div></div>
+<div class="text-center border-t border-emerald-400/20 pt-10"><p id="sponsorsLabel" class="text-sm text-slate-400 mb-5">الجهات الراعية وصالات اللياقة الشريكة</p>
+<div class="overflow-hidden" dir="ltr" style="-webkit-mask-image:linear-gradient(90deg,transparent,#000 10%,#000 90%,transparent);mask-image:linear-gradient(90deg,transparent,#000 10%,#000 90%,transparent)"><div class="mq flex w-max text-emerald-200/80 font-bold text-xl"><div class="flex shrink-0 gap-12 pe-12"><span class="flex items-center gap-2 whitespace-nowrap"><i class="fa-solid fa-dumbbell text-emerald-400"></i>FITNESS HUB</span><span class="flex items-center gap-2 whitespace-nowrap"><i class="fa-solid fa-fire text-emerald-400"></i>IRON GYM</span><span class="flex items-center gap-2 whitespace-nowrap"><i class="fa-solid fa-bolt text-emerald-400"></i>TITAN FITNESS</span><span class="flex items-center gap-2 whitespace-nowrap"><i class="fa-solid fa-trophy text-emerald-400"></i>OLYMPUS CLUB</span><span class="flex items-center gap-2 whitespace-nowrap"><i class="fa-solid fa-heart-pulse text-emerald-400"></i>EGYPT FIT</span></div><div class="flex shrink-0 gap-12 pe-12"><span class="flex items-center gap-2 whitespace-nowrap"><i class="fa-solid fa-dumbbell text-emerald-400"></i>FITNESS HUB</span><span class="flex items-center gap-2 whitespace-nowrap"><i class="fa-solid fa-fire text-emerald-400"></i>IRON GYM</span><span class="flex items-center gap-2 whitespace-nowrap"><i class="fa-solid fa-bolt text-emerald-400"></i>TITAN FITNESS</span><span class="flex items-center gap-2 whitespace-nowrap"><i class="fa-solid fa-trophy text-emerald-400"></i>OLYMPUS CLUB</span><span class="flex items-center gap-2 whitespace-nowrap"><i class="fa-solid fa-heart-pulse text-emerald-400"></i>EGYPT FIT</span></div></div></div></div>
+</div></section>
+<div aria-hidden="true" style="height:3px;background:linear-gradient(90deg,transparent,#10D9A0,transparent);box-shadow:0 0 18px #10D9A088"></div>
 
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="bg-slate-900 border border-slate-800 p-8 rounded-3xl ltr:text-left rtl:text-right">
-                    <div class="w-12 h-12 bg-emerald-500/10 text-emerald-400 rounded-xl flex items-center justify-center text-xl font-bold mb-6"><i class="fa-solid fa-building-user"></i></div>
-                    <h3 id="s1Title" class="text-xl font-bold mb-3">إدارة الصالات الرياضية</h3>
-                    <p id="s1Desc" class="text-slate-400 text-sm leading-relaxed">نظام متكامل لإدارة فروع الجيم، الاشتراكات، الحضور، وتوزيع العوائد المالية بكل شفافية.</p>
-                </div>
-                <div class="bg-slate-900 border border-slate-800 p-8 rounded-3xl ltr:text-left rtl:text-right">
-                    <div class="w-12 h-12 bg-blue-500/10 text-blue-400 rounded-xl flex items-center justify-center text-xl font-bold mb-6"><i class="fa-solid fa-utensils"></i></div>
-                    <h3 id="s2Title" class="text-xl font-bold mb-3">التغذية والبرامج الغذائية</h3>
-                    <p id="s2Desc" class="text-slate-400 text-sm leading-relaxed">تصميم الحصص السعرية، السعرات الحرارية، والوجبات الغذائية المناسبة لهدف كل مشترك بإشراف مختصين.</p>
-                </div>
-                <div class="bg-slate-900 border border-slate-800 p-8 rounded-3xl ltr:text-left rtl:text-right">
-                    <div class="w-12 h-12 bg-purple-500/10 text-purple-400 rounded-xl flex items-center justify-center text-xl font-bold mb-6"><i class="fa-solid fa-stethoscope"></i></div>
-                    <h3 id="s3Title" class="text-xl font-bold mb-3">المتابعة الطبية وتحليل المجلدات</h3>
-                    <p id="s3Desc" class="text-slate-400 text-sm leading-relaxed">قراءة وتحليل التقارير الطبية والقياسات الحيوية عبر تقنيات OCR مع مراقبة أسباب الإصابات والتصعيد الفوري.</p>
-                </div>
-            </div>
-        </div>
-    </section>
+<!-- 9) المدونة: مقال رئيسي كبير + مقالين جانبيين -->
+<section id="blog" class="bg-gradient-to-b from-black to-[#0A1F15] sec">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="text-center mx-auto max-w-3xl mb-14"><span id="blogSub" class="inline-flex items-center gap-2 rounded-full border border-emerald-400/40 bg-emerald-400/10 text-emerald-300 px-4 py-1.5 text-sm font-semibold"><i class="fa-solid fa-circle text-[7px]"></i>المدونة والنصائح</span><h2 id="blogTitle" class="font-bold text-white mt-5">أحدث المقالات والنصائح الرياضية</h2><div class="w-20 h-1.5 rounded-full bg-emerald-400 mt-4 mb-5 mx-auto"></div><p id="blogDesc" class="text-slate-400 text-lg">محتوى تثقفي احترافي لمساعدتك على فهم التغذية والتمارين بصورة أفضل.</p></div>
+<div class="grid lg:grid-cols-5 gap-6">
+<article class="lg:col-span-3 group rounded-[2rem] overflow-hidden border border-emerald-400/30 bg-[#0E2C1F]/60 flex flex-col"><div class="overflow-hidden"><img src="https://images.unsplash.com/photo-1517838277536-f5f99be501cd?auto=format&fit=crop&w=900&q=75" alt="Blog 1" loading="lazy" class="w-full h-64 sm:h-80 object-cover group-hover:scale-105 transition duration-700"></div><div class="p-6 sm:p-8"><span id="b1Cat" class="inline-block bg-emerald-400 text-slate-950 text-xs font-bold px-3 py-1 rounded-full">التغذية السليمة</span><h3 id="b1Title" class="text-2xl sm:text-3xl font-bold text-white mt-4 mb-3">أهمية حساب السعرات الحرارية للوصول للوزن المثالي</h3><p id="b1Desc" class="text-slate-300 text-lg">كيف تؤثر الماكروز (البروتين والكربوهيدرات والدهون) على تطور عضلاتك وحرق الدهون.</p><i class="fa-solid fa-arrow-left rtl:inline ltr:hidden text-emerald-400 mt-4"></i><i class="fa-solid fa-arrow-right ltr:inline rtl:hidden text-emerald-400 mt-4"></i></div></article>
+<div class="lg:col-span-2 flex flex-col gap-6">
+<article class="group flex-1 flex items-stretch rounded-3xl border border-white/10 bg-white/[0.04] hover:border-emerald-400/50 transition overflow-hidden"><div class="w-32 sm:w-40 shrink-0 overflow-hidden"><img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=400&q=75" alt="Blog 2" loading="lazy" class="w-full h-full min-h-[9rem] object-cover group-hover:scale-110 transition duration-500"></div><div class="p-5"><span id="b2Cat" class="text-emerald-300 text-sm font-bold">التمارين الرياضية</span><h3 id="b2Title" class="font-bold text-lg text-white mt-1 mb-1">لماذا تعد تمارين المقاومة أساسية للياقة البدنية؟</h3><p id="b2Desc" class="text-slate-400 text-sm">تعرف على دور رفع الأشرطة والأوزان في بناء القوة العضلية وتحسين صحة العظام.</p></div></article>
+<article class="group flex-1 flex items-stretch rounded-3xl border border-white/10 bg-white/[0.04] hover:border-emerald-400/50 transition overflow-hidden"><div class="w-32 sm:w-40 shrink-0 overflow-hidden"><img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&fit=crop&w=400&q=75" alt="Blog 3" loading="lazy" class="w-full h-full min-h-[9rem] object-cover group-hover:scale-110 transition duration-500"></div><div class="p-5"><span id="b3Cat" class="text-emerald-300 text-sm font-bold">الذكاء الاصطناعي</span><h3 id="b3Title" class="font-bold text-lg text-white mt-1 mb-1">دور الذكاء الاصطناعي والإشراف البشري في الرياضة</h3><p id="b3Desc" class="text-slate-400 text-sm">كيف تضمن المنظومة دقة البرامج التدريبية مع حمايتك التامة من الإصابات.</p></div></article></div></div></div></section>
+<div aria-hidden="true" style="height:3px;background:linear-gradient(90deg,transparent,#10D9A0,transparent);box-shadow:0 0 18px #10D9A088"></div>
 
-    <!-- الباقات -->
-    <section id="pricing" class="py-20 bg-slate-950 border-t border-slate-800/60">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-3xl mx-auto mb-12">
-                <span id="priceSub" class="text-emerald-400 text-sm font-bold uppercase">باقات الاشتراكات</span>
-                <h2 id="priceTitle" class="font-extrabold mt-2 mb-4">اختر الباقة المناسبة لاحتياجاتك</h2>
-                <p id="priceDesc" class="text-slate-400 mb-6">باقات مرنة ومصممة خصيصاً لتناسب المتدربين وأصحاب الصالات الرياضية.</p>
+<!-- 10) التطبيق: أخضر ساطع بنص أسود وهاتف -->
+<section class="bg-gradient-to-br from-emerald-300 via-emerald-400 to-emerald-600 text-slate-950 sec overflow-hidden">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-2 gap-12 items-center">
+<div><span id="appSub" class="inline-flex items-center gap-2 rounded-full bg-black text-emerald-300 px-4 py-1.5 text-sm font-semibold"><i class="fa-solid fa-mobile-screen"></i>تطبيق الجوال</span>
+<h2 id="appTitle" class="font-bold mt-5">تابع تمارينك وتغذيتك أينما كنت</h2><div class="w-20 h-1.5 rounded-full bg-black mt-4 mb-5"></div>
+<p id="appDesc" class="text-slate-900/80 text-lg mb-8 max-w-xl">قم بتحميل تطبيق SFNE FITAI على هاتفك الذكي واستمتع بمتابعة خطتك اليومية، تسجيل الأوزان، والتواصل المباشر مع مدربك في أي وقت.</p>
+<div class="flex flex-wrap gap-4">
+<button class="bg-black hover:bg-slate-900 text-white px-6 py-3 rounded-2xl flex items-center gap-3 transition"><i class="fa-brands fa-apple text-3xl"></i><div class="text-start"><p id="appStoreSub" class="text-[11px] text-slate-400 leading-tight">تحميل من</p><p class="text-sm font-bold">App Store</p></div></button>
+<button class="bg-black hover:bg-slate-900 text-white px-6 py-3 rounded-2xl flex items-center gap-3 transition"><i class="fa-brands fa-google-play text-2xl text-emerald-400"></i><div class="text-start"><p id="playStoreSub" class="text-[11px] text-slate-400 leading-tight">حمل من</p><p class="text-sm font-bold">Google Play</p></div></button></div></div>
+<div class="flex justify-center"><div class="w-56 sm:w-64 rounded-[2.5rem] bg-black p-3 shadow-2xl rotate-3"><div class="rounded-[2rem] overflow-hidden bg-gradient-to-b from-[#0F3A28] to-black text-white p-5 h-[380px] sm:h-[440px] flex flex-col gap-4"><div class="flex items-center justify-between"><span id="appUiTitle" class="font-bold">خطة اليوم</span><i class="fa-solid fa-bell text-emerald-400"></i></div><div class="flex items-center gap-4"><svg viewBox="0 0 36 36" class="w-20 h-20 -rotate-90" aria-hidden="true"><circle cx="18" cy="18" r="15.9" fill="none" stroke="#ffffff22" stroke-width="3.5"/><circle cx="18" cy="18" r="15.9" fill="none" stroke="#10D9A0" stroke-width="3.5" stroke-linecap="round" stroke-dasharray="75 100"/></svg><span id="appUiProg" class="font-bold text-emerald-300">75% مكتمل</span></div><div class="flex items-center gap-3 bg-white/10 rounded-2xl p-3 text-sm"><i class="fa-solid fa-circle-check text-emerald-400"></i><span id="appUiW1">تمرين الصدر</span></div><div class="flex items-center gap-3 bg-white/10 rounded-2xl p-3 text-sm"><i class="fa-solid fa-circle-check text-emerald-400"></i><span id="appUiW2">وجبة غنية بالبروتين</span></div><div class="flex items-center gap-3 bg-white/10 rounded-2xl p-3 text-sm"><i class="fa-regular fa-circle text-slate-500"></i><span id="appUiW3">شرب 3 لتر ماء</span></div><div class="mt-auto flex justify-around text-slate-400 text-lg border-t border-white/10 pt-3"><i class="fa-solid fa-house text-emerald-400"></i><i class="fa-solid fa-dumbbell"></i><i class="fa-solid fa-utensils"></i><i class="fa-solid fa-user"></i></div></div></div></div>
+</div></section>
+<div aria-hidden="true" style="height:3px;background:linear-gradient(90deg,transparent,#10D9A0,transparent);box-shadow:0 0 18px #10D9A088"></div>
 
-                <div class="inline-flex items-center gap-3 bg-slate-900 p-1.5 rounded-2xl border border-slate-800">
-                    <button id="btnMonthly" onclick="togglePricing('monthly')" class="px-5 py-2 rounded-xl text-xs font-bold transition bg-emerald-500 text-slate-950">شهري</button>
-                    <button id="btnYearly" onclick="togglePricing('yearly')" class="px-5 py-2 rounded-xl text-xs font-bold transition text-slate-400 hover:text-white flex items-center gap-1">
-                        سنوي <span class="bg-emerald-500/20 text-emerald-400 text-[10px] px-2 py-0.5 rounded-full">خصم 20%</span>
-                    </button>
-                </div>
-            </div>
+<!-- 11) التواصل: أخضر داكن بشبكة ونموذج زجاجي -->
+<section id="contact" class="bg-[#0E2C1F] grid-bg sec">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-2 gap-12 items-center">
+<div><span id="cntSub" class="inline-flex items-center gap-2 rounded-full border border-emerald-400/40 bg-emerald-400/10 text-emerald-300 px-4 py-1.5 text-sm font-semibold"><i class="fa-solid fa-circle text-[7px]"></i>تواصل معنا</span>
+<h2 id="cntTitle" class="font-bold text-white mt-5">يسعدنا تواصلك معنا في أي وقت</h2><div class="w-20 h-1.5 rounded-full bg-emerald-400 mt-4 mb-5"></div>
+<p id="cntDesc" class="text-slate-300 text-lg mb-8">سواء كنت صاحب صالة رياضية تبحث عن تطوير نظامك، أو مشتركاً جديداً، فريقنا جاهز للإجابة على كافة استفساراتك.</p>
+<div class="space-y-4 text-white">
+<div class="flex items-center gap-4"><div class="w-12 h-12 rounded-full border-2 border-emerald-400 flex items-center justify-center text-emerald-400"><i class="fa-solid fa-envelope"></i></div><span dir="ltr">info@sfne-fitai.com</span></div>
+<div class="flex items-center gap-4"><div class="w-12 h-12 rounded-full border-2 border-emerald-400 flex items-center justify-center text-emerald-400"><i class="fa-solid fa-phone"></i></div><span dir="ltr">+20 100 000 0000</span></div></div></div>
+<div class="bg-black/60 backdrop-blur-md border border-emerald-400/30 p-6 sm:p-8 rounded-[2rem]">
+<form class="space-y-4" onsubmit="event.preventDefault(); alert(currentLang === 'ar' ? 'تم إرسال رسالتك بنجاح!' : 'Your message was sent successfully!');">
+<div><label id="lblFullName" for="inpName" class="block text-sm font-semibold text-slate-300 mb-2">الاسم بالكامل</label><input id="inpName" type="text" required placeholder="أدخل اسمك" class="w-full bg-black/60 border border-emerald-400/30 px-4 py-3 rounded-xl focus:outline-none focus:border-emerald-400 text-white"></div>
+<div><label id="lblEmailPhone" for="inpContact" class="block text-sm font-semibold text-slate-300 mb-2">البريد الإلكتروني / الهاتف</label><input id="inpContact" type="text" required placeholder="أدخل بريدك أو رقمك" class="w-full bg-black/60 border border-emerald-400/30 px-4 py-3 rounded-xl focus:outline-none focus:border-emerald-400 text-white"></div>
+<div><label id="lblMsg" for="inpMsg" class="block text-sm font-semibold text-slate-300 mb-2">الرسالة</label><textarea id="inpMsg" rows="4" required placeholder="كيف يمكننا مساعدتك؟" class="w-full bg-black/60 border border-emerald-400/30 px-4 py-3 rounded-xl focus:outline-none focus:border-emerald-400 text-white"></textarea></div>
+<button type="submit" id="btnSendMsg" class="w-full bg-emerald-400 hover:bg-emerald-300 text-slate-950 font-bold py-3.5 rounded-full transition">إرسال الرسالة</button></form></div>
+</div></section>
+<div aria-hidden="true" style="height:3px;background:linear-gradient(90deg,transparent,#10D9A0,transparent);box-shadow:0 0 18px #10D9A088"></div>
 
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="bg-slate-900 border border-slate-800 p-8 rounded-3xl flex flex-col justify-between ltr:text-left rtl:text-right">
-                    <div>
-                        <h3 id="p1Title" class="text-xl font-bold mb-2">باقة المتدرب</h3>
-                        <p id="p1Desc" class="text-slate-400 text-sm mb-6">للأفراد الراغبين في متابعة خططهم الرياضية والتغذية.</p>
-                        <div id="p1Tag" class="text-3xl font-black text-emerald-400 mb-6">مجاناً <span class="text-xs text-slate-400 font-normal">/ لفترة محدودة</span></div>
-                        <ul class="space-y-3 text-sm text-slate-300 mb-8">
-                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400"></i> <span id="p1Item1">خطط تمرين وتغذية ذكية</span></li>
-                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400"></i> <span id="p1Item2">متابعة أسبوعية للتقدم</span></li>
-                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400"></i> <span id="p1Item3">دعم فني أساسي</span></li>
-                        </ul>
-                    </div>
-                    <button onclick="openModal('signup')" id="p1Btn" class="w-full bg-slate-800 hover:bg-slate-700 text-center py-3 rounded-xl font-bold transition text-sm">اشترك الآن</button>
-                </div>
+<!-- 12) الدعم: أسود، أكورديون -->
+<section id="support" class="bg-[#04120C] sec">
+<div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="text-center mx-auto max-w-3xl mb-14"><span id="supSub" class="inline-flex items-center gap-2 rounded-full border border-emerald-400/40 bg-emerald-400/10 text-emerald-300 px-4 py-1.5 text-sm font-semibold"><i class="fa-solid fa-circle text-[7px]"></i>الدعم الفني والأسئلة</span><h2 id="supTitle" class="font-bold text-white mt-5">الأسئلة الشائعة والدعم الفني</h2><div class="w-20 h-1.5 rounded-full bg-emerald-400 mt-4 mb-5 mx-auto"></div><p id="supDesc" class="text-slate-400 text-lg">إجابات واضحة ومقسمة لاحتياجات الأعضاء، المدربين، وصالات الجيم.</p></div>
+<div class="space-y-4 mb-12">
+<details class="group bg-white/[0.04] border border-white/10 border-s-4 border-s-emerald-400 rounded-2xl p-6 open:bg-emerald-400/10"><summary class="cursor-pointer list-none flex items-center justify-between gap-4"><div><span id="q1Role" class="text-sm text-emerald-300 font-bold">للأعضاء والمتدربين</span><h3 id="q1Title" class="font-bold text-lg text-white mt-1">كيف يمكنني البدء في استخدام المنصة؟</h3></div><i class="fa-solid fa-chevron-down text-emerald-400 transition group-open:rotate-180"></i></summary><p id="q1Desc" class="text-slate-400 leading-relaxed mt-4">يمكنك التسجيل مباشرة عبر الضغط على "إنشاء حساب" أو التواصل معنا لتفعيل حسابك الشخصي.</p></details>
+<details class="group bg-white/[0.04] border border-white/10 border-s-4 border-s-emerald-400 rounded-2xl p-6 open:bg-emerald-400/10"><summary class="cursor-pointer list-none flex items-center justify-between gap-4"><div><span id="q2Role" class="text-sm text-emerald-300 font-bold">للمدربين والكباتن</span><h3 id="q2Title" class="font-bold text-lg text-white mt-1">كيف أراجع خطط الذكاء الاصطناعي؟</h3></div><i class="fa-solid fa-chevron-down text-emerald-400 transition group-open:rotate-180"></i></summary><p id="q2Desc" class="text-slate-400 leading-relaxed mt-4">يتيح النظام لوحة تحكم مخصصة للمدرب المعتمد لمراجعة وتعديل واعتماد مسودات التمارين والتغذية بكل سهولة.</p></details>
+<details class="group bg-white/[0.04] border border-white/10 border-s-4 border-s-emerald-400 rounded-2xl p-6 open:bg-emerald-400/10"><summary class="cursor-pointer list-none flex items-center justify-between gap-4"><div><span id="q3Role" class="text-sm text-emerald-300 font-bold">لأصحاب الصالات الرياضية</span><h3 id="q3Title" class="font-bold text-lg text-white mt-1">كيف يتم ربط الفروع وتوزيع العوائد؟</h3></div><i class="fa-solid fa-chevron-down text-emerald-400 transition group-open:rotate-180"></i></summary><p id="q3Desc" class="text-slate-400 leading-relaxed mt-4">توفر المنظومة نظام متكامل لإدارة فروع الجيم، الاشتراكات، والتقارير المالية بدقة واحترافية عالية.</p></details>
+<details class="group bg-white/[0.04] border border-white/10 border-s-4 border-s-emerald-400 rounded-2xl p-6 open:bg-emerald-400/10"><summary class="cursor-pointer list-none flex items-center justify-between gap-4"><div><span id="q4Role" class="text-sm text-emerald-300 font-bold">للجميع</span><h3 id="q4Title" class="font-bold text-lg text-white mt-1">هل بياناتي الصحية في أمان؟</h3></div><i class="fa-solid fa-chevron-down text-emerald-400 transition group-open:rotate-180"></i></summary><p id="q4Desc" class="text-slate-400 leading-relaxed mt-4">نحافظ على خصوصية بياناتك، ولا يطلع عليها إلا أنت ومدربك المعتمد.</p></details>
+<details class="group bg-white/[0.04] border border-white/10 border-s-4 border-s-emerald-400 rounded-2xl p-6 open:bg-emerald-400/10"><summary class="cursor-pointer list-none flex items-center justify-between gap-4"><div><span id="q5Role" class="text-sm text-emerald-300 font-bold">للمتدربين</span><h3 id="q5Title" class="font-bold text-lg text-white mt-1">هل أستطيع استخدام المنصة بدون مدرب؟</h3></div><i class="fa-solid fa-chevron-down text-emerald-400 transition group-open:rotate-180"></i></summary><p id="q5Desc" class="text-slate-400 leading-relaxed mt-4">نعم، يمكنك البدء بالخطط الذكية وطلب مراجعة مدرب معتمد في أي وقت.</p></details></div>
+<div class="bg-gradient-to-r from-emerald-400/20 to-emerald-700/10 border border-emerald-400/40 p-8 rounded-3xl text-center">
+<i class="fa-solid fa-headset text-4xl text-emerald-400 mb-4"></i>
+<h3 id="supCardTitle" class="text-xl font-bold text-white mb-2">هل تواجه أي مشكلة تقنية؟</h3>
+<p id="supCardDesc" class="text-slate-300 mb-6">فريق الدعم الفني جاهز لحل أي مشكلة واجهتك ومساعدتك فوراً.</p>
+<a href="mailto:support@sfne-fitai.com" id="supCardBtn" class="inline-flex items-center gap-2 bg-emerald-400 hover:bg-emerald-300 text-slate-950 font-bold px-7 py-3 rounded-full transition"><i class="fa-solid fa-paper-plane"></i> مراسلة الدعم الفني</a></div>
+</div></section>
+<div aria-hidden="true" style="height:3px;background:linear-gradient(90deg,transparent,#10D9A0,transparent);box-shadow:0 0 18px #10D9A088"></div>
 
-                <div class="bg-gradient-to-b from-slate-900 to-slate-950 border-2 border-emerald-500 p-8 rounded-3xl flex flex-col justify-between relative shadow-xl shadow-emerald-500/10 ltr:text-left rtl:text-right">
-                    <div id="popularBadge" class="absolute -top-3 left-1/2 -translate-x-1/2 bg-emerald-500 text-slate-950 text-xs font-bold px-3 py-1 rounded-full">الأكثر طلباً</div>
-                    <div>
-                        <h3 id="p2Title" class="text-xl font-bold mb-2">باقة الصالات الرياضية (Gyms)</h3>
-                        <p id="p2Desc" class="text-slate-400 text-sm mb-6">لإدارة الفروع، المدربين، والاشتراكات بكفاءة.</p>
-                        <div id="gymPrice" class="text-3xl font-black text-emerald-400 mb-6">حسب الطلب</div>
-                        <ul class="space-y-3 text-sm text-slate-300 mb-8">
-                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400"></i> <span id="p2Item1">ربط شامل لجميع فروع الجيم</span></li>
-                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400"></i> <span id="p2Item2">لوحة تحكم كاملة للمدربين</span></li>
-                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400"></i> <span id="p2Item3">تقارير مالية وإدارية دقيقة</span></li>
-                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400"></i> <span id="p2Item4">دعم فني مخصص على مدار الساعة</span></li>
-                        </ul>
-                    </div>
-                    <a href="#contact" id="p2Btn" class="w-full bg-emerald-500 hover:bg-emerald-600 text-slate-950 text-center py-3 rounded-xl font-bold transition text-sm shadow-lg shadow-emerald-500/20">تواصل مع المبيعات</a>
-                </div>
+<footer class="bg-[#020403] text-slate-400 pt-14 pb-8">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
+<div><span class="text-2xl font-black text-emerald-400 block mb-4">SFNE <span class="text-white">FITAI</span></span>
+<p id="footerDesc" class="text-sm mb-6">المنظومة الذكية الأولى لربط الصالات الرياضية، المتدربين، والمدربين بأحدث تقنيات الذكاء الاصطناعي وإشراف الخبراء.</p><div class="flex gap-3"><a href="#" aria-label="facebook-f" class="w-10 h-10 bg-white/10 hover:bg-emerald-400 hover:text-slate-950 rounded-xl flex items-center justify-center transition"><i class="fa-brands fa-facebook-f"></i></a><a href="#" aria-label="instagram" class="w-10 h-10 bg-white/10 hover:bg-emerald-400 hover:text-slate-950 rounded-xl flex items-center justify-center transition"><i class="fa-brands fa-instagram"></i></a><a href="#" aria-label="twitter" class="w-10 h-10 bg-white/10 hover:bg-emerald-400 hover:text-slate-950 rounded-xl flex items-center justify-center transition"><i class="fa-brands fa-twitter"></i></a><a href="#" aria-label="linkedin-in" class="w-10 h-10 bg-white/10 hover:bg-emerald-400 hover:text-slate-950 rounded-xl flex items-center justify-center transition"><i class="fa-brands fa-linkedin-in"></i></a></div></div>
+<div><h4 id="footerLinksTitle" class="text-white font-bold mb-4">روابط سريعة</h4><ul class="space-y-2.5 text-sm"><li><a href="#hero" class="hover:text-emerald-400 transition">الرئيسية</a></li><li><a href="#about" class="hover:text-emerald-400 transition">من نحن</a></li><li><a href="#features" class="hover:text-emerald-400 transition">المميزات</a></li><li><a href="#services" class="hover:text-emerald-400 transition">خدماتنا</a></li><li><a href="#pricing" class="hover:text-emerald-400 transition">الباقات</a></li></ul></div>
+<div><h4 id="footerServicesTitle" class="text-white font-bold mb-4">خدمات المنظومة</h4><ul class="space-y-2.5 text-sm"><li><a href="#services" class="hover:text-emerald-400 transition">إدارة الصالات الرياضية</a></li><li><a href="#services" class="hover:text-emerald-400 transition">التغذية والبرامج الغذائية</a></li><li><a href="#services" class="hover:text-emerald-400 transition">المتابعة الطبية وتحليل OCR</a></li><li><a href="#pricing" class="hover:text-emerald-400 transition">باقات المدرب المعتمد</a></li></ul></div>
+<div><h4 id="footerContactTitle" class="text-white font-bold mb-4">معلومات الاتصال</h4><ul class="space-y-3 text-sm">
+<li class="flex items-center gap-3"><i class="fa-solid fa-location-dot text-emerald-400"></i><span>القاهرة، جمهورية مصر العربية</span></li>
+<li class="flex items-center gap-3"><i class="fa-solid fa-envelope text-emerald-400"></i><span dir="ltr">info@sfne-fitai.com</span></li>
+<li class="flex items-center gap-3"><i class="fa-solid fa-phone text-emerald-400"></i><span dir="ltr">+20 100 000 0000</span></li></ul></div></div>
+<div class="border-t border-white/10 pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500 text-center">
+<p id="footerRights">&copy; 2026 SFNE FITAI Ecosystem. جميع الحقوق محفوظة.</p>
+<div class="flex gap-6"><a href="#" class="hover:text-emerald-400 transition">سياسة الخصوصية</a><a href="#" class="hover:text-emerald-400 transition">الشروط والأحكام</a></div></div></div></footer>
 
-                <div class="bg-slate-900 border border-slate-800 p-8 rounded-3xl flex flex-col justify-between ltr:text-left rtl:text-right">
-                    <div>
-                        <h3 id="p3Title" class="text-xl font-bold mb-2">باقة المدرب المعتمد</h3>
-                        <p id="p3Desc" class="text-slate-400 text-sm mb-6">للكباتن وأخصائيي التغذية لإدارة عملائهم.</p>
-                        <div id="p3Tag" class="text-3xl font-black text-emerald-400 mb-6">مخصص</div>
-                        <ul class="space-y-3 text-sm text-slate-300 mb-8">
-                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400"></i> <span id="p3Item1">إدارة المحفظة الخاصة بالعملاء</span></li>
-                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400"></i> <span id="p3Item2">مراجعة واعتماد مسودات الذكاء الاصطناعي</span></li>
-                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400"></i> <span id="p3Item3">جدولة المواعيد والاستشارات</span></li>
-                        </ul>
-                    </div>
-                    <button onclick="openModal('signup')" id="p3Btn" class="w-full bg-slate-800 hover:bg-slate-700 text-center py-3 rounded-xl font-bold transition text-sm">انضم كمدرب</button>
-                </div>
-            </div>
-        </div>
-    </section>
+<div id="lightbox" class="fixed inset-0 z-[70] hidden items-center justify-center bg-black/90 p-4"><button type="button" id="lbClose" aria-label="Close" class="absolute top-5 end-5 w-11 h-11 rounded-full bg-white/10 hover:bg-emerald-400 hover:text-slate-950 text-white text-xl transition"><i class="fa-solid fa-xmark"></i></button><img id="lbImg" src="" alt="" class="max-h-[85vh] max-w-full rounded-2xl border border-emerald-400/40"></div>
 
-    <!-- معرض الصور -->
-    <section id="gallery" class="py-20 bg-slate-900/50 border-t border-slate-800/60">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-3xl mx-auto mb-16">
-                <span id="galSub" class="text-emerald-400 text-sm font-bold uppercase">معرض الصور</span>
-                <h2 id="galTitle" class="font-extrabold mt-2 mb-4">جولة داخل المنظومة والصالات الشريكة</h2>
-                <p id="galDesc" class="text-slate-400">لقطات حية تعكس احترافية التجهيزات وبيئة العمل المتطورة.</p>
-            </div>
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                <img src="https://images.unsplash.com/photo-1540497077202-7c8a3999166f?auto=format&fit=crop&w=600&q=80" alt="Gym 1" class="rounded-2xl border border-slate-800 object-cover h-64 w-full">
-                <img src="https://images.unsplash.com/photo-1517838277536-f5f99be501cd?auto=format&fit=crop&w=600&q=80" alt="Gym 2" class="rounded-2xl border border-slate-800 object-cover h-64 w-full">
-                <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=600&q=80" alt="Gym 3" class="rounded-2xl border border-slate-800 object-cover h-64 w-full">
-            </div>
-        </div>
-    </section>
+<a href="https://wa.me/201000000000" target="_blank" rel="noopener" aria-label="WhatsApp" class="keep fixed bottom-6 ltr:left-6 rtl:right-6 bg-[#25D366] hover:brightness-110 text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg transition z-40 text-2xl"><i class="fa-brands fa-whatsapp"></i></a>
 
-    <!-- العملاء -->
-    <section id="clients" class="py-20 bg-slate-950 border-t border-slate-800/60">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-3xl mx-auto mb-16">
-                <span id="cliSub" class="text-emerald-400 text-sm font-bold uppercase">شركاء النجاح</span>
-                <h2 id="cliTitle" class="font-extrabold mt-2 mb-4">آراء عملائنا وقصص النجاح</h2>
-                <p id="cliDesc" class="text-slate-400">تعرف على تجارب من استعملوا المنظومة وحققوا نتائج مذهلة.</p>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
-                <div class="bg-slate-900 border border-slate-800 p-6 rounded-2xl ltr:text-left rtl:text-right">
-                    <div class="flex items-center gap-1 text-amber-400 mb-4"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
-                    <p id="t1Text" class="text-slate-300 text-sm mb-6 leading-relaxed">"المنصة ساعدتني كثيراً في تنظيم الجيم الخاص بي ومتابعة الأعضاء بكل سهولة ويسر."</p>
-                    <div class="flex items-center gap-3">
-                        <div class="w-10 h-10 bg-emerald-500/20 text-emerald-400 rounded-full flex items-center justify-center font-bold">م</div>
-                        <div><h4 id="t1Name" class="font-bold text-sm">أحمد محمود</h4><p id="t1Role" class="text-xs text-slate-500">مدير صالة رياضية</p></div>
-                    </div>
-                </div>
-                <div class="bg-slate-900 border border-slate-800 p-6 rounded-2xl ltr:text-left rtl:text-right">
-                    <div class="flex items-center gap-1 text-amber-400 mb-4"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
-                    <p id="t2Text" class="text-slate-300 text-sm mb-6 leading-relaxed">"أفضل تجربة مرت علي كمدربة، سهلت لي وضع البرامج التدريبية ومتابعة اللاعبين بشكل احترافي."</p>
-                    <div class="flex items-center gap-3">
-                        <div class="w-10 h-10 bg-blue-500/20 text-blue-400 rounded-full flex items-center justify-center font-bold">ك</div>
-                        <div><h4 id="t2Name" class="font-bold text-sm">سارة علي</h4><p id="t2Role" class="text-xs text-slate-500">مدربة لياقة بدنية</p></div>
-                    </div>
-                </div>
-                <div class="bg-slate-900 border border-slate-800 p-6 rounded-2xl ltr:text-left rtl:text-right">
-                    <div class="flex items-center gap-1 text-amber-400 mb-4"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
-                    <p id="t3Text" class="text-slate-300 text-sm mb-6 leading-relaxed">"النتائج واضحة جداً وجدول التمارين والتغذية ساعدوني أوصل لهدفي في وقت قصير."</p>
-                    <div class="flex items-center gap-3">
-                        <div class="w-10 h-10 bg-purple-500/20 text-purple-400 rounded-full flex items-center justify-center font-bold">ع</div>
-                        <div><h4 id="t3Name" class="font-bold text-sm">عمر حسن</h4><p id="t3Role" class="text-xs text-slate-500">عضو مشترك</p></div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="text-center pt-8 border-t border-slate-800">
-                <p id="sponsorsLabel" class="text-xs text-slate-500 uppercase tracking-widest mb-6">الجهات الراعية وصالات اللياقة الشريكة</p>
-                <div class="flex flex-wrap justify-center items-center gap-10 text-slate-400 font-bold opacity-75">
-                    <span class="text-xl tracking-wider">FITNESS HUB</span>
-                    <span class="text-xl tracking-wider">IRON GYM</span>
-                    <span class="text-xl tracking-wider">TITAN FITNESS</span>
-                    <span class="text-xl tracking-wider">OLYMPUS CLUB</span>
-                    <span class="text-xl tracking-wider">EGYPT FIT</span>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- المدونة -->
-    <section id="blog" class="py-20 bg-slate-900/50 border-t border-slate-800/60">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-3xl mx-auto mb-16">
-                <span id="blogSub" class="text-emerald-400 text-sm font-bold uppercase">المدونة والنصائح</span>
-                <h2 id="blogTitle" class="font-extrabold mt-2 mb-4">أحدث المقالات والنصائح الرياضية</h2>
-                <p id="blogDesc" class="text-slate-400">محتوى تثقفي احترافي لمساعدتك على فهم التغذية والتمارين بصورة أفضل.</p>
-            </div>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden ltr:text-left rtl:text-right">
-                    <img src="https://images.unsplash.com/photo-1517838277536-f5f99be501cd?auto=format&fit=crop&w=500&q=80" alt="Blog 1" class="h-48 w-full object-cover">
-                    <div class="p-6">
-                        <span id="b1Cat" class="text-xs text-emerald-400 font-bold">التغذية السليمة</span>
-                        <h3 id="b1Title" class="font-bold text-lg mt-2 mb-2">أهمية حساب السعرات الحرارية للوصول للوزن المثالي</h3>
-                        <p id="b1Desc" class="text-slate-400 text-sm">كيف تؤثر الماكروز (البروتين والكربوهيدرات والدهون) على تطور عضلاتك وحرق الدهون.</p>
-                    </div>
-                </div>
-                <div class="bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden ltr:text-left rtl:text-right">
-                    <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=500&q=80" alt="Blog 2" class="h-48 w-full object-cover">
-                    <div class="p-6">
-                        <span id="b2Cat" class="text-xs text-blue-400 font-bold">التمارين الرياضية</span>
-                        <h3 id="b2Title" class="font-bold text-lg mt-2 mb-2">لماذا تعد تمارين المقاومة أساسية للياقة البدنية؟</h3>
-                        <p id="b2Desc" class="text-slate-400 text-sm">تعرف على دور رفع الأشرطة والأوزان في بناء القوة العضلية وتحسين صحة العظام.</p>
-                    </div>
-                </div>
-                <div class="bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden ltr:text-left rtl:text-right">
-                    <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&fit=crop&w=500&q=80" alt="Blog 3" class="h-48 w-full object-cover">
-                    <div class="p-6">
-                        <span id="b3Cat" class="text-xs text-purple-400 font-bold">الذكاء الاصطناعي</span>
-                        <h3 id="b3Title" class="font-bold text-lg mt-2 mb-2">دور الذكاء الاصطناعي والإشراف البشري في الرياضة</h3>
-                        <p id="b3Desc" class="text-slate-400 text-sm">كيف تضمن المنظومة دقة البرامج التدريبية مع حمايتك التامة من الإصابات.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- تطبيق الجوال -->
-    <section class="py-20 bg-slate-950 border-t border-slate-800/60">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                <div class="ltr:text-left rtl:text-right">
-                    <span id="appSub" class="text-emerald-400 text-sm font-bold uppercase tracking-widest">تطبيق الجوال</span>
-                    <h2 id="appTitle" class="font-extrabold mt-2 mb-6">تابع تمارينك وتغذيتك أينما كنت</h2>
-                    <p id="appDesc" class="text-slate-400 mb-6 leading-relaxed">
-                        قم بتحميل تطبيق SFNE FITAI على هاتفك الذكي واستمتع بمتابعة خطتك اليومية، تسجيل الأوزان، والتواصل المباشر مع مدربك في أي وقت.
-                    </p>
-                    <div class="flex flex-wrap gap-4 ltr:justify-start rtl:justify-start">
-                        <button class="bg-slate-900 hover:bg-slate-800 border border-slate-700 px-6 py-3 rounded-xl flex items-center gap-3 transition">
-                            <i class="fa-brands fa-apple text-2xl text-white"></i>
-                            <div class="ltr:text-left rtl:text-right">
-                                <p id="appStoreSub" class="text-[10px] text-slate-400">تحميل من</p>
-                                <p class="text-xs font-bold text-white">App Store</p>
-                            </div>
-                        </button>
-                        <button class="bg-slate-900 hover:bg-slate-800 border border-slate-700 px-6 py-3 rounded-xl flex items-center gap-3 transition">
-                            <i class="fa-brands fa-google-play text-2xl text-emerald-400"></i>
-                            <div class="ltr:text-left rtl:text-right">
-                                <p id="playStoreSub" class="text-[10px] text-slate-400">حمل من</p>
-                                <p class="text-xs font-bold text-white">Google Play</p>
-                            </div>
-                        </button>
-                    </div>
-                </div>
-                <div class="text-center">
-                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=600&q=80" alt="Mobile App" class="rounded-3xl border border-slate-800 shadow-2xl mx-auto max-h-[350px] object-cover">
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- تواصل معنا -->
-    <section id="contact" class="py-20 bg-slate-900/50 border-t border-slate-800/60">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
-                <div class="ltr:text-left rtl:text-right">
-                    <span id="cntSub" class="text-emerald-400 text-sm font-bold uppercase">تواصل معنا</span>
-                    <h2 id="cntTitle" class="font-extrabold mt-2 mb-6">يسعدنا تواصلك معنا في أي وقت</h2>
-                    <p id="cntDesc" class="text-slate-400 mb-8 leading-relaxed">
-                        سواء كنت صاحب صالة رياضية تبحث عن تطوير نظامك، أو مشتركاً جديداً، فريقنا جاهز للإجابة على كافة استفساراتك.
-                    </p>
-                    <div class="space-y-4">
-                        <div class="flex items-center gap-4 text-slate-300">
-                            <div class="w-10 h-10 bg-slate-900 border border-slate-800 rounded-xl flex items-center justify-center text-emerald-400"><i class="fa-solid fa-envelope"></i></div>
-                            <span dir="ltr">info@sfne-fitai.com</span>
-                        </div>
-                        <div class="flex items-center gap-4 text-slate-300">
-                            <div class="w-10 h-10 bg-slate-900 border border-slate-800 rounded-xl flex items-center justify-center text-emerald-400"><i class="fa-solid fa-phone"></i></div>
-                            <span dir="ltr">+20 100 000 0000</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="bg-slate-900 border border-slate-800 p-8 rounded-3xl ltr:text-left rtl:text-right">
-                    <form class="space-y-4" onsubmit="event.preventDefault(); alert(currentLang === 'ar' ? 'تم إرسال رسالتك بنجاح!' : 'Your message was sent successfully!');">
-                        <div>
-                            <label id="lblFullName" class="block text-xs font-bold text-slate-400 mb-2">الاسم بالكامل</label>
-                            <input id="inpName" type="text" required placeholder="أدخل اسمك" class="w-full bg-slate-950 border border-slate-800 px-4 py-3 rounded-xl text-sm focus:outline-none focus:border-emerald-500">
-                        </div>
-                        <div>
-                            <label id="lblEmailPhone" class="block text-xs font-bold text-slate-400 mb-2">البريد الإلكتروني / الهاتف</label>
-                            <input id="inpContact" type="text" required placeholder="أدخل بريدك أو رقمك" class="w-full bg-slate-950 border border-slate-800 px-4 py-3 rounded-xl text-sm focus:outline-none focus:border-emerald-500">
-                        </div>
-                        <div>
-                            <label id="lblMsg" class="block text-xs font-bold text-slate-400 mb-2">الرسالة</label>
-                            <textarea id="inpMsg" rows="4" required placeholder="كيف يمكننا مساعدتك؟" class="w-full bg-slate-950 border border-slate-800 px-4 py-3 rounded-xl text-sm focus:outline-none focus:border-emerald-500"></textarea>
-                        </div>
-                        <button type="submit" id="btnSendMsg" class="w-full bg-emerald-500 hover:bg-emerald-600 text-slate-950 font-bold py-3.5 rounded-xl transition shadow-lg shadow-emerald-500/20">
-                            إرسال الرسالة
-                        </button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- الدعم والأسئلة -->
-    <section id="support" class="py-20 bg-slate-950 border-t border-slate-800/60">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-3xl mx-auto mb-16">
-                <span id="supSub" class="text-emerald-400 text-sm font-bold uppercase">الدعم الفني والأسئلة</span>
-                <h2 id="supTitle" class="font-extrabold mt-2 mb-4">الأسئلة الشائعة والدعم الفني</h2>
-                <p id="supDesc" class="text-slate-400">إجابات واضحة ومقسمة لاحتياجات الأعضاء، المدربين، وصالات الجيم.</p>
-            </div>
-
-            <div class="max-w-3xl mx-auto space-y-4 mb-12">
-                <div class="bg-slate-900 border border-slate-800 p-6 rounded-2xl ltr:text-left rtl:text-right">
-                    <span id="q1Role" class="text-xs text-emerald-400 font-bold">للأعضاء والمتدربين</span>
-                    <h3 id="q1Title" class="font-bold text-lg mt-1 mb-2">كيف يمكنني البدء في استخدام المنصة؟</h3>
-                    <p id="q1Desc" class="text-slate-400 text-sm leading-relaxed">يمكنك التسجيل مباشرة عبر الضغط على "إنشاء حساب" أو التواصل معنا لتفعيل حسابك الشخصي.</p>
-                </div>
-                <div class="bg-slate-900 border border-slate-800 p-6 rounded-2xl ltr:text-left rtl:text-right">
-                    <span id="q2Role" class="text-xs text-blue-400 font-bold">للمدربين والكباتن</span>
-                    <h3 id="q2Title" class="font-bold text-lg mt-1 mb-2">كيف أراجع خطط الذكاء الاصطناعي؟</h3>
-                    <p id="q2Desc" class="text-slate-400 text-sm leading-relaxed">يتيح النظام لوحة تحكم مخصصة للمدرب المعتمد لمراجعة وتعديل واعتماد مسودات التمارين والتغذية بكل سهولة.</p>
-                </div>
-                <div class="bg-slate-900 border border-slate-800 p-6 rounded-2xl ltr:text-left rtl:text-right">
-                    <span id="q3Role" class="text-xs text-purple-400 font-bold">لأصحاب الصالات الرياضية</span>
-                    <h3 id="q3Title" class="font-bold text-lg mt-1 mb-2">كيف يتم ربط الفروع وتوزيع العوائد؟</h3>
-                    <p id="q3Desc" class="text-slate-400 text-sm leading-relaxed">توفر المنظومة نظام متكامل لإدارة فروع الجيم، الاشتراكات، والتقارير المالية بدقة واحترافية عالية.</p>
-                </div>
-            </div>
-
-            <div class="bg-gradient-to-r from-emerald-500/10 to-blue-500/10 border border-emerald-500/30 p-8 rounded-3xl text-center max-w-2xl mx-auto">
-                <i class="fa-solid fa-headset text-4xl text-emerald-400 mb-4"></i>
-                <h3 id="supCardTitle" class="text-xl font-bold mb-2">هل تواجه أي مشكلة تقنية؟</h3>
-                <p id="supCardDesc" class="text-slate-400 text-sm mb-6">فريق الدعم الفني جاهز لحل أي مشكلة واجهتك ومساعدتك فوراً.</p>
-                <a href="mailto:support@sfne-fitai.com" id="supCardBtn" class="inline-flex items-center gap-2 bg-emerald-500 hover:bg-emerald-600 text-slate-950 font-bold px-6 py-3 rounded-xl transition text-sm">
-                    <i class="fa-solid fa-paper-plane"></i> مراسلة الدعم الفني
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- الفوتر الشامل والمطور (Footer) -->
-    <footer class="bg-slate-900 border-t border-slate-800 text-slate-400 pt-16 pb-8">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12 ltr:text-left rtl:text-right">
-                <div>
-                    <span class="text-2xl font-black text-emerald-400 tracking-wider block mb-4">SFNE <span class="text-blue-500">FITAI</span></span>
-                    <p id="footerDesc" class="text-sm leading-relaxed mb-6">
-                        المنظومة الذكية الأولى لربط الصالات الرياضية، المتدربين، والمدربين بأحدث تقنيات الذكاء الاصطناعي وإشراف الخبراء.
-                    </p>
-                    <div class="flex items-center gap-3">
-                        <a href="#" class="w-9 h-9 bg-slate-800 hover:bg-emerald-500 hover:text-slate-950 rounded-xl flex items-center justify-center transition"><i class="fa-brands fa-facebook-f"></i></a>
-                        <a href="#" class="w-9 h-9 bg-slate-800 hover:bg-emerald-500 hover:text-slate-950 rounded-xl flex items-center justify-center transition"><i class="fa-brands fa-instagram"></i></a>
-                        <a href="#" class="w-9 h-9 bg-slate-800 hover:bg-emerald-500 hover:text-slate-950 rounded-xl flex items-center justify-center transition"><i class="fa-brands fa-twitter"></i></a>
-                        <a href="#" class="w-9 h-9 bg-slate-800 hover:bg-emerald-500 hover:text-slate-950 rounded-xl flex items-center justify-center transition"><i class="fa-brands fa-linkedin-in"></i></a>
-                    </div>
-                </div>
-
-                <div>
-                    <h4 id="footerLinksTitle" class="text-white font-bold text-base mb-4">روابط سريعة</h4>
-                    <ul class="space-y-2.5 text-sm">
-                        <li><a href="#hero" class="hover:text-emerald-400 transition">الرئيسية</a></li>
-                        <li><a href="#about" class="hover:text-emerald-400 transition">من نحن</a></li>
-                        <li><a href="#features" class="hover:text-emerald-400 transition">المميزات</a></li>
-                        <li><a href="#services" class="hover:text-emerald-400 transition">خدماتنا</a></li>
-                        <li><a href="#pricing" class="hover:text-emerald-400 transition">الباقات</a></li>
-                    </ul>
-                </div>
-
-                <div>
-                    <h4 id="footerServicesTitle" class="text-white font-bold text-base mb-4">خدمات المنظومة</h4>
-                    <ul class="space-y-2.5 text-sm">
-                        <li><a href="#services" class="hover:text-emerald-400 transition">إدارة الصالات الرياضية</a></li>
-                        <li><a href="#services" class="hover:text-emerald-400 transition">التغذية والبرامج الغذائية</a></li>
-                        <li><a href="#services" class="hover:text-emerald-400 transition">المتابعة الطبية وتحليل OCR</a></li>
-                        <li><a href="#pricing" class="hover:text-emerald-400 transition">باقات المدرب المعتمد</a></li>
-                    </ul>
-                </div>
-
-                <div>
-                    <h4 id="footerContactTitle" class="text-white font-bold text-base mb-4">معلومات الاتصال</h4>
-                    <ul class="space-y-3 text-sm">
-                        <li class="flex items-center gap-3">
-                            <i class="fa-solid fa-location-dot text-emerald-400"></i>
-                            <span>القاهرة، جمهورية مصر العربية</span>
-                        </li>
-                        <li class="flex items-center gap-3">
-                            <i class="fa-solid fa-envelope text-emerald-400"></i>
-                            <span dir="ltr">info@sfne-fitai.com</span>
-                        </li>
-                        <li class="flex items-center gap-3">
-                            <i class="fa-solid fa-phone text-emerald-400"></i>
-                            <span dir="ltr">+20 100 000 0000</span>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="border-t border-slate-800 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500 text-center">
-                <p id="footerRights">&copy; 2026 SFNE FITAI Ecosystem. جميع الحقوق محفوظة.</p>
-                <div class="flex gap-6">
-                    <a href="#" class="hover:text-emerald-400 transition">سياسة الخصوصية</a>
-                    <a href="#" class="hover:text-emerald-400 transition">الشروط والأحكام</a>
-                </div>
-            </div>
-        </div>
-    </footer>
-
-    <!-- زر العودة للأعلى -->
-    <a href="#hero" class="fixed bottom-6 ltr:right-6 rtl:left-6 bg-emerald-500 hover:bg-emerald-600 text-slate-950 w-12 h-12 rounded-full flex items-center justify-center shadow-lg transition z-40">
-        <i class="fa-solid fa-arrow-up font-bold"></i>
-    </a>
+<a href="#hero" aria-label="Top" class="fixed bottom-6 ltr:right-6 rtl:left-6 bg-emerald-400 hover:bg-emerald-300 text-slate-950 w-12 h-12 rounded-full flex items-center justify-center shadow-lg transition z-40"><i class="fa-solid fa-arrow-up"></i></a>
 
     <!-- نافذة الدخول / التسجيل -->
     <div id="authModal" class="fixed inset-0 bg-slate-950/80 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
@@ -842,5 +535,72 @@
             if (e.key === 'Escape') closeModal();
         });
     </script>
+
+<script>
+Object.assign(translations.ar,{howSub:"كيف يعمل النظام",howTitle:"أربع خطوات تفصلك عن هدفك",howDesc:"رحلة بسيطة وواضحة من التسجيل حتى تحقيق النتيجة.",
+hw1Title:"سجّل حسابك",hw1Desc:"أنشئ حسابك كمتدرب أو مدرب أو صالة رياضية في دقائق.",hw2Title:"احصل على خطة ذكية",hw2Desc:"نبني لك برنامج تمرين وتغذية يناسب هدفك وأجهزة الصالة.",
+hw3Title:"مدربك يراجع ويعتمد",hw3Desc:"مدرب معتمد يراجع الخطة ويعدلها قبل أن تبدأ.",hw4Title:"تابع تقدمك أسبوعياً",hw4Desc:"تقارير دورية تعرض نتائجك وتقترح التحسين التالي.",
+q4Role:"للجميع",q4Title:"هل بياناتي الصحية في أمان؟",q4Desc:"نحافظ على خصوصية بياناتك، ولا يطلع عليها إلا أنت ومدربك المعتمد.",
+q5Role:"للمتدربين",q5Title:"هل أستطيع استخدام المنصة بدون مدرب؟",q5Desc:"نعم، يمكنك البدء بالخطط الذكية وطلب مراجعة مدرب معتمد في أي وقت.",
+appUiTitle:"خطة اليوم",appUiProg:"75% مكتمل",appUiW1:"تمرين الصدر",appUiW2:"وجبة غنية بالبروتين",appUiW3:"شرب 3 لتر ماء"});
+Object.assign(translations.en,{howSub:"How It Works",howTitle:"Four Steps to Your Goal",howDesc:"A simple, clear journey from sign-up to results.",
+hw1Title:"Create your account",hw1Desc:"Sign up as a trainee, coach, or gym in just a few minutes.",hw2Title:"Get a smart plan",hw2Desc:"We build a workout and nutrition plan that fits your goal and gym equipment.",
+hw3Title:"Your coach reviews it",hw3Desc:"A certified coach reviews and adjusts the plan before you start.",hw4Title:"Track weekly progress",hw4Desc:"Regular reports show your results and suggest what to improve next.",
+q4Role:"For Everyone",q4Title:"Is my health data safe?",q4Desc:"We keep your data private. Only you and your certified coach can see it.",
+q5Role:"For Trainees",q5Title:"Can I use the platform without a coach?",q5Desc:"Yes. Start with smart plans and request a certified coach review any time.",
+appUiTitle:"Today's plan",appUiProg:"75% done",appUiW1:"Chest workout",appUiW2:"High-protein meal",appUiW3:"Drink 3L of water"});
+
+translations.ar.t1Av='م';translations.ar.t2Av='ك';translations.ar.t3Av='ع';translations.en.t1Av='A';translations.en.t2Av='S';translations.en.t3Av='O';
+var HG=' <span class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-300 to-emerald-500">';
+translations.ar.heroTitle='طور لياقتك بأحدث تقنيات'+HG+'الذكاء الاصطناعي والإشراف الاحترافي</span>';
+translations.en.heroTitle='Elevate Your Fitness with'+HG+'AI Tech & Expert Coaching</span>';
+function ti(c){document.querySelectorAll('.theme-i').forEach(function(e){e.className='theme-i fa-solid '+c})}
+var I18N={'الرئيسية':'Home','من نحن':'About','المميزات':'Features','خدماتنا':'Services','الباقات':'Pricing','معرض الصور':'Gallery','المدونة':'Blog','تواصل معنا':'Contact','الدعم الفني':'Support','تسجيل الدخول':'Login','إدارة الصالات الرياضية':'Gym Facility Management','التغذية والبرامج الغذائية':'Nutrition & Meal Planning','المتابعة الطبية وتحليل OCR':'Medical & OCR Tracking','باقات المدرب المعتمد':'Certified Coach Plans','القاهرة، جمهورية مصر العربية':'Cairo, Egypt','سياسة الخصوصية':'Privacy Policy','الشروط والأحكام':'Terms & Conditions'};
+function i18nExtra(){var en=currentLang==='en';document.querySelectorAll('#mobileMenu *, footer *').forEach(function(el){if(el.children.length)return;var t=el.dataset.ar||el.textContent.trim();if(!Object.prototype.hasOwnProperty.call(I18N,t))return;if(!el.dataset.ar)el.dataset.ar=t;el.textContent=en?I18N[t]:el.dataset.ar})}
+var _tl=toggleLanguage;toggleLanguage=function(){_tl();i18nExtra()};
+function toggleTheme(){var l=document.documentElement.classList.toggle('light');
+ ti(l?'fa-sun':'fa-moon');
+ try{localStorage.setItem('theme',l?'light':'dark')}catch(e){}}
+(function(){
+ var reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+ if(document.documentElement.classList.contains('light'))ti('fa-sun');
+ document.querySelectorAll('img').forEach(function(i){i.decoding='async'});
+ // reveal on scroll
+ if(!reduce&&'IntersectionObserver' in window){
+  var ro=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');ro.unobserve(e.target)}})},{threshold:.08});
+  document.querySelectorAll('section:not(#hero) > div').forEach(function(el){el.classList.add('rv');ro.observe(el)});
+ }
+ // counters
+ function fmt(n){return n.toLocaleString('en-US')}
+ function count(el){var t=+el.dataset.count,p=el.dataset.pre||'',s=el.dataset.suf||'',st=null,d=1400;
+  function f(ts){if(!st)st=ts;var k=Math.min((ts-st)/d,1),v=Math.round(t*(1-Math.pow(1-k,3)));el.textContent=p+fmt(v)+s;if(k<1)requestAnimationFrame(f)}
+  requestAnimationFrame(f)}
+ var cs=document.querySelectorAll('[data-count]');
+ if(!reduce&&'IntersectionObserver' in window){var co=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){count(e.target);co.unobserve(e.target)}})},{threshold:.6});cs.forEach(function(c){co.observe(c)})}
+ // progress + active nav
+ var prog=document.getElementById('prog'),links=[].slice.call(document.querySelectorAll('nav a[href^="#"]')),
+  secs=links.map(function(a){return document.querySelector(a.getAttribute('href'))});
+ function onScroll(){var h=document.documentElement,m=h.scrollHeight-innerHeight;prog.style.transform='scaleX('+(m>0?scrollY/m:0)+')';
+  var cur=-1;secs.forEach(function(s,i){if(s&&s.getBoundingClientRect().top<=160)cur=i});
+  links.forEach(function(a,i){a.classList.toggle('is-active',i===cur)})}
+ addEventListener('scroll',onScroll,{passive:true});onScroll();
+ // gallery slider + lightbox
+ var gt=document.getElementById('galTrack');
+ function go(n){var rtl=document.documentElement.dir==='rtl';gt.scrollBy({left:(rtl?-1:1)*n*gt.clientWidth*.7,behavior:reduce?'auto':'smooth'})}
+ document.getElementById('galNext').addEventListener('click',function(){go(1)});
+ document.getElementById('galPrev').addEventListener('click',function(){go(-1)});
+ var lb=document.getElementById('lightbox'),lbi=document.getElementById('lbImg');
+ function lbClose(){lb.classList.add('hidden');lb.classList.remove('flex');lbi.src=''}
+ document.querySelectorAll('.gal').forEach(function(g){g.addEventListener('click',function(){lbi.src=g.dataset.src;lb.classList.remove('hidden');lb.classList.add('flex')})});
+ lb.addEventListener('click',function(e){if(e.target!==lbi)lbClose()});
+ addEventListener('keydown',function(e){if(e.key==='Escape')lbClose()});
+ // services panels
+ document.querySelectorAll('.svc').forEach(function(c,_,all){function on(){all.forEach(function(x){x.classList.remove('on')});c.classList.add('on')}
+  c.addEventListener('mouseenter',on);c.addEventListener('focus',on);c.addEventListener('click',on)});
+ // glow follows pointer
+ document.querySelectorAll('.glow').forEach(function(c){c.addEventListener('pointermove',function(e){var r=c.getBoundingClientRect();c.style.setProperty('--x',(e.clientX-r.left)+'px');c.style.setProperty('--y',(e.clientY-r.top)+'px')})});
+})();
+</script>
+
 </body>
 </html>
